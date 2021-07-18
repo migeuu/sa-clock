@@ -316,6 +316,7 @@ header {
 
 .categories {
   margin: 30px 0;
+  font-family: 'Roboto', monospace;
 }
 
 .col-1 {
@@ -328,11 +329,11 @@ header {
 .col-1 img {
   display: block;
   width: 100%;
-  border-radius: 50%;
+  border-radius: 10%;
 }
 
 .img-overlay {
-  border-radius: 50%;
+  border-radius: 10%;
   position: absolute;
   top: 0;
   left: 0;
@@ -365,6 +366,8 @@ header {
   color: #c71e81;
   font-size: 2em;
   font-weight: bold;
+  display: flex;
+  align-items: center;
 }
 
 .img-desc {
