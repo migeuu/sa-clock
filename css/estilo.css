@@ -316,7 +316,10 @@ header {
 
 .categories {
   margin: 30px 0;
+<<<<<<< HEAD
   font-family: 'Roboto', monospace;
+=======
+>>>>>>> 8bc863b8c7aa2a9dc29d173c7e8eae0ce99ae6f7
 }
 
 .col-1 {
@@ -329,11 +332,19 @@ header {
 .col-1 img {
   display: block;
   width: 100%;
+<<<<<<< HEAD
   border-radius: 10%;
 }
 
 .img-overlay {
   border-radius: 10%;
+=======
+  border-radius: 50%;
+}
+
+.img-overlay {
+  border-radius: 50%;
+>>>>>>> 8bc863b8c7aa2a9dc29d173c7e8eae0ce99ae6f7
   position: absolute;
   top: 0;
   left: 0;
@@ -366,8 +377,11 @@ header {
   color: #c71e81;
   font-size: 2em;
   font-weight: bold;
+<<<<<<< HEAD
   display: flex;
   align-items: center;
+=======
+>>>>>>> 8bc863b8c7aa2a9dc29d173c7e8eae0ce99ae6f7
 }
 
 .img-desc {
