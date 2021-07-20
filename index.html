@@ -11,30 +11,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="dropdown">
-        <div class="drop-container">
-            <ul>
-                <li><a class="menu-a" href="index.html">Home</a></li>
-                <li><a class="menu-a" href="#">SNKRS</a>
-                    <div class="sub-menu-1">
-                        <ul>
-                            <li><a href="nike.html">Todos</a></li>
-                            <li><a href="nike.html">Nike</a></li>
-                            <li><a href="nike.html">Jordan</a></li>
-                            <li><a href="nike.html">Adidas</a></li>
-                            <li><a href="nike.html">Yeezy</a></li>
-                            <li><a href="nike.html">Puma</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a class="menu-a" href="#">STREETWEAR</a></li>
-                <li><a class="menu-a" href="#">HEADWEAR</a></li>
-                <li><a class="menu-a" href="#">ACESSORIES</a></li>
-                <li><a class="menu-a" href="#">SALES</a></li>
-                <li><a class="menu-a" href="#">ALL</a></li>
-            </ul>
+    <nav>
+        <div class="dropdown">
+            <div class="drop-container">
+                <ul>
+                    <li><a class="menu-a" href="index.html">
+                        <span class="iconify" style="font-size: 1.2em;" data-icon="ant-design:home-outlined" data-inline="false"></span>
+                        </a>
+                    </li>
+                    <li><a class="menu-a" href="#">SNKRS
+                        <span class="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span></a>
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="allsneakers.html">Todos</a></li>
+                                <li><a href="nike.html">Nike</a></li>
+                                <li><a href="jordan.html">Jordan</a></li>
+                                <li><a href="adidas.html">Adidas</a></li>
+                                <li><a href="yeezy.html">Yeezy</a></li>
+                                <li><a href="puma.html">Puma</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="menu-a" href="#">STREETWEAR
+                        <span class="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span>
+                        </a>
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="allclothes.html">Todos</a></li>
+                                <li><a href="nike.html">Camisetas</a></li>
+                                <li><a href="nike.html">Calças</a></li>
+                                <li><a href="nike.html">Bermudas</a></li>
+                                <li><a href="nike.html">Moletons</a></li>
+                                <li><a href="nike.html">Jaquetas</a></li>
+                                <li><a href="nike.html">Meias</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a class="menu-a" href="#">HEADWEAR
+                        <span class="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span>
+                        </a>
+                        <div class="sub-menu-1">
+                            <ul>
+                                <li><a href="allhead.html">Todos</a></li>
+                                <li><a href="caps.html">Bonés</a></li>
+                                <li><a href="hood.html">Toucas</a></li>
+                                <li><a href="bucket.html">Buckets</a></li>
+                                <li><a href="durag.html">Durags</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </nav>
 
     <section class="home-carousel">
         <div class="slider">
@@ -106,10 +135,20 @@
 
     </section>
 
+    <div class="categories-title-container">
+        <div class="categories-title">
+            <h3>Categorias</h3>
+        </div>
+        <hr>
+        <div class="categories-p">
+            <p>Em destaque</p>
+        </div>
+    </div>
+
     <div class="categories">
         <div class="small-container">
-            <div class="row">
-                <div class="col-1">
+            <div class="row-cat">
+                <div class="col-cat">
                     <img src="./imgs/adidas-ctg.jpg" alt="">
                     <a href="adidas.html">
                         <div class="img-overlay">
@@ -118,7 +157,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-1">
+                <div class="col-cat">
                     <img src="./imgs/cactus-ctg.jpg" alt="">
                     <a href="cactus.html">
                         <div class="img-overlay">
@@ -127,7 +166,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-1">
+                <div class="col-cat">
                     <img src="./imgs/supreme-ctg.jpg" alt="">
                     <a href="adidas.html">
                         <div class="img-overlay">
@@ -139,6 +178,7 @@
             </div>
         </div>
     </div>
+
     <div class="footer-container">
         <div class="footer">
             <div class="footer-heading footer-1">
@@ -173,7 +213,7 @@
     </div>
 
     <div class="footer-bottom">
-        &copy; Clock Inc. | Designed by Clock Meddia | Todas as imagens são meramente para usos educacionais e sem fins lucrativos.
+        &copy; Clock Inc. | Designed by Clock Meddia | Todas as imagens são de uso educacional e sem fins lucrativos.
     </div>
     <script src="./js/script.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
