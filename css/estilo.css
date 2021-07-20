@@ -12,144 +12,62 @@ body {
   z-index: 1;
 }
 
-header {
-  background-color: white;
-  padding: 32px;
-  width: 100%;
-}
-
-.upper-header {
-  display: inline-flex;
-  width: 100%;
-}
-
-.logo-header {
-  margin-left: 32px;
-}
-
-
 /* NAVBAR */
+
 .dropdown {
-  height: 10vh;
+  background-color: #222;
+  height: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 60%;
-  margin: auto;
 }
 
-.sneakers,
-.headwear,
-.streetwear,
-.acessories,
-.sales,
-.all-btn {
-  position: relative;
+.dropdown ul {
+  display: flex;
+  list-style: none;
+  color: white;
 }
 
-.sneakers ul,
-.headwear ul,
-.streetwear ul,
-.acessories ul {
+.dropdown .menu-a {
+  margin-right: 32px;
+}
+
+.dropdown .menu-a {
+  text-decoration: none;
+  transition: all 0.3s;
+  color: white;
+}
+
+.menu-a:hover {
+  color: #c71e81;
+  letter-spacing: 3px;
+}
+
+.sub-menu-1 {
+  display: none;
+  z-index: 3;
+}
+
+.dropdown ul li:hover .sub-menu-1  {
+  display: flex;
   position: absolute;
-  left: 50%;
-  background: white;
-  margin-top: 20px;
-  width: 200px;
-  height: 200px;
+}
+
+.dropdown ul li:hover .sub-menu-1 ul{
   border: 1px solid black;
   border-radius: 4px;
+  margin-top: 12.5px;
+  background-color: white;
+  color: #000;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  list-style: none;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(10px);
-  transition: 0.2s ease;
-  z-index: 100;
-}
-
-.sneakers a,
-.headwear a,
-.streetwear a,
-.acessories a {
-  color: #222;
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-  display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.3s;
+  width: 180px;
+  height: 160px;
 }
 
-.sneakers a:hover,
-.headwear a:hover,
-.streetwear a:hover,
-.acessories a:hover {
-  font-weight: bold;
-  transform: scale(1.25);
-  transition: 0.3s;
-  color: rgb(199, 29, 129);
-}
 
-.sneakers li,
-.headwear li,
-.streetwear li,
-.acessories li {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.3s;
-}
-
-.sneakers li:hover,
-.headwear li:hover,
-.streetwear li:hover,
-.acessories li:hover {
-  background: #444;
-  transition: 0.3s;
-}
-
-.dropdown button,
-.home,
-.sales,
-.all-btn {
-  text-decoration: none;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-  transition: 0.3s ease-out;
-}
-
-.dropdown button:hover {
-  color: rgb(199, 29, 129);
-  transform: scale(1.1);
-  transition: 0.3s;
-  letter-spacing: 2px;
-}
-
-.home:hover,
-.sales:hover,
-.all-btn:hover {
-  color: rgb(199, 29, 129);
-  transition: 0.3s ease-out;
-}
-
-.sneakers button:focus + ul,
-.streetwear button:focus + ul,
-.headwear button:focus + ul,
-.acessories button:focus + ul {
-  transform: translateX(-50%);
-  opacity: 1;
-  pointer-events: all;
-}
 
 /* CAROUSEL */
 .home-carousel {
@@ -167,7 +85,6 @@ header {
   height: 80%;
   background-size: cover;
   background-position: center 100%;
-  z-index: 2;
   display: none;
   padding: 0 1rem;
   animation: slide 2s ease;
@@ -316,10 +233,7 @@ header {
 
 .categories {
   margin: 30px 0;
-<<<<<<< HEAD
   font-family: 'Roboto', monospace;
-=======
->>>>>>> 8bc863b8c7aa2a9dc29d173c7e8eae0ce99ae6f7
 }
 
 .col-1 {
@@ -332,19 +246,11 @@ header {
 .col-1 img {
   display: block;
   width: 100%;
-<<<<<<< HEAD
   border-radius: 10%;
 }
 
 .img-overlay {
   border-radius: 10%;
-=======
-  border-radius: 50%;
-}
-
-.img-overlay {
-  border-radius: 50%;
->>>>>>> 8bc863b8c7aa2a9dc29d173c7e8eae0ce99ae6f7
   position: absolute;
   top: 0;
   left: 0;
@@ -377,11 +283,8 @@ header {
   color: #c71e81;
   font-size: 2em;
   font-weight: bold;
-<<<<<<< HEAD
   display: flex;
   align-items: center;
-=======
->>>>>>> 8bc863b8c7aa2a9dc29d173c7e8eae0ce99ae6f7
 }
 
 .img-desc {
