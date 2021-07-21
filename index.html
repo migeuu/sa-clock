@@ -68,7 +68,7 @@
     <section class="home-carousel">
         <div class="slider">
             <div class="slide active" style="background-image: url(./imgs/nike.jpg);">
-                <div class="container">
+                <div class="container-carousel">
                     <div class="caption">
                         <h1>NIKE</h1>
                         <p>agora disponíveis novas coleções de sneakers,<br>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
             <div class="slide" style="background-image: url(./imgs/jordan.jpg);">
-                <div class="container">
+                <div class="container-carousel">
                     <div class="caption">
                         <h1>JORDAN</h1>
                         <p>a <code style="color: #c71e81; font-weight: bold;">JORDAN</code> é uma das maiores marcas influenciadoras hoje
@@ -89,7 +89,7 @@
                     </div>
                 </div>
             <div class="slide" style="background-image: url(./imgs/adidas.jpg);">
-                <div class="container">
+                <div class="container-carousel">
                     <div class="caption">
                         <h1>ADIDAS</h1>
                         <p>a marca <code style="color: #c71e81; font-weight: bold;">ADIDAS</code><br> é uma das que mais
@@ -100,7 +100,7 @@
                     </div>
                 </div>
             <div class="slide" style="background-image: url(./imgs/yeezy.jpg);">
-                <div class="container">
+                <div class="container-carousel">
                     <div class="caption">
                         <h1>YEEZY</h1>
                         <p>temos agora os novos drops dos Yeezys,<br> tênis que ficou famoso pelo seu dono 
@@ -112,7 +112,7 @@
                     </div>
                 </div>
             <div class="slide" style="background-image: url(./imgs/high.png);">
-                <div class="container">
+                <div class="container-carousel">
                     <div class="caption">
                         <h1>HIGH</h1>
                         <p><code style="font-weight: bold; color: #c71e81;">HIGH Company&copy;</code>
@@ -130,9 +130,7 @@
             <div class="next">></div>
         </div>
 
-        <div id="indicator" class="indicator">
-        </div>
-
+        <div id="indicator" class="indicator"></div>
     </section>
 
     <div class="categories-title-container">
@@ -166,7 +164,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="col-cat">
+                <div class="col-cat sup">
                     <img src="./imgs/supreme-ctg.jpg" alt="">
                     <a href="adidas.html">
                         <div class="img-overlay">
@@ -206,8 +204,11 @@
             </div>
             <div class="footer-email-form">
                 <h2>Newsletter</h2>
-                <input type="email" placeholder="Digite seu e-mail" id="footer-email">
-                <input type="submit" value="Enviar" id="footer-email-btn">
+                <form>
+                    <input type="email" placeholder="exemplo@outlook.com" id="footer-email">
+                    <input type="submit" value="Enviar" id="footer-email-btn">
+                </form>
+                <p id="text-news"></p>
             </div>
         </div>
     </div>
