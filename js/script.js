@@ -12,8 +12,8 @@ const news = document.getElementById("footer-email-btn");
             text = "Insira um e-mail válido."
         } else {
             text = "Email cadastrado com sucesso!"
+            document.getElementById("text-news").innerHTML = text;
         }
-        document.getElementById("text-news").innerHTML = text;
     }
 
 const slides = document.querySelector(".slider").children;
