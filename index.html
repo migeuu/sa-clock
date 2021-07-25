@@ -10,80 +10,51 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <img src="./imgs/carousel-slides/clock.png" alt="">
-            </div>
-            <form>
-                <div class="search-bar">
-                    <input type="search" name="search-input" id="search-input">
-                    <button type="submit"><span class="iconify" data-icon="ant-design:search-outlined" data-inline="false"></span></button>
-                </div>
-            </form>
-            <div class="personal-container">
-                <div class="personal-content">
-                    <a href="login.html"><span class="iconify" data-icon="zmdi:account-circle" data-inline="false"></span></a>
-                    <a href="cart.html"><span class="iconify" data-icon="vaadin:cart" data-inline="false"></span></a>
-                </div>
-            </div>
-        </div>
-    </header>
-
     <nav>
-        <div class="dropdown">
-            <div class="drop-container">
+        <div class="logo">CodingMiguel</div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+        </label>
+        <input type="checkbox" id="btn">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <label for="btn-1" class="show">Features +</label>
+                <a href="#">Features</a>
+                <input type="checkbox" id="btn-1">
                 <ul>
-                    <li><a class="menu-a home" href="index.html">
-                        <span class="iconify" data-icon="ant-design:home-outlined" data-inline="false"></span>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Elements</a></li>
+                    <li><a href="#">Icons</a></li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-2" class="show">Services +</label>
+                <a href="#">Services</a>
+                <input type="checkbox" id="btn-2">
+                <ul>
+                    <li><a href="#">Web Design</a></li>
+                    <li><a href="#">App Design</a></li>
+                    <li>
+                        <label for="btn-3" class="show">More +</label>
+                        <a href="#">More
+                            <span class="fa fa-plus"></span>
                         </a>
-                    </li>
-                    <li><a class="menu-a" href="#">SNKRS
-                        <span class="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span></a>
-                        <div class="sub-menu-1">
-                            <ul>
-                                <li><a href="allsneakers.html">Todos</a></li>
-                                <li><a href="nike.html">Nike</a></li>
-                                <li><a href="jordan.html">Jordan</a></li>
-                                <li><a href="adidas.html">Adidas</a></li>
-                                <li><a href="yeezy.html">Yeezy</a></li>
-                                <li><a href="puma.html">Puma</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a class="menu-a" href="#">STREETWEAR
-                        <span class="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span>
-                        </a>
-                        <div class="sub-menu-1">
-                            <ul>
-                                <li><a href="allclothes.html">Todos</a></li>
-                                <li><a href="nike.html">Camisetas</a></li>
-                                <li><a href="nike.html">Calças</a></li>
-                                <li><a href="nike.html">Bermudas</a></li>
-                                <li><a href="nike.html">Moletons</a></li>
-                                <li><a href="nike.html">Jaquetas</a></li>
-                                <li><a href="nike.html">Meias</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a class="menu-a" href="#">HEADWEAR
-                        <span class="iconify" data-icon="dashicons:arrow-down-alt2" data-inline="false"></span>
-                        </a>
-                        <div class="sub-menu-1">
-                            <ul>
-                                <li><a href="allhead.html">Todos</a></li>
-                                <li><a href="caps.html">Bonés</a></li>
-                                <li><a href="hood.html">Toucas</a></li>
-                                <li><a href="bucket.html">Buckets</a></li>
-                                <li><a href="durag.html">Durags</a></li>
-                            </ul>
-                        </div>
+                        <input type="checkbox" id="btn-3">
+                        <ul>
+                            <li><a href="#">Submenu-1</a></li>
+                            <li><a href="#">Submenu-1</a></li>
+                            <li><a href="#">Submenu-1</a></li>
+                        </ul>
                     </li>
                 </ul>
-            </div>
-        </div>
+            </li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
     </nav>
 
     <section class="home-carousel">
@@ -312,7 +283,7 @@
     <div class="footer-bottom">
         &copy; Clock Inc. | Designed by Clock Meddia | Todas as imagens são de uso educacional e sem fins lucrativos.
     </div>
+
     <script src="./js/script.js"></script>
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 </body>
 </html>
