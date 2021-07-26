@@ -13,7 +13,7 @@ body {
 }
 
 nav {
-  background: #1b1b1b;
+  background: #222;
 }
 
 nav:after {
@@ -29,6 +29,8 @@ nav .logo {
   font-weight: 600;
   line-height: 70px;
   padding-left: 60px;
+  height: 100%;
+  font-family: 'Roboto', monospace;
 }
 
 nav ul {
@@ -41,7 +43,7 @@ nav ul {
 nav ul li {
   float: left;
   display: inline-block;
-  background: #1b1b1b;
+  background: #222;
   margin: 0 5px
 }
 
@@ -51,12 +53,13 @@ nav ul li a {
   line-height: 70px;
   font-size: 18px;
   padding: 8px 15px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #c71e81;
   border-radius: 5px;
-  box-shadow: 0 0 5px #c71e81;
+  letter-spacing: 2px;
 }
 
 nav ul ul li a:hover {
@@ -87,7 +90,7 @@ nav ul li:hover > ul {
 nav ul ul li {
   position: relative;
   margin: 0px;
-  width: 150px;
+  width: 180px;
   float: none;
   display: list-item;
   border-bottom: 1px solid rgba(0, 0, 0, .3);
@@ -100,7 +103,7 @@ nav ul ul li a {
 nav ul ul ul li {
   position: relative;
   top: -70px;
-  left: 150px;
+  left: 180px;
 }
 
 .fa-plus {
@@ -108,7 +111,11 @@ nav ul ul ul li {
   font-size: 15px;
 }
 
-.show, .icon, input {
+.fa-chevron-down {
+  font-size: 15px;
+}
+
+.show, .icon, nav input {
   display: none;
 }
 
@@ -458,7 +465,7 @@ nav ul ul ul li {
 .footer-heading {
   display: flex;
   flex-direction: column;
-  margin-right: 4rem;
+  margin-right: 5rem;
   margin-top: 1rem;
 }
 
@@ -609,8 +616,6 @@ nav ul ul ul li {
 }
 
 @media screen and (max-width: 400px) {
-  /* TITULO */
-
   .categories-title-container {
     width: 80%;
   }
@@ -701,18 +706,6 @@ nav ul ul ul li {
 }
 
 @media screen and (max-width: 360) {
-  /* NAVBAR */
-
-  .dropdown {
-    justify-content: left;
-  }
-
-  .dropdown ul {
-    margin-left: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-  }
 
   /* TITULO */
 
