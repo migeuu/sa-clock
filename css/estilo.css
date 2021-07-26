@@ -119,6 +119,12 @@ nav ul ul ul li {
   display: none;
 }
 
+/* SEARCH */
+
+.search-bar-container {
+  
+}
+
 /* CAROUSEL */
 .home-carousel {
   height: 70vh;
