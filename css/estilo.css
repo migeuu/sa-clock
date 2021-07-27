@@ -413,6 +413,7 @@ nav ul ul ul li {
 
 .img-desc {
   margin-top: 0.25em;
+  text-align: center;
 }
 
 .small-container-cat {
@@ -489,7 +490,12 @@ nav ul ul ul li {
 }
 
 .card-info h1 {
+  text-align: center;
   font-size:18px;
+}
+
+.card-info p {
+  text-align: center;
 }
 
 
@@ -660,10 +666,138 @@ nav ul ul ul li {
 
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 858px) {
+  .col-cat {
+    flex-basis: 40%;
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .controls {
     display: none;
   }
+
+  .categories{
+    margin: 30px 0;
+  }
+
+  .small-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .col-cat {
+    min-width: 90%;
+    margin-bottom: 16px;
+  }
+
+  .img-overlay {
+    opacity: 1;
+    background: rgba(17, 17, 17, 0.505);
+    font-size: 25px;
+  }
+
+  .img-overlay > * {
+    transform: translateY(0px);
+    transition: transform 0.3s;
+  }
+
+  .img-desc {
+    font-size: 20px;
+  }
+
+  .col-cat img {
+    border: 2px solid white;
+    padding: 4px;
+  }
+
+  .col-cat.sup {
+    margin-bottom: 0;
+  }
+
+}
+
+@media screen and (max-width: 640px) {
+
+  .categories{
+    margin: 30px 0;
+  }
+
+  .small-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .col-cat {
+    margin-bottom: 16px;
+  }
+
+  .img-overlay {
+    opacity: 1;
+    background: rgba(17, 17, 17, 0.505);
+    font-size: 18px;
+  }
+
+  .col-cat img {
+    border: 2px solid white;
+    padding: 4px;
+  }
+
+  .col-cat.sup {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 575px) {
+  .img-overlay {
+    font-size: 18px;
+  }
+
+  .img-desc {
+    font-size: 16px;
+  }
+
+  .prod-container {
+    flex-direction: column;
+  }
+
+  .card-prod {
+    width: 98%;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  .card-info h1 {
+    font-size: 32px;
+  }
+
+  .card-info {
+    padding: 5%;
+    font-size: 24px;
+  }
+
+  .footer {
+    height: 100%;
+    display: block;
+    justify-content: left;
+  }
+
+  .footer-heading h2 {
+    margin-top:16px;
+    margin-bottom: 8px;
+  }
+
+  .footer-email-form h2 {
+    margin-bottom: 1rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -695,17 +829,13 @@ nav ul ul ul li {
   }
 
   .col-cat {
-    min-width: 310px;
     margin-bottom: 16px;
   }
 
   .img-overlay {
     opacity: 1;
     background: rgba(17, 17, 17, 0.505);
-  }
-
-  #adidas-div .img-desc {
-    font-size: 15px;
+    font-size: 18px;
   }
 
   .col-cat img {
@@ -715,10 +845,6 @@ nav ul ul ul li {
 
   .col-cat.sup {
     margin-bottom: 0;
-  }
-
-  .col-cat.sup .img-desc {
-    padding-left: 40px;
   }
 
   /* PRODUTOS SUGERIDOS */
