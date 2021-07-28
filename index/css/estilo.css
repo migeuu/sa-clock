@@ -27,7 +27,7 @@ nav .logo {
   font-size: 27px;
   font-weight: 600;
   line-height: 70px;
-  padding-left: 60px;
+  padding-left: 10px;
   height: 100%;
   font-family: 'Roboto', monospace;
 }
@@ -353,9 +353,7 @@ nav ul ul ul li {
 
 .col-cat {
   position: relative;
-  width: 400px;
   flex-basis: 30%;
-  min-width: 250px;
 }
 
 .col-cat img {
@@ -574,7 +572,7 @@ nav ul ul ul li {
   text-align: center;
 }
 
-@media all and (max-width: 1080px) {
+@media all and (max-width: 950px) {
   nav ul {
       margin-right: 0px;
       float: left;
@@ -653,17 +651,23 @@ nav ul ul ul li {
 
 }
 
-@media screen and (max-width: 858px) {
-  .col-cat {
-    flex-basis: 40%;
-    margin-bottom: 5%;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .controls {
     display: none;
   }
+
+  .categories{
+    margin: 30px 0;
+  }
+
+  .small-container {
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 656px) {
 
   .categories{
     margin: 30px 0;
@@ -682,47 +686,6 @@ nav ul ul ul li {
   .img-overlay {
     opacity: 1;
     background: rgba(17, 17, 17, 0.505);
-    font-size: 25px;
-  }
-
-  .img-overlay > * {
-    transform: translateY(0px);
-    transition: transform 0.3s;
-  }
-
-  .img-desc {
-    font-size: 20px;
-  }
-
-  .col-cat img {
-    border: 2px solid white;
-    padding: 4px;
-  }
-
-  .col-cat.sup {
-    margin-bottom: 0;
-  }
-
-}
-
-@media screen and (max-width: 640px) {
-
-  .categories{
-    margin: 30px 0;
-  }
-
-  .small-container {
-    padding: 0;
-    margin: 0;
-  }
-
-  .col-cat {
-    margin-bottom: 16px;
-  }
-
-  .img-overlay {
-    opacity: 1;
-    background: rgba(17, 17, 17, 0.505);
     font-size: 18px;
   }
 
@@ -733,35 +696,6 @@ nav ul ul ul li {
 
   .col-cat.sup {
     margin-bottom: 0;
-  }
-}
-
-@media (max-width: 575px) {
-  .img-overlay {
-    font-size: 18px;
-  }
-
-  .img-desc {
-    font-size: 16px;
-  }
-
-  .prod-container {
-    flex-direction: column;
-  }
-
-  .card-prod {
-    width: 98%;
-    margin: auto;
-    margin-top: 1rem;
-  }
-
-  .card-info h1 {
-    font-size: 32px;
-  }
-
-  .card-info {
-    padding: 5%;
-    font-size: 24px;
   }
 
   .footer {
@@ -785,6 +719,34 @@ nav ul ul ul li {
     height: 10vh;
   }
 
+  .prod-container {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .card-prod {
+    width: 98%;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  .card-info h1 {
+    font-size: 32px;
+  }
+
+  .card-info {
+    padding: 5%;
+    font-size: 24px;
+  }
+  
+  .img-overlay {
+    font-size: 18px;
+  }
+  
+  .img-desc {
+    font-size: 16px;
+  }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -798,11 +760,9 @@ nav ul ul ul li {
     transform: scaleX(1.2);
   }
   
-
   .home-carousel .indicator {
     bottom: 20px;
   }
-
 
   .categories{
     margin: 30px 0;
@@ -834,15 +794,17 @@ nav ul ul ul li {
 
 
   .prod-container {
+    width: 90%;
     flex-direction: column;
   }
 
-  .card-prod {
-    width: 98%;
-    margin: auto;
-    margin-top: 1rem;
+  .card-info h1 {
+    font-size: 20px;
   }
 
+  .card-info p {
+    font-size: 18px;
+  }
 
   .footer {
     height: 100%;
