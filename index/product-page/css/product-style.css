@@ -163,6 +163,23 @@ nav ul ul ul li {
   color: #b1b1b1;
 }
 
+.main-container {
+  width: 100%;
+  background-color: #b1b1b1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prod-images {
+  display: flex;
+  justify-content: center;
+}
+
+.main-image {
+  min-width: 20px;
+}
+
 .footer-container {
   background: white;
   padding-bottom: 4rem;
@@ -250,7 +267,7 @@ nav ul ul ul li {
   text-align: center;
 }
 
-@media all and (max-width: 1080px) {
+@media all and (max-width: 950px) {
   nav ul {
       margin-right: 0px;
       float: left;
