@@ -243,6 +243,7 @@ nav input {
 .size {
   width: 40%;
   padding: 4px;
+  margin-bottom: 10px;
   background: none;
   outline: none;
   border: none;
@@ -341,6 +342,7 @@ nav input {
 
 .footer-container {
   background: white;
+  padding-top: 2rem;
   padding-bottom: 4rem;
 }
 
