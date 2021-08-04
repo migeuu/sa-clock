@@ -1,28 +1,30 @@
-const mainImage = document.querySelector(".main-image-container").children;
-const subImage1 = document.getElementById("card1");
-const subImage2 = document.getElementById("card2");
-const subImage3 = document.getElementById("card3");
-
 let index = 0;
+let img = [
+  document.getElementById("card1"),
+  document.getElementById("card2"),
+  document.getElementById("card3"),
+];
 
-subImage1.addEventListener("click", function () {
-  changeMainImage();
+let container = [
+  document.getElementById("card-img1"),
+  document.getElementById("card-img2"),
+  document.getElementById("card-img3"),
+];
+
+let mainImage = document.getElementById("big-image");
+let tempImage = mainImage;
+
+container[0].addEventListener("click", function () {
+  mainImage.src = img[0].src;
+  img[0].src = mainImage.src;
 });
 
-subImage2.addEventListener("click", function () {
-  changeMainImage();
+container[1].addEventListener("click", function () {
+  mainImage.src = img[1].src;
+  img[1].src = mainImage.src;
 });
 
-subImage3.addEventListener("click", function () {
-  changeMainImage();
+container[2].addEventListener("click", function () {
+  mainImage.src = img[2].src;
+  img[2].src = mainImage.src;
 });
-
-function changeMainImage() {
-  for (let i = 0; i < mainImage.length; i++) {
-    if ((mainImage.className = "active")) {
-      mainImage[i].classList.remove("active");
-    } else {
-      mainImage[i].classList.add("active");
-    }
-  }
-}
