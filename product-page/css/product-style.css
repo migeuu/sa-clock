@@ -288,7 +288,8 @@ nav input {
   font-weight: 800;
   letter-spacing: 2px;
   font-family: "Roboto", monospace;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .buy-btn {

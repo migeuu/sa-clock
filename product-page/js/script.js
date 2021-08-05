@@ -1,4 +1,3 @@
-let index = 0;
 let img = [
   document.getElementById("card1"),
   document.getElementById("card2"),
@@ -12,7 +11,6 @@ let container = [
 ];
 
 let mainImage = document.getElementById("big-image");
-let tempImage = mainImage;
 
 container[0].addEventListener("click", function () {
   mainImage.src = img[0].src;
