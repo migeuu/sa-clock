@@ -401,6 +401,7 @@ nav ul ul ul li {
 }
 
 .img-desc {
+  width: 80%;
   margin-top: 0.25em;
   text-align: center;
 }
