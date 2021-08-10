@@ -279,6 +279,10 @@ nav input {
   background-color: #f6f6f6;
 }
 
+.size:focus {
+  outline: 1px solid #222;
+}
+
 .button-container {
   display: flex;
   flex-direction: column;
