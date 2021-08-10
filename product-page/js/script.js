@@ -26,3 +26,9 @@ container[2].addEventListener("click", function () {
   mainImage.src = img[2].src;
   img[2].src = mainImage.src;
 });
+
+let searchBar = document.getElementsByClassName("search-bar")
+
+searchBar.addEventListener("click", function () {
+  searchBar.style.border = "1px solid white"
+})
