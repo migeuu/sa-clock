@@ -1,176 +1,144 @@
-// Armazena os valores dos inputs da tela de Cadastro
-let nomeCadastro = document.getElementById("user");
-let senhaCadastro = document.getElementById("pass");
+let userRegister = document.getElementById("user");
+let passwordRegister = document.getElementById("pass");
+let emailRegister = document.getElementById("email");
 
-// Armazena os valores dos inputs da tela de Login
-let nomeLogin = document.getElementById("userLog");
-let senhaLogin = document.getElementById("senhaLog");
+let userLogin = document.getElementById("userLog");
+let passwordLogin = document.getElementById("passwordLog");
 
-// Armazena o nome do input de pesquisa
-let nomePesquisar = document.getElementById("userPesquisa");
-let senhaPesquisar = document.getElementById("passPesquisa");
+let userSearch = document.getElementById("userSearch");
+let passwordSearch = document.getElementById("passwordSearch");
+let emailSearch = document.getElementById("emailSearch");
 
-// Armazena o nome do usuário digitado no input de exclusão
-let nomeExcluir = document.getElementById("excluir");
+let userDelete = document.getElementById("excluir");
 
-// Cria uma variável para armazenar a posição dos dados a serem pesquisados
-let posicaoPesquisar;
+let positionSearch;
 
-// Cria vetores vazios para armazenamento temporário dos dados
-let nomes = [];
-let senhas = [];
+let users = [];
+let passwords = [];
+let email = [];
 
 function Cadastrar() {
-  // Pega valores do LocalStorage (se tiver) e armazena
-  nomes = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  senhas = JSON.parse(localStorage.getItem("cadastro_senha"));
+  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
+  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
 
-  // Compara se o que veio do LocalStorage é vazio
-  if (nomes == null) {
-    // Se estiver vazio, recria os vetores temporários
-    nomes = [];
-    senhas = [];
+  if (users == null) {
+    users = [];
+    passwords = [];
+    email = [];
 
-    // Adiciona os valores dos inputs no início dos vetores
-    nomes.push(nomeCadastro.value);
-    senhas.push(senhaCadastro.value);
+    users.push(userRegister.value);
+    passwords.push(passwordRegister.value);
+    email.push(emailRegister.value);
 
-    // Joga para o LocalStorage novamente
-    localStorage.setItem("cadastro_usuario", JSON.stringify(nomes));
-    localStorage.setItem("cadastro_senha", JSON.stringify(senhas));
+    localStorage.setItem("cadastro_usuario", JSON.stringify(users));
+    localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
+    localStorage.setItem("cadastro_email", JSON.stringify(email));
   } else {
-    // Se não estiver vazio
-    // Apenas adiciona os valores dos inputs após os valores que já tem nos vetores
-    nomes.push(nomeCadastro.value);
-    senhas.push(senhaCadastro.value);
+    users.push(userRegister.value);
+    passwords.push(passwordRegister.value);
+    email.push(emailRegister.value);
 
-    // Joga para o LocalStorage novamente
-    localStorage.setItem("cadastro_usuario", JSON.stringify(nomes));
-    localStorage.setItem("cadastro_senha", JSON.stringify(senhas));
+    localStorage.setItem("cadastro_usuario", JSON.stringify(users));
+    localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
+    localStorage.setItem("cadastro_email", JSON.stringify(email));
   }
 
-  // Mostra mensagem cadastro efetuado e carrega a página de login
   alert("Seu cadastro foi efetuado com sucesso!");
-  // Pula para a página de Login
-  window.location.href = "login.html";
+  window.location.href = "user.html";
 }
 
 function Logar() {
-  // Pega valores do LocalStorage (se tiver) e armazena
-  nomes = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  senhas = JSON.parse(localStorage.getItem("cadastro_senha"));
+  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
+  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
+  email = JSON.parse(localStorage.getItem("cadastro_email"));
 
-  // Cria uma variável ou flag para indicar que logou
-  let logou = 0;
+  let logged = 0;
 
-  // Realiza um loop do tamanho dos vetores
-  for (i = 0; i < nomes.length; i++) {
-    // Se o nome e senha no input do login forem iguais ao nome e senha da vez no loop
-    if (nomeLogin.value == nomes[i] && senhaLogin.value == senhas[i]) {
-      // Flag "logou" ativa
-      logou = 1;
+  for (i = 0; i < users.length; i++) {
+    if (userLogin.value == users[i] && passwordLogin.value == passwords[i]) {
+      logged = 1;
     }
   }
 
-  if (logou == 1) {
-    // Mostra mensagem de login efetuado
+  if (logged == 1) {
     alert("Login efetuado!");
-    // Pula para a página Principal
-    window.location.href = "principal.html";
+    window.location.href = "index.html";
   } else {
-    // Senão, mostra mensagem de login falhou
     alert("Login falhou!");
   }
 }
 
 function Listar() {
-  // Pega valores do LocalStorage (se tiver) e armazena
-  nomes = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  senhas = JSON.parse(localStorage.getItem("cadastro_senha"));
+  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
+  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
+  email = JSON.parse(localStorage.getItem("cadastro_email"));
 
-  // Cria uma variável de string vazia para armazenar os dados da lista
   let lista = "";
 
-  // Realiza um loop do tamanho dos vetores
-  for (i = 0; i < nomes.length; i++) {
-    // Armazena na variável lista, os dados dos vetores
-    lista = lista + nomes[i] + " - " + senhas[i] + "<br>";
+  for (i = 0; i < users.length; i++) {
+    lista = lista + users[i] + " - " + passwords[i] + " - " + email[i] + "<br>";
   }
 
-  // Mostra a lista na div centro
   document.getElementById("baixo").innerHTML = lista;
 }
 
 function Excluir() {
-  // Pega valores do LocalStorage (se tiver) e armazena
-  nomes = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  senhas = JSON.parse(localStorage.getItem("cadastro_senha"));
+  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
+  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
+  email = JSON.parse(localStorage.getItem("cadastro_email"));
 
-  // Cria uma variável para armazenar a posição dos dados a serem excluídos
-  let posicaoExcluir;
+  let positionDelete;
 
-  // Realiza um loop do tamanho dos vetores
-  for (i = 0; i < nomes.length; i++) {
-    // Compara o valor do input de exclusão com o valor da posição atual do vetor
-    if (nomeExcluir.value == nomes[i]) {
-      // Se existir um valor igual, armazena a posição
-      posicaoExcluir = i;
+  for (i = 0; i < users.length; i++) {
+    if (userDelete.value == users[i]) {
+      positionDelete = i;
 
-      // Utiliza a posição armazenada para excluir os dados
-      nomes.splice(posicaoExcluir, 1);
-      senhas.splice(posicaoExcluir, 1);
+      users.splice(positionDelete, 1);
+      passwords.splice(positionDelete, 1);
+      email.splice(positionDelete, 1);
 
-      // Mostra mensagem de dados excluídos
       alert("Usuário excluído!");
 
-      // Joga para o LocalStorage novamente
-      localStorage.setItem("cadastro_usuario", JSON.stringify(nomes));
-      localStorage.setItem("cadastro_senha", JSON.stringify(senhas));
+      localStorage.setItem("cadastro_usuario", JSON.stringify(users));
+      localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
+      localStorage.setItem("cadastro_email", JSON.stringify(email));
     }
   }
-
-  // Limpa dados do input excluir
   document.getElementById("excluir").value = "";
 }
 
-function Pesquisar() {
-  // Pega valores do LocalStorage (se tiver) e armazena
-  nomes = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  senhas = JSON.parse(localStorage.getItem("cadastro_senha"));
+function Searchr() {
+  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
+  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
+  email = JSON.parse(localStorage.getItem("cadastro_email"));
 
-  // Cria uma variável ou flag para indicar que encontrou
-  let encontrou = 0;
+  let found = 0;
 
-  // Realiza um loop do tamanho dos vetores
-  for (i = 0; i < nomes.length; i++) {
-    // Compara o valor do input de exclusão com o valor da posição atual do vetor
-    if (nomePesquisar.value == nomes[i]) {
-      encontrou = 1;
-      posicaoPesquisar = i;
+  for (i = 0; i < users.length; i++) {
+    if (userSearch.value == users[i]) {
+      found = 1;
+      positionSearch = i;
     }
   }
 
-  if (encontrou == 1) {
-    // Pega os valores da posição onde foi encontrado e joga pra os inputs
-    document.getElementById("userPesquisa").value = nomes[posicaoPesquisar];
-    document.getElementById("passPesquisa").value = senhas[posicaoPesquisar];
+  if (found == 1) {
+    document.getElementById("userSearch").value = users[positionSearch];
+    document.getElementById("passwordSearch").value = passwords[positionSearch];
+    document.getElementById("emailSearch").value = email[positionSearch];
   } else {
-    // Mostra mensagem de usuário inexistente
     alert("Usuário não encontrado!");
-    // Limpa dados do input excluir
-    //document.getElementById("userPequisa").value = ''
+    document.getElementById("userPequisa").value = ''
   }
 }
 
 function Atualizar() {
-  // Remove os dados da posição encontrada e joga os novos dados
-  nomes.splice(posicaoPesquisar, 1, nomePesquisar.value);
-  senhas.splice(posicaoPesquisar, 1, senhaPesquisar.value);
+  users.splice(positionSearch, 1, userSearch.value);
+  passwords.splice(positionSearch, 1, passwordSearch.value);
+  email.splice(positionSearch, 1, emailSearch.value);
 
-  // Joga para o LocalStorage o vetor atualizado
-  localStorage.setItem("cadastro_usuario", JSON.stringify(nomes));
-  localStorage.setItem("cadastro_senha", JSON.stringify(senhas));
+  localStorage.setItem("cadastro_usuario", JSON.stringify(users));
+  localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
+  localStorage.setItem("cadastro_email", JSON.stringify(email));
 
-  // Mensagem de dados atualizados
   alert("Dados atualizados!");
 }

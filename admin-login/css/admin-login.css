@@ -6,7 +6,7 @@
 
 body {
   height: 100vh;
-  background-color: #888;
+  background-color: #222;
   font-family: Arial, Helvetica, sans-serif;
   z-index: 1;
 }
@@ -165,14 +165,328 @@ nav input {
   color: #b1b1b1;
 }
 
-.cadastro {
-    margin: auto;
-    margin-top: 20%;
-    width: 50%;
-    background-color: #fff;
+.main-container {
+  background-color: white;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #222;
+}
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 50%;
+  background-color: white;
+}
+
+.title-container {
+  font-size: 32px;
+  font-weight: bold;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', monospace;
+  position: relative;
+  bottom: 20px;
+}
+
+.info-container {
+  height: 20%;
+  width: 80%;
+  margin-bottom: 10px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-container label {
+  padding-left: 0.5rem;
+  font-family: 'Roboto', monospace;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+}
+
+#userLog,
+#passwordLog,
+#user,
+#pass,
+#email {
+  border-radius: 4px;
+  border: none;
+  border-bottom: 1px solid #b1b1b1;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+#userLog:focus,
+#passwordLog:focus,
+#user:focus,
+#pass:focus,
+#email:focus {
+  border: 1px solid #222;
+}
+
+#userLog:focus::placeholder,
+#passwordLog:focus::placeholder,
+#user:focus::placeholder,
+#pass:focus::placeholder,
+#email:focus::placeholder {
+  color: #fff;
+}
+
+.button-container {
+  width: 80%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.btn-user {
+  background-color: #222;
+  color: white;
+  border: 2px solid #222;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-family: 'Roboto', monospace;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-user:hover {
+  background: none;
+  color: #222;
+}
+
+.login-anchor {
+  color: #222;
+  position: absolute;
+  left: 58%;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.login-anchor:hover {
+  color: #c71e81;
+}
+
+.footer-container {
+  background: white;                                         
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.footer {
+  width: 80%;
+  height: 100%;
+  background: white;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.footer-heading {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5rem;
+}
+
+.footer-heading h2 {
+  margin-bottom: 1rem;
+}
+
+.footer-heading a {
+  display: flex;
+  justify-content: left;
+  color: #222;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: 0.3s;
+}
+
+.footer-heading a:hover {
+  transform: translateX(5px);
+  transition: 0.4s;
+}
+
+.footer-email-form h2 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#footer-email {
+  width: 250px;
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #222;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#footer-email::placeholder {
+  color: #b1b1b1;
+}
+
+#footer-email-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  background-color: #f6f6f6;
+  transition: 0.3s;
+}
+
+#footer-email-btn:hover {
+  cursor: pointer;
+  background-color: #222;
+  color: white;
+  transition: all 0.3s ease-out;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding: 4px;
+  color: #222;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+
+@media all and (max-width: 950px) {
+  nav ul {
+    margin-right: 0px;
+    float: left;
+  }
+
+  nav .logo {
+    padding-left: 30px;
+    width: 100%;
+  }
+
+  nav ul li,
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul {
+    top: 70px;
+    position: static;
+    border-top: none;
+    float: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav ul ul ul li {
+    position: static;
+  }
+
+  nav ul ul li {
+    border-bottom: 0px;
+  }
+
+  nav ul ul a {
+    padding-left: 40px;
+  }
+
+  nav ul ul ul a {
+    padding-left: 40px;
+  }
+
+  .show {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+
+  .show:hover {
+    color: #c71e81;
+  }
+
+  .icon {
+    display: block;
+    color: white;
+    position: absolute;
+    right: 40px;
+    line-height: 70px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  nav ul li a:hover {
+    box-shadow: none;
+  }
+
+  .show + a,
+  ul {
+    display: none;
+  }
+
+  [id^="btn"]:checked + ul {
+    display: block;
+  }
+
+  .register-container {
+    width: 90%;
+  }
+
+  .info-container {
+    width: 100%;
+  }
+
+  .button-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  }
+
+  .login-anchor {
+    margin-top: 16px;
+    position: inherit;
+  }
+
+}
+
+@media (max-width: 575px) {
+  .footer {
+    height: 100%;
+    display: block;
+    justify-content: left;
+  }
+  
+  .footer-heading h2 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .footer-email-form h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-bottom {
+    display: flex;
     align-items: center;
-    padding: 8px;
+    height: 10vh;
+  }
 }
