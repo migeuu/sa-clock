@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock&copy; Inc.</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
+</head>
+<body style="background-color:white; height: 100vh;
+font-family: Arial, Helvetica, sans-serif;">
+    <nav>
+        <div class="logo">
+            Clock&copy; <code style="color: #c71e81;">Inc.</code>
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+        </label>
+        <input type="checkbox" id="btn">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span style="letter-spacing: normal;" class="fas fa-home"></span>
+                </a>
+            </li>
+            <li>
+                <a style="letter-spacing: normal;" href="user.html">
+                    <i style="letter-spacing: normal;" class="fas fa-user-circle"></i>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <i style="letter-spacing: normal;" class="fas fa-shopping-cart"></i>
+                </a>
+            </li>
+            <li>
+                <label for="btn-1" class="show">SNKRS +</label>
+                <a href="#">SNKRS
+                    <span class="fas fa-chevron-down"></span>
+                </a>
+                <input type="checkbox" id="btn-1">
+                <ul>
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Nike</a></li>
+                    <li><a href="#">Jordan</a></li>
+                    <li><a href="#">Adidas</a></li>
+                    <li><a href="#">Yeezy</a></li>
+                    <li><a href="#">Puma</a></li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-2" class="show">STREETWEAR +</label>
+                <a href="#">STREETWEAR
+                    <span class="fas fa-chevron-down"></span>
+                </a>
+                <input type="checkbox" id="btn-2">
+                <ul class="ul-submenu">
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Camisetas</a></li>
+                    <li><a href="#">Calças</a></li>
+                    <li><a href="#">Bermudas</a></li>
+                    <li><a href="#">Jaquetas</a></li>
+                    <li><a href="#">Moletons</a></li>
+                    <li>
+                        <label for="btn-3" class="show">HEADWEAR +</label>
+                        <a style="letter-spacing: normal; font-size: 12px;" href="#">HEADWEAR
+                            <span class="fa fa-plus"></span>
+                        </a>
+                        <input type="checkbox" id="btn-3">
+                        <ul>
+                            <li><a href="#">Todos</a></li>
+                            <li><a href="#">Bonés</a></li>
+                            <li><a href="#">Toucas</a></li>
+                            <li><a href="#">Buckets</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-4" class="show">ACESSORIES +</label>
+                <a href="#">ACESSORIES
+                    <span class="fas fa-chevron-down"></span>
+                </a>
+                <input type="checkbox" id="btn-4">
+                <ul>
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Bolsas</a></li>
+                    <li><a href="#">Mochilas</a></li>
+                    <li><a href="#">Carteiras</a></li>
+                    <li><a href="#">Adesivos</a></li>
+                    <li><a href="#">Chaveiros</a></li>
+                </ul>
+            </li>
+            <li><a href="#">SUPORTE</a></li>
+        </ul>
+    </nav>
+
+
+    <br>
+    <br>
+    <br>
+    <h4>Report here</h4>
+    <br>
+    <br>
+    <br>
+
+ <form action="#">
+
+
+    <div class="container-2">
+      <div class="col-2-name">
+        <label for="Nome">Nome:
+        <input type="text" placeholder="Digite seu Nome">
+      </label> 
+      </label>
+    </div>
+    <br>
+    <div class="col-2-email">
+        <label for="Email">Email:
+        <input type="email" name="email" placeholder="Digite seu E-mail"> 
+      </label>
+    </div>
+    <br>
+    <div class="row-report">
+        <label for="Problems">Reporte Erros:
+        <select class="select-row">
+          <option></option>
+          <option value="Problema de navegação entre as paginas">Problemas na navegação entre as páginas</option>
+          <option value="Problemas nas politicas de devolução">Problemas na hora de delvolver algum produto</option>
+          <option value="Atraso na entrega">Atraso na entrega</option>
+          <option value="Problemas em nossas paginas de suporte">Problemas em nossa página de suporte</option>
+          <option value="Abuso">Abuso</option>
+          <option value="Outros">Outros</option>
+        </label>
+        </select>
+    </div>
+    <br>
+    <div class="row-2-message">
+        <label for="caixa de mensagem">Qual a sua reclamação? 
+        <textarea id="Caixa de mensagem" rows="18" placeholder="Explique aqui seu problema"></textarea>
+      </label>
+    </div>
+    <br>
+    <div class="col-2-button">
+      <button type="submit" class="btn btn-success" onclick="">Enviar</button>
+    </div>
+</div>
+</form>
+<br>
+<div class="footer-container">
+    <div class="footer">
+        <div class="footer-heading footer-1">
+            <h2>Menu</h2>
+            <a href="index.html">Home</a>
+            <a href="#">SNKRS</a>
+            <a href="#">Streetwear</a>
+            <a href="#">Headwear</a>
+            <a href="TermosDeServiço.html">Termos de Serviço</a>
+        </div>
+        <div class="footer-heading footer-2">
+            <h2>Contato</h2>
+            <a href="vagas.html">Vagas</a>
+            <a href="Repport.html">Support</a>
+            <a href="Support.html">Contato</a>
+            <a href="#">Patrocínios</a>
+        </div>
+        <div class="footer-heading footer-3">
+            <h2>Follow</h2>
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://pt-br.facebook.com/">Facebook</a>
+            <a href="#">Youtube</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <div class="footer-email-form">
+            <h2>Newsletter</h2>
+            <form action="#">
+                <input type="email" placeholder="exemplo@outlook.com" id="footer-email">
+                <input type="submit" value="Enviar" id="footer-email-btn">
+            </form>
+            <p id="text-news"></p>
+        </div>
+    </div>
+</div>
+
+<div class="footer-bottom">
+    &copy; Clock Inc. | Designed by Clock Meddia | Todas as imagens são de uso educacional e sem fins lucrativos.
+</div>
+
+<script src="./js/script.js"></script>
+
+</body>
+</html>

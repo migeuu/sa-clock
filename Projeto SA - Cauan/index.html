@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock&copy; Inc.</title>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            Clock&copy; <code style="color: #c71e81;">Inc.</code>
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+        </label>
+        <input type="checkbox" id="btn">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span style="letter-spacing: normal;" class="fas fa-home"></span>
+                </a>
+            </li>
+            <li>
+                <a style="letter-spacing: normal;" href="user.html">
+                    <i style="letter-spacing: normal;" class="fas fa-user-circle"></i>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <i style="letter-spacing: normal;" class="fas fa-shopping-cart"></i>
+                </a>
+            </li>
+            <li>
+                <label for="btn-1" class="show">SNKRS +</label>
+                <a href="#">SNKRS
+                    <span class="fas fa-chevron-down"></span>
+                </a>
+                <input type="checkbox" id="btn-1">
+                <ul>
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Nike</a></li>
+                    <li><a href="#">Jordan</a></li>
+                    <li><a href="#">Adidas</a></li>
+                    <li><a href="#">Yeezy</a></li>
+                    <li><a href="#">Puma</a></li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-2" class="show">STREETWEAR +</label>
+                <a href="#">STREETWEAR
+                    <span class="fas fa-chevron-down"></span>
+                </a>
+                <input type="checkbox" id="btn-2">
+                <ul class="ul-submenu">
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Camisetas</a></li>
+                    <li><a href="#">Calças</a></li>
+                    <li><a href="#">Bermudas</a></li>
+                    <li><a href="#">Jaquetas</a></li>
+                    <li><a href="#">Moletons</a></li>
+                    <li>
+                        <label for="btn-3" class="show">HEADWEAR +</label>
+                        <a style="letter-spacing: normal; font-size: 12px;" href="#">HEADWEAR
+                            <span class="fa fa-plus"></span>
+                        </a>
+                        <input type="checkbox" id="btn-3">
+                        <ul>
+                            <li><a href="#">Todos</a></li>
+                            <li><a href="#">Bonés</a></li>
+                            <li><a href="#">Toucas</a></li>
+                            <li><a href="#">Buckets</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-4" class="show">ACESSORIES +</label>
+                <a href="#">ACESSORIES
+                    <span class="fas fa-chevron-down"></span>
+                </a>
+                <input type="checkbox" id="btn-4">
+                <ul>
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Bolsas</a></li>
+                    <li><a href="#">Mochilas</a></li>
+                    <li><a href="#">Carteiras</a></li>
+                    <li><a href="#">Adesivos</a></li>
+                    <li><a href="#">Chaveiros</a></li>
+                </ul>
+            </li>
+            <li><a href="#">SUPORTE</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-bar-container">
+        <div class="search-bar">
+            <input 
+            type="search"
+            placeholder="Buscar tênis, roupas, acessórios..."
+            id="search-inp"
+            >
+            <button id="search-btn" onclick="searchFunction()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <section class="home-carousel">
+        <div class="slider">
+            <div class="slide active" style="background-image: url(./imgs/carousel-slides/nike.jpg);">
+                <div class="container-carousel">
+                    <div class="caption">
+                        <h1>NIKE</h1>
+                        <p>agora disponíveis novas coleções de sneakers,<br>
+                        streetwear, headwear e muito mais, adquira agora no botão abaixo.
+                    </div>
+                        <button onclick="window.location.href='nike.html'" id="link-btn">Compre já</button>
+                    </div>
+                </div>
+            <div class="slide" style="background-image: url(./imgs/carousel-slides/jordan.jpg);">
+                <div class="container-carousel">
+                    <div class="caption">
+                        <h1>JORDAN</h1>
+                        <p>a <code style="color: #c71e81; font-weight: bold;">JORDAN</code> é uma das maiores marcas influenciadoras hoje
+                        em dia,<br> por isso coletamos as melhores peças e unidades para você,<br> confira nossas coleções de tênis, roupas e acessórios agora mesmo.
+                        </p>
+                    </div>
+                        <button onclick="window.location.href='jordan.html'" id="link-btn">Compre já</button>
+                    </div>
+                </div>
+            <div class="slide" style="background-image: url(./imgs/carousel-slides/adidas.jpg);">
+                <div class="container-carousel">
+                    <div class="caption">
+                        <h1>ADIDAS</h1>
+                        <p>a marca <code style="color: #c71e81; font-weight: bold;">ADIDAS</code><br> é uma das que mais
+                        crescem hoje em dia no cenário da moda,<br> aproveite agora o timing certo para comprar.
+                        </p>
+                    </div>
+                        <button onclick="window.location.href='adidas.html'" id="link-btn">Compre já</button>
+                    </div>
+                </div>
+            <div class="slide" style="background-image: url(./imgs/carousel-slides/yeezy.jpg);">
+                <div class="container-carousel">
+                    <div class="caption">
+                        <h1>YEEZY</h1>
+                        <p>temos agora os novos drops dos Yeezys,<br> tênis que ficou famoso pelo seu dono 
+                        <code style="color: #c71e81; font-weight: bold;">Kanye West</code> e sua limitação,<br> graças a nossa equipe você
+                        terá a chance de adquirir os novos limiteds.
+                        </p>
+                    </div>
+                        <button onclick="window.location.href='yeezy.html'" id="link-btn">Compre já</button>
+                    </div>
+                </div>
+            <div class="slide" style="background-image: url(./imgs/carousel-slides/high.png);">
+                <div class="container-carousel">
+                    <div class="caption">
+                        <h1>HIGH</h1>
+                        <p><code style="font-weight: bold; color: #c71e81;">HIGH Company&copy;</code>
+                        é uma das parceiras da CLOCK INC,<br> confira agora as novas coleções
+                        de roupas e acessórios.</p>
+                    </div>
+                        <button onclick="window.location.href='high.html'" id="link-btn">Compre já</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="prev"><</div>
+            <div class="next">></div>
+        </div>
+
+        <div id="indicator" class="indicator"></div>
+    </section>
+
+    <div class="categories-title-container">
+        <div class="categories-title">
+            <h3>Categorias</h3>
+        </div>
+        <hr>
+        <div class="categories-p">
+            <p>Em destaque</p>
+        </div>
+    </div>
+    
+    <div class="categories">
+        <div class="small-container-cat">
+            <div class="row-cat">
+                <div class="col-cat">
+                    <img src="./imgs/categories/adidas-ctg.jpg" alt="">
+                    <a href="adidas.html">
+                        <div id="adidas-div" class="img-overlay">
+                            <div class="img-title">Adidas</div>
+                            <p class="img-desc">Roupas, tênis e acessórios Adidas.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-cat">
+                    <img src="./imgs/categories/cactus-ctg.jpg" alt="">
+                    <a href="cactus.html">
+                        <div class="img-overlay">
+                            <div class="img-title">Cactus Jack</div>
+                            <p class="img-desc">Todas as coleções de Cactus Jack.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-cat sup">
+                    <img src="./imgs/categories/supreme-ctg.jpg" alt="">
+                    <a href="supreme.html">
+                        <div class="img-overlay">
+                            <div class="img-title">Supreme</div>
+                            <p class="img-desc">Artigos Supreme, machados, tijolos...</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="categories-title-container">
+        <div class="categories-title">
+            <h3>High Company</h3>
+        </div>
+        <hr>
+        <div class="categories-p">
+            <p>Produtos Sugeridos</p>
+        </div>
+    </div>
+
+    <div class="products">
+        <div class="prod-container">
+            <div class="card-prod">
+                <a style="text-decoration: none; color: #222;" href="#">
+                    <div class="img-prod">
+                       <img src="./imgs/vitrine-index/jaqueta1/jaqueta1.jpg" alt="Jaqueta High Company Coach Purple">
+                    </div>
+                    <div class="card-info">
+                        <h1>Jaqueta High Coach</h1>
+                        <p style="letter-spacing: 0.5px;">R$539</p>
+                        <p>ou 3x de 179,66 s/juros</p>
+                    </div>
+                </a>
+            </div>
+            <div class="card-prod">
+                <a style="text-decoration: none; color: #222;" href="#">
+                    <div class="img-prod">
+                       <img src="./imgs/vitrine-index/calca/calca1.jpg" alt="Calça High Company Chino Love">
+                    </div>
+                    <div class="card-info">
+                        <h1>Calça High Chino Love</h1>
+                        <p style="letter-spacing: 0.5px;">R$389</p>
+                        <p>ou 3x de 129,67 s/juros</p>
+                    </div>
+                </a>
+            </div>
+            <div class="card-prod">
+                <a style="text-decoration: none; color: #222;" href="#">
+                    <div class="img-prod">
+                       <img src="./imgs/vitrine-index/moletom/moletom1.jpg" alt="Moletom High Company Bold Crewneck">
+                    </div>
+                    <div class="card-info">
+                        <h1>Moletom High Bold</h1>
+                        <p style="letter-spacing: 0.5px;">R$309</p>
+                        <p>ou 3x de 103,00 s/juros</p>
+                    </div>
+                </a>
+            </div>
+            <div class="card-prod">
+                <a style="text-decoration: none; color: #222;" href="#">
+                    <div class="img-prod">
+                       <img src="./imgs/vitrine-index/jaqueta2/jaqueta2.jpg" alt="Jaqueta High Company Rain Beige/Blue">
+                    </div>
+                    <div class="card-info">
+                        <h1>Jaqueta High Rain</h1>
+                        <p style="letter-spacing: 0.5px;">R$559</p>
+                        <p>ou 3x de 186,33 s/juros</p>
+                    </div>
+                </a>
+            </div>
+            <div class="card-prod">
+                <a style="text-decoration: none; color: #222;" href="#">
+                    <div class="img-prod">
+                       <img src="./imgs/vitrine-index/jaqueta3/jaqueta3.jpg" alt="Jaqueta High Company Quilted Logo Black">
+                    </div>
+                    <div class="card-info">
+                        <h1>Jaqueta High Quilted</h1>
+                        <p style="letter-spacing: 0.5px;">R$429</p>
+                        <p>ou 3x de 143,00 s/juros</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-container">
+        <div class="footer">
+            <div class="footer-heading footer-1">
+                <h2>Menu</h2>
+                <a href="index.html">Home</a>
+                <a href="#">SNKRS</a>
+                <a href="#">Streetwear</a>
+                <a href="#">Headwear</a>
+            </div>
+            <div class="footer-heading footer-2">
+                <h2>Contato</h2>
+                <a href="vagas.html">Vagas</a>
+                <a href="Repport.html">Support</a>
+                <a href="Support.html">Contato</a>
+                <a href="TermosDeServiço.html">Termos de Serviço</a>
+            </div>
+            <div class="footer-heading footer-3">
+                <h2>Follow</h2>
+                <a href="https://www.instagram.com/">Instagram</a>
+                <a href="https://pt-br.facebook.com/">Facebook</a>
+                <a href="https://www.youtube.com/">Youtube</a>
+                <a href="https://twitter.com/twitter">Twitter</a>
+                <a href="https://br.linkedin.com/">LinkedIn</a>
+            </div>
+            <div class="footer-email-form">
+                <h2>Newsletter</h2>
+                <form action="#">
+                    <input type="email" placeholder="exemplo@outlook.com" id="footer-email">
+                    <input type="submit" value="Enviar" id="footer-email-btn">
+                </form>
+                <p id="text-news"></p>
+            </div>
+        </div>
+    </div>
+
+        <section style="background:  #f6f6f6; padding: 4px; text-align: left; color: #222; font-family: Arial, Helvetica, sans-serif;">
+            <p>2021 Clock&copy; Inc. all rights reserved</p>
+            <p>Copyright by 
+            <a href="https://www.blockoffice.com.br/" target="_blank" style="color: #222; text-decoration: none;">Block Office®</a></p>
+            <p>Our Sponsors are <a href="https://highcompanybr.com/" target="_blank" style="color: #222; text-decoration: none;">HIGH Conpany®</a></p>
+            <p>Clock&copy; Inc.</p>
+            <p>Rod. Admar Gonzaga, 2765 Florianópolis/SC - 88034-001</p>
+            <img src="./imgs/boleto-logo-1.png" alt="Boleto" style="width: 45px; height: 35px;"><img src="./imgs/PayPal.Png" alt="PayPal" style="width: 45px; height: 35px;"><img src="./imgs/Visa.logo.jpg" alt="Visa" style="height: 35px; width: 45px;">
+        </section>
+        
+    <div class="footer-bottom">
+        &copy; Clock Inc. | Designed by Clock Meddia | Todas as imagens são de uso educacional e sem fins lucrativos.
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

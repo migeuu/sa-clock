@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./index/imgs/COVID DEZEROSA.png">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="./admin-login/css/admin-login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a style="text-decoration: none; color: white;" href="index.html">Clock&copy; <code style="color: #c71e81;">Inc.</code></a>
+        </div>
+        <label for="btn" class="icon">
+            <span class="fa fa-bars"></span>
+        </label>
+        <input type="checkbox" id="btn">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <span style="letter-spacing: normal;" class="fas fa-home"></span>
+                </a>
+            </li>
+            <li>
+                <label for="btn-1" class="show">SNKRS +</label>
+                <a href="sneakers-all.html">SNKRS
+                    <span class="fas fa-chevron-down"></span>
+                </a>
+                <input type="checkbox" id="btn-1">
+                <ul>
+                    <li><a href="sneakers-all.html">Todos</a></li>
+                    <li><a href="nike-sneakers.html">Nike</a></li>
+                    <li><a href="jordan.html">Jordan</a></li>
+                    <li><a href="adidas-sneakers.html">Adidas</a></li>
+                    <li><a href="yeezy.html">Yeezy</a></li>
+                </ul>
+            </li>
+            <li>
+                <label for="btn-2" class="show">STREETWEAR +</label>
+                <a href="streetwear-all.html">STREETWEAR
+                    <span class="fas fa-chevron-down"></span>
+                </a>
+                <input type="checkbox" id="btn-2">
+                <ul class="ul-submenu">
+                    <li><a href="#">Todos</a></li>
+                    <li><a href="#">Camisetas</a></li>
+                    <li><a href="#">Calças</a></li>
+                    <li><a href="#">Bermudas</a></li>
+                    <li><a href="#">Moletons</a></li>
+                    <li><a href="#">Jaquetas</a></li>
+                    <li>
+                        <label for="btn-3" class="show">HEADWEAR +</label>
+                        <a style="letter-spacing: normal; font-size: 12px;" href="#">HEADWEAR
+                            <span class="fa fa-plus"></span>
+                        </a>
+                        <input type="checkbox" id="btn-3">
+                        <ul>
+                            <li><a href="#">Todos</a></li>
+                            <li><a href="#">Bonés</a></li>
+                            <li><a href="#">Toucas</a></li>
+                            <li><a href="#">Buckets</a></li>
+                            <li><a href="#">Durags</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="#">TODOS</a></li>
+            <li><a href="#">SUPORTE</a></li>
+            <li>
+                <a style="letter-spacing: normal;" href="user.html">
+                    <i style="letter-spacing: normal;" class="fas fa-user-circle"></i>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <i style="letter-spacing: normal;" class="fas fa-shopping-cart"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div class="search-bar-container">
+        <div class="search-bar">
+            <input 
+            type="search"
+            placeholder="Buscar tênis, roupas, acessórios..."
+            id="search-inp"
+            >
+            <button id="search-btn" onclick="searchFunction()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+
+
+    <script src="./admin-login/cadastro.js"></script>
+    
+</body>
+</html>
