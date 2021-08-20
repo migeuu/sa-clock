@@ -1,3 +1,9 @@
+let form = document.getElementsByTagName("form")[0];
+
+form.addEventListener("submit", function(){
+  Cadastrar();
+})
+
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
@@ -20,6 +26,7 @@ let email = [];
 function Cadastrar() {
   users = JSON.parse(localStorage.getItem("cadastro_usuario"));
   passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
+  email = JSON.parse(localStorage.getItem("cadastro_email"));
 
   if (users == null) {
     users = [];
@@ -34,17 +41,22 @@ function Cadastrar() {
     localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
     localStorage.setItem("cadastro_email", JSON.stringify(email));
   } else {
-    users.push(userRegister.value);
-    passwords.push(passwordRegister.value);
-    email.push(emailRegister.value);
+    for (i = 0; i < users.length; i++) {
+      if (userRegister.value == users[i] || emailRegister.value == email[i]) {
+        alert("Usuário já existente!");
+      } else {
+        users.push(userRegister.value);
+        passwords.push(passwordRegister.value);
+        email.push(emailRegister.value);
 
-    localStorage.setItem("cadastro_usuario", JSON.stringify(users));
-    localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
-    localStorage.setItem("cadastro_email", JSON.stringify(email));
+        localStorage.setItem("cadastro_usuario", JSON.stringify(users));
+        localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
+        localStorage.setItem("cadastro_email", JSON.stringify(email));
+        alert("Usuário cadastrado com sucesso!");
+        window.location.href = "user.html";
+      }
+    }
   }
-
-  alert("Seu cadastro foi efetuado com sucesso!");
-  window.location.href = "user.html";
 }
 
 function Logar() {
@@ -107,7 +119,7 @@ function Excluir() {
   document.getElementById("excluir").value = "";
 }
 
-function Searchr() {
+function Search() {
   users = JSON.parse(localStorage.getItem("cadastro_usuario"));
   passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
   email = JSON.parse(localStorage.getItem("cadastro_email"));
@@ -127,7 +139,7 @@ function Searchr() {
     document.getElementById("emailSearch").value = email[positionSearch];
   } else {
     alert("Usuário não encontrado!");
-    document.getElementById("userPequisa").value = ''
+    document.getElementById("userPequisa").value = "";
   }
 }
 

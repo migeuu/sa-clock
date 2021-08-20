@@ -100,25 +100,27 @@
 
     <div class="main-container">
         <div class="register-container">
-            <div class="title-container">
-                <h3>Cadastro</h3>
-            </div>
-            <div class="info-container">
-                <label>Usuário:</label>
-                <input type="text" name="registerUser" id="user" placeholder="usuario123" />
-            </div>
-            <div class="info-container">
-                <label>E-mail:</label>
-                <input type="email" name="register" id="email" placeholder="exemplo@outlook.com" />
-            </div>
-            <div class="info-container">
-                <label>Senha:</label>
-                <input type="password" name="registerPass" id="pass" placeholder="senha123" />
-            </div>
-            <div class="button-container">
-                <button class="btn-user" id="btn-register" onclick="Cadastrar()">Cadastrar</button>
-                <a class="login-anchor" id="login-anchor" href="user.html">Já tem conta?</a>
-            </div>
+            <form action="#">
+                <div class="title-container">
+                    <h3>Cadastro</h3>
+                </div>
+                <div class="info-container">
+                    <label>Usuário:</label>
+                    <input type="text" name="registerUser" id="user" placeholder="usuario123" required/>
+                </div>
+                <div class="info-container">
+                    <label>E-mail:</label>
+                    <input type="email" name="register" id="email" placeholder="exemplo@outlook.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+                </div>
+                <div class="info-container">
+                    <label>Senha:</label>
+                    <input type="password" name="registerPass" id="pass" placeholder="senha123" required/>
+                </div>
+                <div class="button-container">
+                    <button class="btn-user" id="btn-register" type="submit">Cadastrar</button>
+                    <a class="login-anchor" id="login-anchor" href="user.html">Já tem conta?</a>
+                </div>
+            </form>
         </div>
     </div>
 
