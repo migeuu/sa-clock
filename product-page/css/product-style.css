@@ -352,21 +352,32 @@ nav input {
 }
 
 .fa-whatsapp:hover {
-  color: #25D366;
+  color: #25d366;
 }
 
 .fa-twitter:hover {
-  color: #1DA1F2;
+  color: #1da1f2;
 }
 
 .fa-instagram:hover {
-  background: -webkit-linear-gradient(#405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+  background: -webkit-linear-gradient(
+    #405de6,
+    #5b51d8,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d,
+    #f56040,
+    #f77737,
+    #fcaf45,
+    #ffdc80
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .fa-facebook:hover {
-  color: #4267B2;
+  color: #4267b2;
 }
 
 .size-details {
@@ -539,7 +550,7 @@ nav input {
   [id^="btn"]:checked + ul {
     display: block;
   }
-  
+
   .product-container {
     flex-direction: column;
   }
@@ -548,13 +559,12 @@ nav input {
     width: 100%;
   }
 
-  
   .product-description {
     height: 40%;
     width: 95%;
     text-align: center;
   }
-  
+
   .details {
     margin: 0;
     padding-left: 32px;
@@ -562,7 +572,7 @@ nav input {
     justify-content: center;
     width: 100%;
   }
-  
+
   .size-details {
     margin-right: 0;
     margin-bottom: 5%;
@@ -573,26 +583,26 @@ nav input {
   .img-row {
     height: 100px;
   }
-  
+
   .main-image {
     height: 40vh;
   }
-  
+
   .footer {
     height: 100%;
     display: block;
     justify-content: left;
   }
-  
+
   .footer-heading h2 {
     margin-top: 16px;
     margin-bottom: 8px;
   }
-  
+
   .footer-email-form h2 {
     margin-bottom: 1rem;
   }
-  
+
   .footer-bottom {
     display: flex;
     align-items: center;

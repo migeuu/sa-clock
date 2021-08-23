@@ -1,5 +1,5 @@
 let form = document.getElementsByTagName("form")[0];
-let passEye = document.getElementById("passEye")
+let passEye = document.getElementById("passEye");
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
@@ -19,36 +19,32 @@ let users = [];
 let passwords = [];
 let email = [];
 
-
-form.addEventListener("submit", function(){
+form.addEventListener("submit", function () {
   Cadastrar();
-})
+});
 
-passEye.addEventListener("click", function(){
+passEye.addEventListener("click", function () {
   seePassword();
-})
+});
 
 function seePassword() {
-  let eye = document.getElementById("eye")
-  let x = [
-    passwordLogin, 
-    passwordRegister
-  ];
-  if(x[0] = passwordLogin){
-    if(passwordLogin.type == "password"){
-      passwordLogin.type = "text"
-      eye.className = "far fa-eye-slash"
+  let eye = document.getElementById("eye");
+  let x = [passwordLogin, passwordRegister];
+  if ((x[0] = passwordLogin)) {
+    if (passwordLogin.type == "password") {
+      passwordLogin.type = "text";
+      eye.className = "far fa-eye-slash";
     } else {
-      passwordLogin.type = "password"
-      eye.className = "far fa-eye"
+      passwordLogin.type = "password";
+      eye.className = "far fa-eye";
     }
   } else {
-    if(passwordRegister.type == "password"){
-      passwordRegister.type = "text"
-      eye.className = "far fa-eye-slash"
+    if (passwordRegister.type == "password") {
+      passwordRegister.type = "text";
+      eye.className = "far fa-eye-slash";
     } else {
-      passwordRegister.type = "password"
-      eye.className = "far fa-eye"
+      passwordRegister.type = "password";
+      eye.className = "far fa-eye";
     }
   }
 }

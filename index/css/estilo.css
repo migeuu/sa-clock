@@ -13,11 +13,11 @@ body {
 
 nav {
   background: #222;
-  font-family: 'Roboto', monospace;
+  font-family: "Roboto", monospace;
 }
 
 nav:after {
-  content: '';
+  content: "";
   clear: both;
   display: table;
 }
@@ -30,7 +30,7 @@ nav .logo {
   line-height: 70px;
   padding-left: 20px;
   height: 100%;
-  font-family: 'Roboto', monospace;
+  font-family: "Roboto", monospace;
 }
 
 nav ul {
@@ -44,7 +44,7 @@ nav ul li {
   float: left;
   display: inline-block;
   background: #222;
-  margin: 0 5px
+  margin: 0 5px;
 }
 
 nav ul li a {
@@ -74,7 +74,7 @@ nav ul ul {
   border-top: 2px solid #c71e81;
   opacity: 0;
   visibility: hidden;
-  transition: top .3s;
+  transition: top 0.3s;
 }
 
 nav ul ul ul {
@@ -93,7 +93,7 @@ nav ul ul li {
   width: 180px;
   float: none;
   display: list-item;
-  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 nav ul ul li a {
@@ -115,7 +115,9 @@ nav ul ul ul li {
   font-size: 15px;
 }
 
-.show, .icon, nav input {
+.show,
+.icon,
+nav input {
   display: none;
 }
 
@@ -335,7 +337,7 @@ nav ul ul ul li {
   display: flex;
   justify-content: center;
   font-size: 32px;
-} 
+}
 
 .categories-title-container hr {
   margin: 8px;
@@ -349,7 +351,7 @@ nav ul ul ul li {
 
 .categories {
   margin: 20px 0;
-  font-family: 'Roboto', monospace;
+  font-family: "Roboto", monospace;
 }
 
 .col-cat {
@@ -419,10 +421,9 @@ nav ul ul ul li {
   justify-content: space-around;
 }
 
-
 .products {
   margin: 30px 0;
-  font-family: 'Roboto', monospace;
+  font-family: "Roboto", monospace;
 }
 
 .prod-container {
@@ -480,7 +481,7 @@ nav ul ul ul li {
 
 .card-info h1 {
   text-align: center;
-  font-size:18px;
+  font-size: 18px;
 }
 
 .card-info p {
@@ -576,81 +577,82 @@ nav ul ul ul li {
 
 @media all and (max-width: 950px) {
   nav ul {
-      margin-right: 0px;
-      float: left;
+    margin-right: 0px;
+    float: left;
   }
 
   nav .logo {
-      padding-left: 30px;
-      width: 100%;
+    padding-left: 30px;
+    width: 100%;
   }
 
-  nav ul li, nav ul ul li {
-      display: block;
-      width: 100%;
+  nav ul li,
+  nav ul ul li {
+    display: block;
+    width: 100%;
   }
 
   nav ul ul {
-      top: 70px;
-      position: static;
-      border-top: none;
-      float: none;
-      display: none;
-      opacity: 1;
-      visibility: visible;
+    top: 70px;
+    position: static;
+    border-top: none;
+    float: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
   }
 
   nav ul ul ul li {
-      position: static;
+    position: static;
   }
 
   nav ul ul li {
-      border-bottom: 0px;
+    border-bottom: 0px;
   }
 
   nav ul ul a {
-      padding-left: 40px;
+    padding-left: 40px;
   }
 
   nav ul ul ul a {
-      padding-left: 40px;
+    padding-left: 40px;
   }
 
   .show {
-      display: block;
-      color: white;
-      font-size: 18px;
-      padding: 8px 15px;
-      line-height: 70px;
-      cursor: pointer;
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 8px 15px;
+    line-height: 70px;
+    cursor: pointer;
   }
 
   .show:hover {
-      color: #c71e81;
+    color: #c71e81;
   }
 
   .icon {
-      display: block;
-      color: white;
-      position: absolute;
-      right: 40px;
-      line-height: 70px;
-      font-size: 25px;
-      cursor: pointer;
+    display: block;
+    color: white;
+    position: absolute;
+    right: 40px;
+    line-height: 70px;
+    font-size: 25px;
+    cursor: pointer;
   }
 
   nav ul li a:hover {
-      box-shadow: none;
+    box-shadow: none;
   }
 
-  .show + a, ul {
-      display: none;
+  .show + a,
+  ul {
+    display: none;
   }
 
-  [id^=btn]:checked + ul {
-      display: block;
+  [id^="btn"]:checked + ul {
+    display: block;
   }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -658,7 +660,7 @@ nav ul ul ul li {
     display: none;
   }
 
-  .categories{
+  .categories {
     margin: 30px 0;
   }
 
@@ -666,12 +668,10 @@ nav ul ul ul li {
     padding: 0;
     margin: 0;
   }
-
 }
 
 @media screen and (max-width: 656px) {
-
-  .categories{
+  .categories {
     margin: 30px 0;
   }
 
@@ -707,7 +707,7 @@ nav ul ul ul li {
   }
 
   .footer-heading h2 {
-    margin-top:16px;
+    margin-top: 16px;
     margin-bottom: 8px;
   }
 
@@ -740,19 +740,17 @@ nav ul ul ul li {
     padding: 5%;
     font-size: 24px;
   }
-  
+
   .img-overlay {
     font-size: 18px;
   }
-  
+
   .img-desc {
     font-size: 16px;
   }
-
 }
 
 @media screen and (max-width: 400px) {
-
   .categories-title-container {
     width: 80%;
   }
@@ -761,12 +759,12 @@ nav ul ul ul li {
     margin: 8px;
     transform: scaleX(1.2);
   }
-  
+
   .home-carousel .indicator {
     bottom: 20px;
   }
 
-  .categories{
+  .categories {
     margin: 30px 0;
   }
 
@@ -794,7 +792,6 @@ nav ul ul ul li {
     margin-bottom: 0;
   }
 
-
   .prod-container {
     width: 90%;
     flex-direction: column;
@@ -815,7 +812,7 @@ nav ul ul ul li {
   }
 
   .footer-heading h2 {
-    margin-top:16px;
+    margin-top: 16px;
     margin-bottom: 8px;
   }
 
@@ -831,20 +828,16 @@ nav ul ul ul li {
 }
 
 @media screen and (max-width: 360) {
-
-
   .categories-title-container hr {
     margin: 8px;
     transform: scaleX(2.2);
   }
-  
 
   .home-carousel .indicator {
     bottom: 20px;
   }
 
-
-  .categories{
+  .categories {
     margin: 70px;
   }
 
@@ -859,7 +852,6 @@ nav ul ul ul li {
     margin-bottom: 10px;
   }
 
-
   .footer {
     height: 100%;
     display: block;
@@ -867,7 +859,7 @@ nav ul ul ul li {
   }
 
   .footer-heading h2 {
-    margin-top:16px;
+    margin-top: 16px;
     margin-bottom: 8px;
   }
 

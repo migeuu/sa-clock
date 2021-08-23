@@ -243,13 +243,12 @@ form {
   background: none;
   color: #222;
   border: none;
-  transition: transform 0.3s ;
+  transition: transform 0.3s;
 }
 
 .info-container button:hover {
   transform: scale(1.5);
 }
-
 
 .button-container {
   width: 80%;
