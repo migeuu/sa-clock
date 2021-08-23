@@ -105,19 +105,33 @@
                     <h3>Cadastro</h3>
                 </div>
                 <div class="info-container">
+                    <label>Nome Completo:</label>
+                    <input type="text" name="nameRegister" id="nameRegister" placeholder="ex... João da Silva Costa" required />
+                </div>
+                <div class="info-container">
+                    <label>Data de Nascimento:</label>
+                    <input type="date" name="dateRegister" id="dateRegister" placeholder="06/12/2004" min="1890" max="2021-01-01" required />
+                </div>
+                <div class="info-container">
                     <label>Usuário:</label>
-                    <input type="text" name="registerUser" id="user" placeholder="usuario123" required/>
+                    <input type="text" name="registerUser" id="user" placeholder="usuario123" required />
                 </div>
                 <div class="info-container">
                     <label>E-mail:</label>
-                    <input type="email" name="register" id="email" placeholder="exemplo@outlook.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+                    <input type="email" name="register" id="email" placeholder="exemplo@outlook.com"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required />
                 </div>
                 <div class="info-container">
                     <label>Senha:</label>
-                    <input type="password" name="registerPass" id="pass" placeholder="senha123" required/>
+                    <input type="password" name="registerPass" id="pass" placeholder="senha123" required />
+                    <button type="button" id="passEye">
+                        <i id="eye" class="far fa-eye-slash"></i>
+                    </button>
                 </div>
                 <div class="button-container">
-                    <button class="btn-user" id="btn-register" type="submit">Cadastrar</button>
+                    <button class="btn-user" id="btn-register" type="submit">
+                        Cadastrar
+                    </button>
                     <a class="login-anchor" id="login-anchor" href="user.html">Já tem conta?</a>
                 </div>
             </form>

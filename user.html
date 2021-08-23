@@ -100,21 +100,26 @@
 
     <div class="main-container">
         <div class="register-container">
-            <div class="title-container">
-                <h3>Login</h3>
-            </div>
-            <div class="info-container">
-                <label>Usuário:</label>
-                <input type="text" name="userLog" id="userLog"/>
-            </div>
-            <div class="info-container">
-                <label>Senha:</label>
-                <input type="password" name="passwordLog" id="passwordLog"/>
-            </div>
-            <div class="button-container">
-                <button class="btn-user" id="btn-logar" onclick="Logar()">Entrar</button>
-                <a class="login-anchor" id="login-anchor" href="cadastro.html">Criar conta</a>
-            </div>
+            <form action="#">
+                <div class="title-container">
+                    <h3>Login</h3>
+                </div>
+                <div class="info-container">
+                    <label>Usuário:</label>
+                    <input type="text" name="userLog" id="userLog"/>
+                </div>
+                <div class="info-container">
+                    <label>Senha:</label>
+                    <input type="password" name="passwordLog" id="passwordLog"/>
+                    <button type="button" id="passEye">
+                        <i id="eye" class="far fa-eye-slash"></i>
+                    </button>
+                </div>
+                <div class="button-container">
+                    <button class="btn-user" id="btn-logar" onclick="Logar()">Entrar</button>
+                    <a class="login-anchor" id="login-anchor" href="cadastro.html">Criar conta</a>
+                </div>
+            </form>
         </div>
     </div>
 

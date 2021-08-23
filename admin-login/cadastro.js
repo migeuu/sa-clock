@@ -1,9 +1,5 @@
 let form = document.getElementsByTagName("form")[0];
-
-form.addEventListener("submit", function(){
-  Cadastrar();
-})
-
+let passEye = document.getElementById("passEye")
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
@@ -22,6 +18,40 @@ let positionSearch;
 let users = [];
 let passwords = [];
 let email = [];
+
+
+form.addEventListener("submit", function(){
+  Cadastrar();
+})
+
+passEye.addEventListener("click", function(){
+  seePassword();
+})
+
+function seePassword() {
+  let eye = document.getElementById("eye")
+  let x = [
+    passwordLogin, 
+    passwordRegister
+  ];
+  if(x[0] = passwordLogin){
+    if(passwordLogin.type == "password"){
+      passwordLogin.type = "text"
+      eye.className = "far fa-eye-slash"
+    } else {
+      passwordLogin.type = "password"
+      eye.className = "far fa-eye"
+    }
+  } else {
+    if(passwordRegister.type == "password"){
+      passwordRegister.type = "text"
+      eye.className = "far fa-eye-slash"
+    } else {
+      passwordRegister.type = "password"
+      eye.className = "far fa-eye"
+    }
+  }
+}
 
 function Cadastrar() {
   users = JSON.parse(localStorage.getItem("cadastro_usuario"));
