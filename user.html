@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./index/imgs/COVID DEZEROSA.png" />
-    <title>Cadastro</title>
+    <title>Clock Inc. | Login</title>
     <link rel="stylesheet" href="./admin-login/css/admin-login.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -100,7 +100,7 @@
 
     <div class="main-container">
         <div class="register-container">
-            <form action="#">
+            <form action="javascript:login()">
                 <div class="title-container">
                     <h3>Login</h3>
                 </div>
@@ -111,12 +111,12 @@
                 <div class="info-container">
                     <label>Senha:</label>
                     <input type="password" name="passwordLog" id="passwordLog"/>
-                    <button type="button" id="passEye">
+                    <button type="button" id="passEyeLogin">
                         <i id="eye" class="far fa-eye-slash"></i>
                     </button>
                 </div>
                 <div class="button-container">
-                    <button class="btn-user" id="btn-logar" onclick="Logar()">Entrar</button>
+                    <button class="btn-user" id="btn-logar" type="submit">Entrar</button>
                     <a class="login-anchor" id="login-anchor" href="cadastro.html">Criar conta</a>
                 </div>
             </form>

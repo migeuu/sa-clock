@@ -1,7 +1,6 @@
 let form = document.getElementsByTagName("form")[0];
-let passEye = document.getElementById("passEye");
-let nameRegister = document.getElementById("nameRegister");
-let dateRegister = document.getElementById("dateRegister");
+let nameRegister = document.getElementById("nameRegister")
+let dateRegister = document.getElementById("dateRegister")
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
@@ -18,45 +17,16 @@ let userDelete = document.getElementById("excluir");
 let positionSearch;
 
 let users = [];
-users.push([
-  nameRegister.value,
-  dateRegister.value,
-  userRegister.value,
-  emailRegister.value,
-  passwordRegister.value,
-]);
 
-form.addEventListener("submit", function () {
-  Cadastrar();
-});
-
-passEye.addEventListener("click", function () {
-  seePassword();
-});
-
-function seePassword() {
-  let eye = document.getElementById("eye");
-  let x = [passwordLogin, passwordRegister];
-  if ((x[0] = passwordLogin)) {
-    if (passwordLogin.type == "password") {
-      passwordLogin.type = "text";
-      eye.className = "far fa-eye-slash";
-    } else {
-      passwordLogin.type = "password";
-      eye.className = "far fa-eye";
-    }
-  } else {
-    if (passwordRegister.type == "password") {
-      passwordRegister.type = "text";
-      eye.className = "far fa-eye-slash";
-    } else {
-      passwordRegister.type = "password";
-      eye.className = "far fa-eye";
-    }
+form.addEventListener("submit", function(){
+  if(form.id = "formRegister"){
+    register();
+  } else if (form.id = "formLogin"){
+    login()
   }
-}
+})
 
-function Cadastrar() {
+function register() {
   users = JSON.parse(localStorage.getItem("users"));
   if (users == null) {
     users = [];
@@ -71,28 +41,42 @@ function Cadastrar() {
 
     localStorage.setItem("users", JSON.stringify(users));
   } else {
-    console.log("Ja existe");
+    for (i = 0; i < users.length; i++) {
+      if (userRegister.value == users[i][2] || emailRegister.value == users[i][3]) {
+        alert("Usuário já existente!");
+        return false
+      } else {
+        users.push([
+          nameRegister.value,
+          dateRegister.value,
+          userRegister.value,
+          emailRegister.value,
+          passwordRegister.value
+        ]);
+
+        localStorage.setItem("users", JSON.stringify(users));
+        alert("Usuário cadastrado com sucesso!");
+        window.location.href = "user.html";
+        return false
+      }
+    }
   }
 }
 
-function Logar() {
-  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
-  email = JSON.parse(localStorage.getItem("cadastro_email"));
-
+function login() {
   let logged = 0;
-
+  users = JSON.parse(localStorage.getItem("users"));
   for (i = 0; i < users.length; i++) {
-    if (userLogin.value == users[i] && passwordLogin.value == passwords[i]) {
+    if (userLogin.value == users[i][2] && passwordLogin.value == users[i][4]) {
       logged = 1;
     }
   }
 
   if (logged == 1) {
     alert("Login efetuado!");
-    window.location.href = "index.html";
+    window.location.href = "index.html"
   } else {
-    alert("Login falhou!");
+    alert("Preencha os campos corretamente");
   }
 }
 
