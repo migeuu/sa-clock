@@ -1,7 +1,7 @@
 let form = document.getElementsByTagName("form")[0];
 let passEye = document.getElementById("passEye");
-let nameRegister = document.getElementById("nameRegister")
-let dateRegister = document.getElementById("dateRegister")
+let nameRegister = document.getElementById("nameRegister");
+let dateRegister = document.getElementById("dateRegister");
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
@@ -23,8 +23,8 @@ users.push([
   dateRegister.value,
   userRegister.value,
   emailRegister.value,
-  passwordRegister.value
-])
+  passwordRegister.value,
+]);
 
 form.addEventListener("submit", function () {
   Cadastrar();
@@ -66,28 +66,12 @@ function Cadastrar() {
       dateRegister.value,
       userRegister.value,
       emailRegister.value,
-      passwordRegister.value
+      passwordRegister.value,
     ]);
 
     localStorage.setItem("users", JSON.stringify(users));
   } else {
-    for (i = 0; i < users.length; i++) {
-      if (userRegister.value == users[i].userRegister || emailRegister.value == users[i].emailRegister) {
-        alert("Usuário já existente!");
-      } else {
-        users.push([
-          nameRegister.value,
-          dateRegister.value,
-          userRegister.value,
-          emailRegister.value,
-          passwordRegister.value
-        ]);
-
-        localStorage.setItem("users", JSON.stringify(users));
-        alert("Usuário cadastrado com sucesso!");
-        window.location.href = "user.html";
-      }
-    }
+    console.log("Ja existe");
   }
 }
 
