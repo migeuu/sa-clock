@@ -462,6 +462,10 @@ form {
     width: 100%;
   }
 
+  .info-container button {
+    left: 95%;
+  }
+
   .button-container {
     display: flex;
     flex-direction: column;

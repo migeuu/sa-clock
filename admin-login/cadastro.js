@@ -1,5 +1,7 @@
 let form = document.getElementsByTagName("form")[0];
 let passEye = document.getElementById("passEye");
+let nameRegister = document.getElementById("nameRegister")
+let dateRegister = document.getElementById("dateRegister")
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
@@ -16,8 +18,13 @@ let userDelete = document.getElementById("excluir");
 let positionSearch;
 
 let users = [];
-let passwords = [];
-let email = [];
+users.push([
+  nameRegister.value,
+  dateRegister.value,
+  userRegister.value,
+  emailRegister.value,
+  passwordRegister.value
+])
 
 form.addEventListener("submit", function () {
   Cadastrar();
@@ -50,34 +57,33 @@ function seePassword() {
 }
 
 function Cadastrar() {
-  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
-  email = JSON.parse(localStorage.getItem("cadastro_email"));
-
+  users = JSON.parse(localStorage.getItem("users"));
   if (users == null) {
     users = [];
-    passwords = [];
-    email = [];
 
-    users.push(userRegister.value);
-    passwords.push(passwordRegister.value);
-    email.push(emailRegister.value);
+    users.push([
+      nameRegister.value,
+      dateRegister.value,
+      userRegister.value,
+      emailRegister.value,
+      passwordRegister.value
+    ]);
 
-    localStorage.setItem("cadastro_usuario", JSON.stringify(users));
-    localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
-    localStorage.setItem("cadastro_email", JSON.stringify(email));
+    localStorage.setItem("users", JSON.stringify(users));
   } else {
     for (i = 0; i < users.length; i++) {
-      if (userRegister.value == users[i] || emailRegister.value == email[i]) {
+      if (userRegister.value == users[i].userRegister || emailRegister.value == users[i].emailRegister) {
         alert("Usuário já existente!");
       } else {
-        users.push(userRegister.value);
-        passwords.push(passwordRegister.value);
-        email.push(emailRegister.value);
+        users.push([
+          nameRegister.value,
+          dateRegister.value,
+          userRegister.value,
+          emailRegister.value,
+          passwordRegister.value
+        ]);
 
-        localStorage.setItem("cadastro_usuario", JSON.stringify(users));
-        localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
-        localStorage.setItem("cadastro_email", JSON.stringify(email));
+        localStorage.setItem("users", JSON.stringify(users));
         alert("Usuário cadastrado com sucesso!");
         window.location.href = "user.html";
       }
