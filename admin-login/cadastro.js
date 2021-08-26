@@ -1,4 +1,3 @@
-let form = document.getElementsByTagName("form")[0];
 let nameRegister = document.getElementById("nameRegister")
 let dateRegister = document.getElementById("dateRegister")
 let userRegister = document.getElementById("user");
@@ -9,22 +8,17 @@ let userLogin = document.getElementById("userLog");
 let passwordLogin = document.getElementById("passwordLog");
 
 let userSearch = document.getElementById("userSearch");
+let userSearchTemp;
 let passwordSearch = document.getElementById("passwordSearch");
+let passwordSearchTemp;
 let emailSearch = document.getElementById("emailSearch");
+let emailSearchTemp;
 
-let userDelete = document.getElementById("excluir");
+let userDelete = document.getElementById("userDelete");
 
 let positionSearch;
 
 let users = [];
-
-form.addEventListener("submit", function(){
-  if(form.id = "formRegister"){
-    register();
-  } else if (form.id = "formLogin"){
-    login()
-  }
-})
 
 function register() {
   users = JSON.parse(localStorage.getItem("users"));
@@ -55,8 +49,8 @@ function register() {
         ]);
 
         localStorage.setItem("users", JSON.stringify(users));
-        alert("Usuário cadastrado com sucesso!");
         window.location.href = "user.html";
+        alert("Usuário cadastrado com sucesso!");
         return false
       }
     }
@@ -80,77 +74,75 @@ function login() {
   }
 }
 
-function Listar() {
-  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
-  email = JSON.parse(localStorage.getItem("cadastro_email"));
-
+function list() {
+  users = JSON.parse(localStorage.getItem("users"));
   let lista = "";
 
   for (i = 0; i < users.length; i++) {
-    lista = lista + users[i] + " - " + passwords[i] + " - " + email[i] + "<br>";
+    lista = lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br>";
   }
 
   document.getElementById("baixo").innerHTML = lista;
 }
 
-function Excluir() {
-  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
-  email = JSON.parse(localStorage.getItem("cadastro_email"));
-
+function deleteUser() {
+  users = JSON.parse(localStorage.getItem("users"));
   let positionDelete;
-
   for (i = 0; i < users.length; i++) {
-    if (userDelete.value == users[i]) {
+    if (userDelete.value == users[i][2]) {
       positionDelete = i;
 
       users.splice(positionDelete, 1);
-      passwords.splice(positionDelete, 1);
-      email.splice(positionDelete, 1);
 
       alert("Usuário excluído!");
-
-      localStorage.setItem("cadastro_usuario", JSON.stringify(users));
-      localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
-      localStorage.setItem("cadastro_email", JSON.stringify(email));
+      if (users.length == 0) {
+        localStorage.removeItem("users")
+      } else {
+        localStorage.setItem("users", JSON.stringify(users))
+      }
     }
   }
-  document.getElementById("excluir").value = "";
+  document.getElementById("userDelete").value = "";
 }
 
-function Search() {
-  users = JSON.parse(localStorage.getItem("cadastro_usuario"));
-  passwords = JSON.parse(localStorage.getItem("cadastro_senha"));
-  email = JSON.parse(localStorage.getItem("cadastro_email"));
+function search() {
+  users = JSON.parse(localStorage.getItem("users"));
 
   let found = 0;
 
   for (i = 0; i < users.length; i++) {
-    if (userSearch.value == users[i]) {
+    if (userSearch.value == users[i][2] || emailSearch.value == users[i][3] || passwordSearch.value == users[i][4]) {
       found = 1;
       positionSearch = i;
     }
   }
 
   if (found == 1) {
-    document.getElementById("userSearch").value = users[positionSearch];
-    document.getElementById("passwordSearch").value = passwords[positionSearch];
-    document.getElementById("emailSearch").value = email[positionSearch];
+    userSearchTemp = userSearch.value
+    passwordSearchTemp = passwordSearch.value
+    document.getElementById("userSearch").value = users[positionSearch][2];
+    document.getElementById("emailSearch").value = users[positionSearch][3];
+    document.getElementById("passwordSearch").value = users[positionSearch][4];
   } else {
     alert("Usuário não encontrado!");
-    document.getElementById("userPequisa").value = "";
+    document.getElementById("userSearch").value = "";
   }
 }
 
-function Atualizar() {
-  users.splice(positionSearch, 1, userSearch.value);
-  passwords.splice(positionSearch, 1, passwordSearch.value);
-  email.splice(positionSearch, 1, emailSearch.value);
+function editUser() {
+  users = JSON.parse(localStorage.getItem("users"));
+  for (i = 0; i < users.length; i++) {
+    if (userSearchTemp == users[i][2]) {
+      users[i].splice(2, 1, userSearch.value)
+    }
+    if (emailSearchTemp == users[i][3]) {
+      users[i].splice(3, 1, emailSearch.value)
+    }
+    if (passwordSearchTemp == users[i][4]) {
+      users[i].splice(4, 1, passwordSearch.value)
+    }
+  }
 
-  localStorage.setItem("cadastro_usuario", JSON.stringify(users));
-  localStorage.setItem("cadastro_senha", JSON.stringify(passwords));
-  localStorage.setItem("cadastro_email", JSON.stringify(email));
-
+  localStorage.setItem("users", JSON.stringify(users));
   alert("Dados atualizados!");
 }

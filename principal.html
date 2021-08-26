@@ -8,11 +8,13 @@
 </head>
 <body bgcolor="#7952B3" text="#FFFFFF">
 
+    <form action="#">
+    </form>
     <div id="topo">
 
-        <button onclick="Listar()">Listar</button><br>
+        <button onclick="list()">Listar</button><br>
         <label>Digite abaixo o nome de usuário a ser excluído.</label><br>
-        <input type="text" id="excluir"><button onclick="Excluir()">Excluir</button><br><br>
+        <input type="text" id="userDelete"><button onclick="deleteUser()">Excluir</button><br><br>
 
     </div>
     <div id="meio" >
@@ -20,12 +22,12 @@
         <label>Digite abaixo o nome de usuário a pesquisado.</label><br>
         <label>Usuário</label>
         <input type="text" id="userSearch"><br>
-        <label>Senha</label>
-        <input type="text" id="passwordSearch"><br>
         <label>Email</label>
         <input type="text" id="emailSearch"><br>
+        <label>Senha</label>
+        <input type="text" id="passwordSearch"><br>
         <br>
-        <button onclick="Search()">Pesquisar</button><button onclick="Atualizar()">Atualizar</button><br><br>
+        <button onclick="search()">Pesquisar</button><button onclick="editUser()">Atualizar</button><br><br>
 
     </div>
     <div id="baixo"> 
