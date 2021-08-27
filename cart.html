@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./index/imgs/COVID DEZEROSA.png" />
-    <title>Clock Inc. | Login</title>
-    <link rel="stylesheet" href="./admin-login/css/admin-login.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock Inc. | Carrinho de Compras</title>
+    <link rel="stylesheet" href="./cart/css/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
     <nav>
         <div class="logo">
@@ -99,30 +95,19 @@
     </div>
 
     <div class="main-container">
-        <div class="register-container">
-            <form action="javascript:login()">
-                <div class="title-container">
-                    <h3>Login</h3>
+        <div class="product-cart">
+            <div class="product">
+                <div class="img-product">
+                    <img src="./product-page/img/calca1/calca1.jpg" alt="">
+                    <p id="product-name">
+                        calça
+                    </p>
+                    
                 </div>
-                <div class="info-container">
-                    <label>Usuário:</label>
-                    <input type="text" name="userLog" id="userLog"/>
-                </div>
-                <div class="info-container">
-                    <label>Senha:</label>
-                    <input type="password" name="passwordLog" id="passwordLog"/>
-                    <button type="button" id="passEyeLogin">
-                        <i id="eye" class="far fa-eye-slash"></i>
-                    </button>
-                </div>
-                <div class="button-container">
-                    <button class="btn-user" id="btn-login" type="submit">Entrar</button>
-                    <a class="login-anchor" id="login-anchor" href="cadastro.html">Criar conta</a>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-
+    
     <div class="footer-container">
         <div class="footer">
             <div class="footer-heading footer-1">
@@ -130,13 +115,13 @@
                 <a href="index.html">Home</a>
                 <a href="index.html">Perfil</a>
                 <a href="index.html">Carrinho</a>
-                <a href="sneakers.html">SNKRS</a>
-                <a href="streetwear.html">STREETWEAR</a>
-                <a href="headwear.html">TODOS</a>
-                <a href="#">SUPORTE</a>
+                <a href="sneakers.html">Sneakers</a>
+                <a href="streetwear.html">Streetwear</a>
+                <a href="headwear.html">Todos</a>
+                <a href="#">Suporte</a>
             </div>
             <div class="footer-heading footer-2">
-                <h2>Contatos</h2>
+                <h2>Contato</h2>
                 <a href="#">Vagas</a>
                 <a href="#">Suporte</a>
                 <a href="#">Contato</a>
@@ -152,7 +137,7 @@
             </div>
             <div class="footer-email-form">
                 <h2>Newsletter</h2>
-                <form class="email-form" action="#">
+                <form action="#">
                     <input type="email" placeholder="exemplo@outlook.com" id="footer-email" />
                     <input type="submit" value="Enviar" id="footer-email-btn" />
                 </form>
@@ -166,7 +151,6 @@
         educacional e sem fins lucrativos.
     </div>
 
-    <script src="./admin-login/cadastro.js"></script>
+    <script src="./cart/js/cart.js"></script>
 </body>
-
 </html>

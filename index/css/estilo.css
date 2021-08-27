@@ -702,7 +702,8 @@ nav input {
 
   .footer {
     height: 100%;
-    display: block;
+    display: flex;
+    flex-direction: column;
     justify-content: left;
   }
 

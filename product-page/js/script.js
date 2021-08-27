@@ -10,7 +10,9 @@ let container = [
   document.getElementById("card-img3"),
 ];
 
+let searchBar = document.getElementsByClassName("search-bar");
 let mainImage = document.getElementById("big-image");
+let quantity = document.getElementById("quantity");
 
 container[0].addEventListener("click", function () {
   mainImage.src = img[0].src;
@@ -27,8 +29,20 @@ container[2].addEventListener("click", function () {
   img[2].src = mainImage.src;
 });
 
-let searchBar = document.getElementsByClassName("search-bar")
-
 searchBar.addEventListener("click", function () {
   searchBar.style.border = "1px solid white"
 })
+
+function addProd() {
+  if(quantity.value == 10){
+    return false
+  }
+  quantity.value++
+}
+
+function removeProd() {
+  if(quantity.value == 1){
+    return false
+  }
+  quantity.value--
+}
