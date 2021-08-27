@@ -1,5 +1,5 @@
-let nameRegister = document.getElementById("nameRegister")
-let dateRegister = document.getElementById("dateRegister")
+let nameRegister = document.getElementById("nameRegister");
+let dateRegister = document.getElementById("dateRegister");
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
@@ -36,22 +36,30 @@ function register() {
     localStorage.setItem("users", JSON.stringify(users));
   } else {
     for (i = 0; i < users.length; i++) {
-      if (userRegister.value == users[i][2] || emailRegister.value == users[i][3]) {
+      if (
+        userRegister.value == users[i][2] ||
+        emailRegister.value == users[i][3]
+      ) {
         alert("Usuário já existente!");
-        return false
+        nameRegister.value = ""
+        dateRegister.value = ""
+        userRegister.value = ""
+        emailRegister.value = ""
+        passwordRegister.value = ""
+        return false;
       } else {
         users.push([
           nameRegister.value,
           dateRegister.value,
           userRegister.value,
           emailRegister.value,
-          passwordRegister.value
+          passwordRegister.value,
         ]);
 
         localStorage.setItem("users", JSON.stringify(users));
         window.location.href = "user.html";
         alert("Usuário cadastrado com sucesso!");
-        return false
+        return false;
       }
     }
   }
@@ -68,7 +76,7 @@ function login() {
 
   if (logged == 1) {
     alert("Login efetuado!");
-    window.location.href = "index.html"
+    window.location.href = "index.html";
   } else {
     alert("Preencha os campos corretamente");
   }
@@ -79,7 +87,8 @@ function list() {
   let lista = "";
 
   for (i = 0; i < users.length; i++) {
-    lista = lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br>";
+    lista =
+      lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br>";
   }
 
   document.getElementById("baixo").innerHTML = lista;
@@ -96,13 +105,22 @@ function deleteUser() {
 
       alert("Usuário excluído!");
       if (users.length == 0) {
-        localStorage.removeItem("users")
+        localStorage.removeItem("users");
       } else {
-        localStorage.setItem("users", JSON.stringify(users))
+        localStorage.setItem("users", JSON.stringify(users));
       }
     }
   }
   document.getElementById("userDelete").value = "";
+
+  let lista = "";
+
+  for (i = 0; i < users.length; i++) {
+    lista =
+      lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br>";
+  }
+
+  document.getElementById("baixo").innerHTML = lista;
 }
 
 function search() {
@@ -111,15 +129,17 @@ function search() {
   let found = 0;
 
   for (i = 0; i < users.length; i++) {
-    if (userSearch.value == users[i][2] || emailSearch.value == users[i][3] || passwordSearch.value == users[i][4]) {
+    if (
+      userSearch.value == users[i][2] ||
+      emailSearch.value == users[i][3] ||
+      passwordSearch.value == users[i][4]
+    ) {
       found = 1;
       positionSearch = i;
     }
   }
 
   if (found == 1) {
-    userSearchTemp = userSearch.value
-    passwordSearchTemp = passwordSearch.value
     document.getElementById("userSearch").value = users[positionSearch][2];
     document.getElementById("emailSearch").value = users[positionSearch][3];
     document.getElementById("passwordSearch").value = users[positionSearch][4];
@@ -129,18 +149,30 @@ function search() {
   }
 }
 
+function selectUser() {
+  userSearchTemp = userSearch.value;
+  emailSearchTemp = emailSearch.value;
+  passwordSearchTemp = passwordSearch.value;
+}
+
 function editUser() {
   users = JSON.parse(localStorage.getItem("users"));
   for (i = 0; i < users.length; i++) {
     if (userSearchTemp == users[i][2]) {
-      users[i].splice(2, 1, userSearch.value)
+      users[i].splice(2, 1, userSearch.value);
     }
     if (emailSearchTemp == users[i][3]) {
-      users[i].splice(3, 1, emailSearch.value)
+      users[i].splice(3, 1, emailSearch.value);
     }
     if (passwordSearchTemp == users[i][4]) {
-      users[i].splice(4, 1, passwordSearch.value)
+      users[i].splice(4, 1, passwordSearch.value);
     }
+    userSearchTemp == null;
+    emailSearchTemp == null;
+    passwordSearchTemp == null;
+    userSearch.value = "";
+    emailSearch.value = "";
+    passwordSearch.value = "";
   }
 
   localStorage.setItem("users", JSON.stringify(users));
