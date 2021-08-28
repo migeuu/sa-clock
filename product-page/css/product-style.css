@@ -268,7 +268,8 @@ nav input {
 .size-quantity {
   display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .quantity-container {
@@ -348,11 +349,12 @@ nav input {
 .p-prod {
   width: 100%;
   text-align: left;
+  color: #222;
 }
 
 .p-prod-qtd {
   width: 100%;
-  text-align: left;
+  color: #222;
 }
 
 .button-container {

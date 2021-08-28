@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +14,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <nav>
         <div class="logo">
-            <a style="text-decoration: none; color: white;" href="index.html">Clock&copy; <code style="color: #c71e81;">Inc.</code></a>
+            <a style="text-decoration: none; color: white;" href="index.html">Clock&copy; <code
+                    style="color: #c71e81;">Inc.</code></a>
         </div>
         <label for="btn" class="icon">
             <span class="fa fa-bars"></span>
@@ -88,11 +91,7 @@
 
     <div class="search-bar-container">
         <div class="search-bar">
-            <input 
-            type="search"
-            placeholder="Buscar tênis, roupas, acessórios..."
-            id="search-inp"
-            >
+            <input type="search" placeholder="Buscar tênis, roupas, acessórios..." id="search-inp">
             <button id="search-btn" onclick="searchFunction()">
                 <i class="fas fa-search"></i>
             </button>
@@ -108,25 +107,39 @@
             </div>
             <div class="img-row">
                 <div id="card-img1" class="img-card">
-                    <button ><img id="card1" src="./product-page/img/moletom4/moletom4.jpg" alt=""></button>
+                    <button><img id="card1" src="./product-page/img/moletom4/moletom4.jpg" alt=""></button>
                 </div>
                 <div id="card-img2" class="img-card">
-                    <button ><img id="card2" src="./product-page/img/moletom4/moletom4-1.jpg" alt=""></button>
+                    <button><img id="card2" src="./product-page/img/moletom4/moletom4-1.jpg" alt=""></button>
                 </div>
                 <div id="card-img3" class="img-card">
-                <button ><img id="card3" src="./product-page/img/moletom4/moletom4-2.jpg" alt=""></button>
+                    <button><img id="card3" src="./product-page/img/moletom4/moletom4-2.jpg" alt=""></button>
                 </div>
             </div>
         </div>
         <div class="product-description">
-            <h1>MOLETOM NIKE SWOOSH X TDE KENDRICK LAMAR DAMN HOODIE RED</h1>
-            <p>R$1.499,90</p>
+            <h1 id="title-product">MOLETOM NIKE SWOOSH X TDE KENDRICK LAMAR DAMN HOODIE RED</h1>
+            <p>R$<code id="price-product">1499</code></p>
             <p>ou 3x de 499,97 s/ juros</p>
             <p style="font-size: 16px; font-style: italic;">Frete Calculado no Checkout</p>
-            <p style="margin-top: 10px; color: #222;">Tamanho</p>
-            <select class="size" id="size">
-                <option value="M">M</option>
-            </select>
+            <div class="size-quantity">
+                <div class="size-container">
+                    <p style="color: #222;" class="p-prod">Tamanho</p>
+                    <div class="size-wrapper">
+                        <select class="size" id="size">
+                            <option value="M">M</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="quantity-container">
+                    <p style="color: #222;">Quantidade</p>
+                    <div class="quantity-wrapper">
+                        <button class="more-prod" id="more-prod" onclick="addProd()">+</button>
+                        <input type="number" class="quantity" name="quantity" id="quantity" value="1" readonly>
+                        <button class="minus-prod" id="minus-prod" onclick="removeProd()">-</button>
+                    </div>
+                </div>
+            </div>
             <div class="button-container">
                 <button class="buy-btn" id="buy-btn">COMPRAR JÁ</button>
                 <button class="cart-btn" id="cart-btn">ADICIONAR AO CARRINHO</button>
@@ -154,7 +167,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="footer-container">
         <div class="footer">
             <div class="footer-heading footer-1">
@@ -199,4 +212,5 @@
 
     <script src="./product-page/js/script.js"></script>
 </body>
+
 </html>

@@ -41,11 +41,11 @@ function register() {
         emailRegister.value == users[i][3]
       ) {
         alert("Usuário já existente!");
-        nameRegister.value = ""
-        dateRegister.value = ""
-        userRegister.value = ""
-        emailRegister.value = ""
-        passwordRegister.value = ""
+        nameRegister.value = "";
+        dateRegister.value = "";
+        userRegister.value = "";
+        emailRegister.value = "";
+        passwordRegister.value = "";
         return false;
       } else {
         users.push([
