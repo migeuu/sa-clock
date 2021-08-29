@@ -59,8 +59,8 @@ function register() {
         ]);
 
         localStorage.setItem("users", JSON.stringify(users));
-        window.location.href = "user.html";
         alert("Usuário cadastrado com sucesso!");
+        window.location.href = "login.html";
         return false;
       }
     }
@@ -84,6 +84,11 @@ function login() {
   } else {
     alert("Preencha os campos corretamente");
   }
+}
+
+function logout() {
+  userLogged = JSON.parse(localStorage.getItem("userLogged"))
+  localStorage.removeItem("userLogged")
 }
 
 function list() {
