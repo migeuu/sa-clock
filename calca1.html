@@ -89,15 +89,6 @@
     </ul>
   </nav>
 
-  <div class="search-bar-container">
-    <div class="search-bar">
-      <input type="search" placeholder="Buscar tênis, roupas, acessórios..." id="search-inp" />
-      <button id="search-btn" onclick="searchFunction()">
-        <i class="fas fa-search"></i>
-      </button>
-    </div>
-  </div>
-
   <div class="product-container">
     <div class="product-images">
       <div class="main-image-container">
@@ -124,9 +115,7 @@
       </div>
     </div>
     <div class="product-description">
-      <h1 id="title-product">
-        CALÇA HIGH COMPANY CHINO PLAID LOVE NAVY/ORANGE
-      </h1>
+      <h1 id="title-product">CALÇA HIGH COMPANY CHINO PLAID LOVE NAVY/ORANGE</h1>
       <p>R$<code id="price-product">389</code></p>
       <p>ou 3x de 129,67 s/ juros</p>
       <p style="font-size: 16px; font-style: italic">
@@ -136,7 +125,8 @@
         <div class="size-container">
           <p style="color: #222" class="p-prod">Tamanho</p>
           <div class="size-wrapper">
-            <select class="size" id="size">
+            <select class="size" id="size" onchange="getSelectValue()" required>
+              <option value="Selecione seu tamanho" disabled selected hidden>Selecione seu tamanho</option>
               <option value="40">40</option>
               <option value="42">42</option>
               <option value="44">44</option>

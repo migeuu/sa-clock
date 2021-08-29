@@ -89,15 +89,6 @@
         </ul>
     </nav>
 
-    <div class="search-bar-container">
-        <div class="search-bar">
-            <input type="search" placeholder="Buscar tênis, roupas, acessórios..." id="search-inp" />
-            <button id="search-btn" onclick="searchFunction()">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-    </div>
-
     <div class="main-container">
         <div class="register-container">
             <form action="javascript:register()">
@@ -126,14 +117,12 @@
                 <div class="info-container">
                     <label>Senha:</label>
                     <input type="password" name="registerPass" id="pass" placeholder="senha123" required />
-                    <button type="button" id="passEyeRegister">
+                    <button type="button" id="passEyeRegister" onclick="seePasswordRegister()">
                         <i id="eye" class="far fa-eye-slash"></i>
                     </button>
                 </div>
                 <div class="button-container">
-                    <button class="btn-user" id="btn-register" type="submit">
-                        Cadastrar
-                    </button>
+                    <button class="btn-user" id="btn-register" type="submit">Cadastrar</button>
                     <a class="login-anchor" id="login-anchor" href="user.html">Já tem conta?</a>
                 </div>
             </form>
@@ -169,7 +158,7 @@
             </div>
             <div class="footer-email-form">
                 <h2>Newsletter</h2>
-                <form action="#">
+                <form class="email-form" action="#">
                     <input type="email" placeholder="exemplo@outlook.com" id="footer-email" />
                     <input type="submit" value="Enviar" id="footer-email-btn" />
                 </form>

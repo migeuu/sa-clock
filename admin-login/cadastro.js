@@ -3,6 +3,7 @@ let dateRegister = document.getElementById("dateRegister");
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
+let eye = document.getElementById("eye")
 
 let userLogin = document.getElementById("userLog");
 let passwordLogin = document.getElementById("passwordLog");
@@ -19,6 +20,7 @@ let userDelete = document.getElementById("userDelete");
 let positionSearch;
 
 let users = [];
+let userLogged = [];
 
 function register() {
   users = JSON.parse(localStorage.getItem("users"));
@@ -71,6 +73,8 @@ function login() {
   for (i = 0; i < users.length; i++) {
     if (userLogin.value == users[i][2] && passwordLogin.value == users[i][4]) {
       logged = 1;
+      userLogged.push(users[i]);
+      localStorage.setItem("userLogged", JSON.stringify(userLogged));
     }
   }
 
@@ -177,4 +181,25 @@ function editUser() {
 
   localStorage.setItem("users", JSON.stringify(users));
   alert("Dados atualizados!");
+}
+
+function seePasswordRegister() {
+  if (passwordRegister.type == "password") {
+    passwordRegister.type = "text"
+    eye.className = "far fa-eye"
+  } else {
+    passwordRegister.type = "password"
+    eye.className = "far fa-eye-slash"
+  }
+}
+
+function seePasswordLogin() {
+  if (passwordLogin.type == "password") {
+    passwordLogin.type = "text"
+    eye.className = "far fa-eye"
+
+  } else {
+    passwordLogin.type = "password"
+    eye.className = "far fa-eye-slash"
+  }
 }

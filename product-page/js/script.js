@@ -12,7 +12,12 @@ let container = [
 
 let searchBar = document.getElementsByClassName("search-bar");
 let mainImage = document.getElementById("big-image");
-let quantity = document.getElementById("quantity");
+let userLogged = JSON.parse(localStorage.getItem("userLogged"));
+let cart = [];
+let titleProduct = document.getElementById("title-product").innerHTML;
+let priceProduct = document.getElementById("price-product").innerHTML;
+let sizeProduct;
+let quantityProduct = document.getElementById("quantity");
 
 container[0].addEventListener("click", function () {
   mainImage.src = img[0].src;
@@ -30,19 +35,38 @@ container[2].addEventListener("click", function () {
 });
 
 searchBar.addEventListener("click", function () {
-  searchBar.style.border = "1px solid white"
-})
+  searchBar.style.border = "1px solid white";
+});
 
 function addProd() {
-  if(quantity.value == 10){
-    return false
+  if (quantityProduct.value == 10) {
+    return false;
   }
-  quantity.value++
+  quantityProduct.value++;
 }
 
 function removeProd() {
-  if(quantity.value == 1){
+  if (quantityProduct.value == 1) {
+    return false;
+  }
+  quantityProduct.value--;
+}
+
+function getSelectValue() {
+  sizeProduct = document.getElementById("size").value
+}
+
+function addCart() {
+  if(sizeProduct == null){
+    alert("Selecione um tamanho!")
     return false
   }
-  quantity.value--
+  cart.push({
+    name:titleProduct,
+    price:priceProduct,
+    size:sizeProduct,
+    quantity:quantityProduct.value
+  })
+  userLogged.push(cart)
+  localStorage.setItem("userLogged", JSON.stringify(userLogged))
 }

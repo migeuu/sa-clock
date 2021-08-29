@@ -500,8 +500,11 @@ nav input {
   transition: 0.4s;
 }
 
-.footer-email-form h2 {
+.footer-email-form {
   margin-top: 1rem;
+}
+
+.footer-email-form h2 {
   margin-bottom: 2rem;
 }
 

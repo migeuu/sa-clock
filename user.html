@@ -89,15 +89,6 @@
         </ul>
     </nav>
 
-    <div class="search-bar-container">
-        <div class="search-bar">
-            <input type="search" placeholder="Buscar tênis, roupas, acessórios..." id="search-inp" />
-            <button id="search-btn" onclick="searchFunction()">
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-    </div>
-
     <div class="main-container">
         <div class="register-container">
             <form action="javascript:login()">
@@ -111,7 +102,7 @@
                 <div class="info-container">
                     <label>Senha:</label>
                     <input type="password" name="passwordLog" id="passwordLog" />
-                    <button type="button" id="passEyeLogin">
+                    <button type="button" id="passEyeLogin" onclick="seePasswordLogin()">
                         <i id="eye" class="far fa-eye-slash"></i>
                     </button>
                 </div>
