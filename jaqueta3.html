@@ -117,7 +117,8 @@
                 <div class="size-container">
                     <p style="color: #222;" class="p-prod">Tamanho</p>
                     <div class="size-wrapper">
-                        <select class="size" id="size">
+                        <select class="size" id="size" onchange="getSelectValue()">
+                            <option value="Selecione seu tamanho" disabled selected hidden>Selecione seu tamanho</option>
                             <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L">L</option>
@@ -134,8 +135,8 @@
                 </div>
             </div>
             <div class="button-container">
-                <button class="buy-btn" id="buy-btn">COMPRAR JÁ</button>
-                <button class="cart-btn" id="cart-btn">ADICIONAR AO CARRINHO</button>
+                <button class="buy-btn" id="buy-btn" onclick="buyNow()">COMPRAR JÁ</button>
+                <button class="cart-btn" id="cart-btn" onclick="addCart()">ADICIONAR AO CARRINHO</button>
             </div>
         </div>
     </div>

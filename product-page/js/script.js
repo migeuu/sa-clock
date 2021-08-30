@@ -57,16 +57,22 @@ function getSelectValue() {
 }
 
 function addCart() {
+  users = JSON.parse(localStorage.getItem("users"))
+  userLogged = JSON.parse(localStorage.getItem("userLogged"))
   if(sizeProduct == null){
     alert("Selecione um tamanho!")
     return false
   }
-  cart.push({
-    name:titleProduct,
-    price:priceProduct,
-    size:sizeProduct,
-    quantity:quantityProduct.value
-  })
-  userLogged.push(cart)
-  localStorage.setItem("userLogged", JSON.stringify(userLogged))
+  for(i = 0; i < users.length; i++){
+    if(userLogged[0][2] == users[i][2]){
+      cart = {
+        name:titleProduct,
+        price:priceProduct,
+        size:sizeProduct,
+        quantity:quantityProduct.value
+      }
+      users[i].push(cart)
+    }
+  }
+  localStorage.setItem("users", JSON.stringify(users))
 }
