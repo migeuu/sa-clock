@@ -397,16 +397,16 @@ nav input {
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
-  width: 18.5%;
+  width: 19.5%;
   height: 95%;
   margin-top: auto;
   margin-bottom: auto;
   transition: all 0.2s ease;
-  border: 1.2px solid #f1f1f1;
+  border: 1.2px solid #d6d6d6;
 }
 
 .card-prod:hover {
-  background-color: #f1f1f1;
+  background-color: #d6d6d6;
 }
 
 .card-prod:hover h1 {

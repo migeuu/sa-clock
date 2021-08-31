@@ -59,17 +59,17 @@ function getSelectValue() {
 function addCart() {
   users = JSON.parse(localStorage.getItem("users"))
   userLogged = JSON.parse(localStorage.getItem("userLogged"))
-  if(sizeProduct == null){
+  if (sizeProduct == null) {
     alert("Selecione um tamanho!")
     return false
   }
-  for(i = 0; i < users.length; i++){
-    if(userLogged[0][2] == users[i][2]){
+  for (i = 0; i < users.length; i++) {
+    if (userLogged[0][2] == users[i][2]) {
       cart = {
-        name:titleProduct,
-        price:priceProduct,
-        size:sizeProduct,
-        quantity:quantityProduct.value
+        name: titleProduct,
+        price: priceProduct,
+        size: sizeProduct,
+        quantity: quantityProduct.value
       }
       users[i].push(cart)
     }

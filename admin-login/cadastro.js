@@ -36,6 +36,8 @@ function register() {
     ]);
 
     localStorage.setItem("users", JSON.stringify(users));
+    alert("Usuário cadastrado com sucesso!");
+    return false
   } else {
     for (i = 0; i < users.length; i++) {
       if (
@@ -82,7 +84,7 @@ function login() {
 }
 
 function logout() {
-  
+  localStorage.removeItem("userLogged")
 }
 
 function list() {
@@ -173,9 +175,6 @@ function editUser() {
     userSearchTemp == null;
     emailSearchTemp == null;
     passwordSearchTemp == null;
-    userSearch.value = "";
-    emailSearch.value = "";
-    passwordSearch.value = "";
   }
 
   localStorage.setItem("users", JSON.stringify(users));

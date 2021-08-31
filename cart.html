@@ -89,16 +89,36 @@
     </nav>
 
     <div class="main-container">
-        <div class="product-cart">
+        <div class="product-container">
             <div class="product">
-                <div class="img-product">
-                    <img src="./product-page/img/calca1/calca1.jpg" alt="">
-                    <p id="product-name">
-                        calça
-                    </p>
-
+                <div class="product-image-container">
+                    <div class="product-image">
+                        <img src="./product-page/img/jaqueta1/jaqueta1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-title">
+                        <p id="titleCart">Jaqueta High Company Purple Court</p>
+                    </div>
+                    <div class="product-size">
+                        <p id="sizeProduct">XL</p>
+                    </div>
+                    <div class="product-quantity">
+                        <i id="quantityCartUp" class="fas fa-chevron-up"></i>
+                        <input type="number" name="quantityCart" id="quantityCart" value="1" min="1" max="10">
+                        <i id="quantityCartDown" class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="product-price">
+                        <p>R$<code id="priceCart">123</code></p>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="payment-container">
+            <form action="#">
+                <input type="text">
+                <input type="text">
+            </form>
         </div>
     </div>
 
