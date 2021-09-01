@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="userCart()">
     <nav>
         <div class="logo">
             <a style="text-decoration: none; color: white" href="index.html">Clock&copy; <code
@@ -89,35 +89,21 @@
     </nav>
 
     <div class="main-container">
-        <div class="product-container">
-            <div class="product">
-                <div class="product-image-container">
-                    <div class="product-image">
-                        <img src="./product-page/img/jaqueta1/jaqueta1.jpg" alt="">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="product-title">
-                        <p id="titleCart">Jaqueta High Company Purple Court</p>
-                    </div>
-                    <div class="product-size">
-                        <p id="sizeProduct">XL</p>
-                    </div>
-                    <div class="product-quantity">
-                        <i id="quantityCartUp" class="fas fa-chevron-up"></i>
-                        <input type="number" name="quantityCart" id="quantityCart" value="1" min="1" max="10">
-                        <i id="quantityCartDown" class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="product-price">
-                        <p>R$<code id="priceCart">123</code></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="product-container" class="product-container"></div>
         <div class="payment-container">
-            <form action="#">
-                <input type="text">
-                <input type="text">
+            <form class="form-payment" action="#">
+                <div class="subtotal-container">
+                    <h1>Subtotal:</h1>
+                    <p id="subtotal">R$<code id="total-price" style="margin-left: 4px;">20</code>,00</p>
+                </div>
+                <div class="transport-container">
+                    <h1>Frete:</h1>
+                    <p id="transportation-total">R$<code style="color: green; margin-left: 4px;">GRÁTIS</code></p>
+                </div>
+                <div class="button-container">
+                    <button>FINALIZAR COMPRA</button>
+                    <button>LIMPAR CARRINHO</button>
+                </div>
             </form>
         </div>
     </div>

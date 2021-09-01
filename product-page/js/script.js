@@ -14,6 +14,7 @@ let searchBar = document.getElementsByClassName("search-bar");
 let mainImage = document.getElementById("big-image");
 let userLogged = JSON.parse(localStorage.getItem("userLogged"));
 let cart = [];
+let imgProduct = document.getElementById("big-image").src;
 let titleProduct = document.getElementById("title-product").innerHTML;
 let priceProduct = document.getElementById("price-product").innerHTML;
 let sizeProduct;
@@ -66,6 +67,7 @@ function addCart() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0][2] == users[i][2]) {
       cart = {
+        img: imgProduct,
         name: titleProduct,
         price: priceProduct,
         size: sizeProduct,

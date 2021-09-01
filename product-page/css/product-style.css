@@ -330,29 +330,14 @@ nav input {
   font-family: "Roboto", monospace;
   transition: all 0.3s ease;
   cursor: pointer;
-}
-
-.buy-btn {
   border: none;
   background-color: #222;
   color: white;
   border: 2px solid #222;
 }
 
-.buy-btn:hover {
-  background: none;
-  color: #222;
-  border: 2px solid #222;
-}
 
-.cart-btn {
-  border: none;
-  background-color: #222;
-  color: white;
-  border: 2px solid #222;
-}
-
-.cart-btn:hover {
+.button-container button:hover {
   background: none;
   color: #222;
   border: 2px solid #222;
