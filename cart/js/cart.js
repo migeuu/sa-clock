@@ -1,6 +1,8 @@
 let users = JSON.parse(localStorage.getItem("users"))
 let userLogged = JSON.parse(localStorage.getItem("userLogged"))
 const productContainer = document.getElementById("product-container")
+let totalPriceIndicator = document.getElementById("total-price-indicator")
+let totalPrice = []
 
 function userCart() {
     for (i = 0; i < users.length; i++) {
@@ -34,6 +36,8 @@ function userCart() {
                 `
                 productContainer.innerHTML += product
             }
+            totalPriceStorage()
+            totalPriceCalculator()
         } else {
             return false
         }
@@ -41,6 +45,44 @@ function userCart() {
 }
 
 function addProdQuantity() {
-    
+    for (i = 0; i < users.length; i++) {
+        userLogged = JSON.parse(localStorage.getItem("userLogged"))
+        if (users[i][2] == userLogged[0][2]) {
+            for (j = 5; j < users[i].length; j++){}
+        } else {
+            return false
+        }
+    }
 }
 
+function totalPriceStorage() {
+    for (i = 0; i < users.length; i++) {
+        userLogged = JSON.parse(localStorage.getItem("userLogged"))
+        if (users[i][2] == userLogged[0][2]) {
+            for (j = 5; j < users[i].length; j++){
+                totalPrice.push((users[i][j].price * users[i][j].quantity))
+                console.log(totalPrice);
+                
+            }
+        } else {
+            return false
+        }
+    }
+}
+
+function totalPriceCalculator() {
+    for (i = 0; i < users.length; i++) {
+        userLogged = JSON.parse(localStorage.getItem("userLogged"))
+        if (users[i][2] == userLogged[0][2]) {
+            for (j = 5; j < users[i].length; j++){
+                totalPrice = totalPrice.map(i=>Number(i))
+                const reducer = (accumulator, currentValue) => accumulator + currentValue;
+                totalPrice = totalPrice.reduce(reducer)
+                totalPriceIndicator.innerHTML = totalPrice
+            }
+        } else {
+            return false
+        }
+    }
+    
+}

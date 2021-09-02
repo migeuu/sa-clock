@@ -147,6 +147,7 @@ nav input {
   border-radius: 10px;
   border: 1px solid #222;
   height: 20vh;
+  margin: 10px;
 }
 
 .product-image-container {
@@ -234,7 +235,7 @@ nav input {
 .form-payment {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
   border-radius: 10px;
   height: 100%;
   width: 100%;
