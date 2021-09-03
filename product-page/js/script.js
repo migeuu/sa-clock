@@ -19,6 +19,7 @@ let titleProduct = document.getElementById("title-product").innerHTML;
 let priceProduct = document.getElementById("price-product").innerHTML;
 let sizeProduct;
 let quantityProduct = document.getElementById("quantity");
+let loginAccount = document.getElementById("login-account")
 
 container[0].addEventListener("click", function () {
   mainImage.src = img[0].src;
@@ -35,9 +36,18 @@ container[2].addEventListener("click", function () {
   img[2].src = mainImage.src;
 });
 
-searchBar.addEventListener("click", function () {
-  searchBar.style.border = "1px solid white";
-});
+loginAccount.addEventListener("click", function(){
+  enterLoginAccount();
+})
+
+function enterLoginAccount() {
+  userLogged = JSON.parse(localStorage.getItem("userLogged"))
+  if(userLogged != null){
+      loginAccount.href = "accountpage.html"
+  } else {
+      loginAccount.href = "login.html"
+  }
+}
 
 function addProd() {
   if (quantityProduct.value == 10) {

@@ -4,6 +4,20 @@ const productContainer = document.getElementById("product-container");
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 let totalPriceIndicator = document.getElementById("total-price-indicator");
 let totalPrice = [];
+let loginAccount = document.getElementById("login-account")
+
+loginAccount.addEventListener("click", function(){
+  enterLoginAccount();
+})
+
+function enterLoginAccount() {
+  userLogged = JSON.parse(localStorage.getItem("userLogged"))
+  if(userLogged != null){
+      loginAccount.href = "accountpage.html"
+  } else {
+      loginAccount.href = "login.html"
+  }
+}
 
 function totalPriceCalculator() {
   for (i = 0; i < users.length; i++) {
@@ -12,6 +26,15 @@ function totalPriceCalculator() {
         totalPrice.push(users[i][j].quantity * users[i][j].price)
         totalPriceIndicator.innerHTML = totalPrice.reduce(reducer)
       }
+    }
+  }
+}
+
+function cleanCart() {
+  for(i = 0; i < users.length; i++){
+    if (userLogged[0] == users[i][2]){
+      users[i].length = 5
+      localStorage.setItem("users", JSON.stringify(users))
     }
   }
 }
@@ -51,4 +74,3 @@ function userCart() {
     }
   }
 }
-

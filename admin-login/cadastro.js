@@ -85,10 +85,6 @@ function login() {
   }
 }
 
-function logout() {
-  localStorage.removeItem("userLogged")
-}
-
 function list() {
   users = JSON.parse(localStorage.getItem("users"));
   let lista = "";

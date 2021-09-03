@@ -1,8 +1,10 @@
 const slides = document.querySelector(".slider").children;
-
 const prev = document.querySelector(".prev")
 const next = document.querySelector(".next")
 const indicator = document.querySelector(".indicator")
+const loginAccount = document.getElementById("login-account")
+let users = JSON.parse(localStorage.getItem("users"))
+let userLogged = JSON.parse(localStorage.getItem("userLogged"))
 
 let index = 0;
 
@@ -17,6 +19,19 @@ next.addEventListener("click", function () {
     updateCircleIndicator();
     resetTimer();
 })
+
+loginAccount.addEventListener("click", function(){
+    enterLoginAccount();
+})
+
+function enterLoginAccount() {
+    userLogged = JSON.parse(localStorage.getItem("userLogged"))
+    if(userLogged != null){
+        loginAccount.href = "accountpage.html"
+    } else {
+        loginAccount.href = "login.html"
+    }
+}
 
 function circleIndicator() {
     for (let i = 0; i < slides.length; i++) {

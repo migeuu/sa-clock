@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./index/imgs/COVID DEZEROSA.png" />
-    <title>Clock Inc. | Carrinho de Compras</title>
-    <link rel="stylesheet" href="./cart/css/cart.css">
+    <title>Clock Inc. | Conta</title>
+    <link rel="stylesheet" href="./account/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
 </head>
-
-<body onload="userCart()">
+<body>
     <nav>
         <div class="logo">
             <a style="text-decoration: none; color: white" href="index.html">Clock&copy; <code
@@ -76,11 +74,6 @@
             <li><a href="#">TODOS</a></li>
             <li><a href="#">SUPORTE</a></li>
             <li>
-                <a style="letter-spacing: normal" id="login-account" href="login.html">
-                    <i style="letter-spacing: normal" class="fas fa-user-circle"></i>
-                </a>
-            </li>
-            <li>
                 <a href="cart.html">
                     <i style="letter-spacing: normal" class="fas fa-shopping-cart"></i>
                 </a>
@@ -89,25 +82,11 @@
     </nav>
 
     <div class="main-container">
-        <div id="product-container" class="product-container"></div>
-        <div class="payment-container">
-            <form class="form-payment" action="#">
-                <div class="subtotal-container">
-                    <h1>Subtotal:</h1>
-                    <p>R$<code id="total-price-indicator" style="margin-left: 4px;"></code>,00</p>
-                </div>
-                <div class="transport-container">
-                    <h1>Frete:</h1>
-                    <p>R$<code style="color: green; margin-left: 4px;">GRÁTIS</code></p>
-                </div>
-                <div class="button-container">
-                    <button>FINALIZAR COMPRA</button>
-                    <button onclick="cleanCart()">LIMPAR CARRINHO</button>
-                </div>
-            </form>
+        <div class="title-container">
+            <h1>Conta</h1>
         </div>
     </div>
-
+    
     <div class="footer-container">
         <div class="footer">
             <div class="footer-heading footer-1">
@@ -137,7 +116,7 @@
             </div>
             <div class="footer-email-form">
                 <h2>Newsletter</h2>
-                <form action="#">
+                <form class="email-form" action="#">
                     <input type="email" placeholder="exemplo@outlook.com" id="footer-email" />
                     <input type="submit" value="Enviar" id="footer-email-btn" />
                 </form>
@@ -151,7 +130,6 @@
         educacional e sem fins lucrativos.
     </div>
 
-    <script src="./cart/js/cart.js"></script>
+    <script src="./account/js/script.js"></script>
 </body>
-
 </html>
