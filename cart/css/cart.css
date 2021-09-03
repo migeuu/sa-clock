@@ -463,7 +463,7 @@ nav input {
   }
 
   .email-form {
-    flex-direction: row;
+    display: flex;
   }
 
   #footer-email {

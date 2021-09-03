@@ -286,7 +286,6 @@ form {
 }
 
 .footer-email-form h2 {
-  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -449,7 +448,7 @@ form {
   }
 
   .email-form {
-    flex-direction: row;
+    display: flex;
   }
 
   #footer-email {

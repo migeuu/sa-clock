@@ -622,6 +622,10 @@ nav input {
     margin-bottom: 1rem;
   }
 
+  .email-form {
+    display: flex;
+  }
+
   .footer-bottom {
     display: flex;
     align-items: center;

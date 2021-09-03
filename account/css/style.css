@@ -135,8 +135,7 @@ nav input {
 }
 
 .title-container h1 {
-  text-align: left;
-  padding-left: 2rem;
+  text-align: center;
   font-size: 3rem;
   font-style: italic;
 }
@@ -228,7 +227,94 @@ nav input {
     text-align: center;
   }
   
-  @media all and (max-width: 950px) {
+.footer-container {
+  background: white;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.footer {
+  width: 80%;
+  height: 100%;
+  background: white;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.footer-heading {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5rem;
+}
+
+.footer-heading h2 {
+  margin-bottom: 1rem;
+}
+
+.footer-heading a {
+  display: flex;
+  justify-content: left;
+  color: #222;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: 0.3s;
+}
+
+.footer-heading a:hover {
+  transform: translateX(5px);
+  transition: 0.4s;
+}
+
+.footer-email-form h2 {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#footer-email {
+  width: 250px;
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #222;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#footer-email::placeholder {
+  color: #b1b1b1;
+}
+
+#footer-email-btn {
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  background-color: #f6f6f6;
+  transition: 0.3s;
+}
+
+#footer-email-btn:hover {
+  cursor: pointer;
+  background-color: #222;
+  color: white;
+  transition: all 0.3s ease-out;
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  padding: 4px;
+  color: #222;
+  background-color: #f6f6f6;
+  text-align: center;
+}
+
+@media all and (max-width: 950px) {
     nav ul {
       margin-right: 0px;
       float: left;
@@ -306,4 +392,37 @@ nav input {
     [id^="btn"]:checked + ul {
       display: block;
     }
-  }  
+
+    
+  .footer {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+  
+  .footer-heading h2 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+  
+  .footer-email-form h2 {
+    margin-bottom: 1rem;
+  }
+
+  .email-form {
+    display: flex;
+  }
+
+  #footer-email {
+    width: 80%;
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+  }
+}
