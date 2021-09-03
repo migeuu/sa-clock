@@ -65,7 +65,7 @@ function addCart() {
     return false
   }
   for (i = 0; i < users.length; i++) {
-    if (userLogged[0][2] == users[i][2]) {
+    if (userLogged[0] == users[i][2]) {
       cart = {
         img: imgProduct,
         name: titleProduct,

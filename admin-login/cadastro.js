@@ -37,6 +37,7 @@ function register() {
 
     localStorage.setItem("users", JSON.stringify(users));
     alert("Usuário cadastrado com sucesso!");
+    window.location.href = "login.html";
     return false
   } else {
     for (i = 0; i < users.length; i++) {
@@ -70,7 +71,8 @@ function login() {
   for (i = 0; i < users.length; i++) {
     if (userLogin.value == users[i][2] && passwordLogin.value == users[i][4]) {
       logged = 1;
-      userLogged.push(users[i]);
+      userLogged = [];
+      userLogged.push(users[i][2]);
       localStorage.setItem("userLogged", JSON.stringify(userLogged));
     }
   }
