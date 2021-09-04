@@ -87,4 +87,5 @@ function addCart() {
     }
   }
   localStorage.setItem("users", JSON.stringify(users))
+  alert("Produto adicionado ao carrinho")
 }

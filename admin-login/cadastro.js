@@ -21,6 +21,7 @@ let positionSearch;
 
 let users = [];
 let userLogged = [];
+let balance = 0;
 
 function register() {
   users = JSON.parse(localStorage.getItem("users"));
@@ -33,6 +34,9 @@ function register() {
       userRegister.value,
       emailRegister.value,
       passwordRegister.value,
+      {
+        balance:balance
+      }
     ]);
 
     localStorage.setItem("users", JSON.stringify(users));
@@ -54,6 +58,9 @@ function register() {
           userRegister.value,
           emailRegister.value,
           passwordRegister.value,
+          {
+            balance:balance
+          }
         ]);
 
         localStorage.setItem("users", JSON.stringify(users));

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onload="accountUser()">
     <nav>
         <div class="logo">
             <a style="text-decoration: none; color: white" href="index.html">Clock&copy; <code
@@ -85,9 +85,7 @@
         <div class="title-container">
             <h1>Conta</h1>
         </div>
-        <div class="info-container">
-            
-        </div>
+        <div id="info-container" class="info-container"></div>
     </div>
     
     <div class="footer-container">
@@ -95,19 +93,17 @@
             <div class="footer-heading footer-1">
                 <h2>Menu</h2>
                 <a href="index.html">Home</a>
-                <a href="index.html">Perfil</a>
-                <a href="index.html">Carrinho</a>
                 <a href="sneakers.html">Sneakers</a>
                 <a href="streetwear.html">Streetwear</a>
                 <a href="headwear.html">Todos</a>
                 <a href="#">Suporte</a>
+                <a href="index.html">Carrinho</a>
             </div>
             <div class="footer-heading footer-2">
                 <h2>Contato</h2>
                 <a href="#">Vagas</a>
                 <a href="#">Suporte</a>
                 <a href="#">Contato</a>
-                <a href="#">Patrocínios</a>
             </div>
             <div class="footer-heading footer-3">
                 <h2>Follow</h2>
@@ -123,7 +119,6 @@
                     <input type="email" placeholder="exemplo@outlook.com" id="footer-email" />
                     <input type="submit" value="Enviar" id="footer-email-btn" />
                 </form>
-                <p id="text-news"></p>
             </div>
         </div>
     </div>

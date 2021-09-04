@@ -22,7 +22,7 @@ function enterLoginAccount() {
 function totalPriceCalculator() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
-      for (j = 5; j < users[i].length; j++) {
+      for (j = 6; j < users[i].length; j++) {
         totalPrice.push(users[i][j].quantity * users[i][j].price)
         totalPriceIndicator.innerHTML = totalPrice.reduce(reducer)
       }
@@ -33,7 +33,7 @@ function totalPriceCalculator() {
 function cleanCart() {
   for(i = 0; i < users.length; i++){
     if (userLogged[0] == users[i][2]){
-      users[i].length = 5
+      users[i].length = 6
       localStorage.setItem("users", JSON.stringify(users))
     }
   }
@@ -42,7 +42,7 @@ function cleanCart() {
 function userCart() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
-      for (j = 5; j < users[i].length; j++) {
+      for (j = 6; j < users[i].length; j++) {
         const product = `
                 <div class="product">
                 <div class="product-image-container">
