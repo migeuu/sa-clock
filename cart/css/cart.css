@@ -136,7 +136,6 @@ nav input {
   justify-content: space-between;
   background-color: white;
   width: 70%;
-  border-radius: 10px;
   padding: 10px;
 }
 
@@ -185,8 +184,12 @@ nav input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 22px;
   font-style: italic;
+}
+
+.fa-chevron-down,
+.fa-chevron-up {
+  font-size: 20px;
 }
 
 .product-title {
@@ -203,7 +206,7 @@ nav input {
   width: 19%;
 }
 
-.product-quantity input[type=number]::-webkit-inner-spin-button {
+.product-quantity input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
@@ -225,9 +228,7 @@ nav input {
 }
 
 .payment-container {
-  border-radius: 10px;
   background-color: white;
-  height: 50vh;
   width: 25%;
   padding: 1rem;
 }
@@ -242,8 +243,7 @@ nav input {
   padding: 8px;
 }
 
-.form-payment >
-.subtotal-container,
+.form-payment > .subtotal-container,
 .transport-container {
   padding: 8px;
   margin-bottom: 10px;
@@ -260,8 +260,7 @@ nav input {
 .button-container button {
   width: 100%;
   padding: 10px;
-  margin-bottom: 8px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 2px;
   font-family: "Roboto", monospace;
@@ -367,97 +366,113 @@ nav input {
 }
 
 @media all and (max-width: 950px) {
-    nav ul {
-      margin-right: 0px;
-      float: left;
-    }
-  
-    nav .logo {
-      padding-left: 30px;
-      width: 100%;
-    }
-  
-    nav ul li,
-    nav ul ul li {
-      display: block;
-      width: 100%;
-    }
-  
-    nav ul ul {
-      top: 70px;
-      position: static;
-      border-top: none;
-      float: none;
-      display: none;
-      opacity: 1;
-      visibility: visible;
-    }
-  
-    nav ul ul ul li {
-      position: static;
-    }
-  
-    nav ul ul li {
-      border-bottom: 0px;
-    }
-  
-    nav ul ul a {
-      padding-left: 40px;
-    }
-  
-    nav ul ul ul a {
-      padding-left: 40px;
-    }
-  
-    .show {
-      display: block;
-      color: white;
-      font-size: 18px;
-      padding: 0 20px;
-      line-height: 70px;
-      cursor: pointer;
-    }
-  
-    .show:hover {
-      color: #c71e81;
-    }
-  
-    .icon {
-      display: block;
-      color: white;
-      position: absolute;
-      right: 40px;
-      line-height: 70px;
-      font-size: 25px;
-      cursor: pointer;
-    }
-  
-    nav ul li a:hover {
-      box-shadow: none;
-    }
-  
-    .show + a,
-    ul {
-      display: none;
-    }
-  
-    [id^="btn"]:checked + ul {
-      display: block;
-    }
+  nav ul {
+    margin-right: 0px;
+    float: left;
+  }
 
-    
-  .footer {
+  nav .logo {
+    padding-left: 30px;
+    width: 100%;
+  }
+
+  nav ul li,
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul {
+    top: 70px;
+    position: static;
+    border-top: none;
+    float: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  nav ul ul ul li {
+    position: static;
+  }
+
+  nav ul ul li {
+    border-bottom: 0px;
+  }
+
+  nav ul ul a {
+    padding-left: 40px;
+  }
+
+  nav ul ul ul a {
+    padding-left: 40px;
+  }
+
+  .show {
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0 20px;
+    line-height: 70px;
+    cursor: pointer;
+  }
+
+  .show:hover {
+    color: #c71e81;
+  }
+
+  .icon {
+    display: block;
+    color: white;
+    position: absolute;
+    right: 40px;
+    line-height: 70px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  nav ul li a:hover {
+    box-shadow: none;
+  }
+
+  .show + a,
+  ul {
+    display: none;
+  }
+
+  [id^="btn"]:checked + ul {
+    display: block;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .product-container {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .payment-container {
+    width: 100%;
+  }
+
+  .button-container button {
+    font-size: 22px;
+  }
+
+   .footer {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: left;
   }
-  
+
   .footer-heading h2 {
     margin-top: 16px;
     margin-bottom: 8px;
   }
-  
+
   .footer-email-form h2 {
     margin-bottom: 1rem;
   }
@@ -471,10 +486,54 @@ nav input {
     margin-bottom: 0;
     margin-right: 10px;
   }
-  
+
   .footer-bottom {
     display: flex;
     align-items: center;
     height: 10vh;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .product {
+    flex-direction: column;
+    border: 1px solid #d6d6d6;
+    height: 50vh;
+  }
+
+  .product-image-container {
+    width: 40%;
+  }
+
+  .product-info {
+    width: 100%;
+  }
+
+  .product-title {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .product {
+    height: 60vh;
+  }
+
+  .product-image-container {
+    width: 45%;
+  }
+
+  .product-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-info > * {
+    width: 100%;
+  }
+
+  .product-quantity input {
+    width: 10%;
   }
 }

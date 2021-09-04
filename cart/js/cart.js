@@ -54,7 +54,7 @@ function userCart() {
                     <div class="product-title">
                         <p>${users[i][j].name}</p>
                     </div>
-                    <div class="product-size">
+                    <div class="product-size" style="font-weight: 700;">
                         <p>${users[i][j].size}</p>
                     </div>
                     <div class="product-quantity">
@@ -63,7 +63,7 @@ function userCart() {
                         <i id="quantityCartDown" class="fas fa-chevron-down"></i>
                     </div>
                     <div class="product-price">
-                        <p>R$<code>${users[i][j].price}</code></p>
+                        <p style="font-weight: 700;">R$<code>${users[i][j].price}</code></p>
                     </div>
                 </div>
                 </div>
