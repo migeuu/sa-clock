@@ -11,10 +11,17 @@ function deleteUser() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
       positionDelete = i;
-      users.splice(positionDelete, 1);
-      localStorage.removeItem("userLogged");
-      localStorage.setItem("users", JSON.stringify(users));
-      window.location.href = "login.html";
+      if(users.length > 1 ){
+        users.splice(positionDelete, 1);
+        localStorage.removeItem("userLogged");
+        localStorage.setItem("users", JSON.stringify(users));
+        window.location.href = "login.html";
+      } else {
+        users.splice(positionDelete, 1);
+        localStorage.removeItem("userLogged");
+        localStorage.removeItem("users")
+        window.location.href = "login.html";
+      }
     }
   }
 }
