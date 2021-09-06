@@ -78,12 +78,7 @@ function userCart() {
         </div>
         `;
         productContainer.innerHTML += product;
-        botao = document.getElementById(`${users[i][j].id}`).id
-        buttonList.push({
-          button: botao
-        })
       }
-      console.log(buttonList);
       totalPriceCalculator();
     }
   }
