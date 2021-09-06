@@ -14,6 +14,7 @@ let searchBar = document.getElementsByClassName("search-bar");
 let mainImage = document.getElementById("big-image");
 let userLogged = JSON.parse(localStorage.getItem("userLogged"));
 let cart = [];
+let idProduct = document.getElementsByClassName("product-container")[0].id
 let imgProduct = document.getElementById("big-image").src;
 let titleProduct = document.getElementById("title-product").innerHTML;
 let priceProduct = document.getElementById("price-product").innerHTML;
@@ -77,6 +78,7 @@ function addCart() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
       cart = {
+        id: idProduct,
         img: imgProduct,
         name: titleProduct,
         price: priceProduct,
@@ -89,3 +91,4 @@ function addCart() {
   localStorage.setItem("users", JSON.stringify(users))
   alert("Produto adicionado ao carrinho")
 }
+

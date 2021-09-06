@@ -179,7 +179,7 @@ nav input {
   height: 10vh;
   width: 100%;
   display: flex;
-  justify-content: right;
+  justify-content: center;
 }
 
 .user-tools {
@@ -206,10 +206,10 @@ nav input {
   transition: all 0.3s ease;
 }
 
-.user-tools > *:hover i{
+.user-tools > *:hover i {
   transform: scale(1.2);
-  color: #555;
-} 
+  color: #c71e81;
+}
 
 .title-container {
   width: 100%;
@@ -263,7 +263,6 @@ nav input {
 }
 
 .footer-email-form h2 {
-  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -347,11 +346,6 @@ nav input {
 .footer-heading a:hover {
   transform: translateX(5px);
   transition: 0.4s;
-}
-
-.footer-email-form h2 {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
 }
 
 #footer-email {
@@ -506,7 +500,6 @@ nav input {
     height: 10vh;
   }
 }
-
 
 @media screen and (max-width: 768px) {
   .info-container {

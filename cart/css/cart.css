@@ -206,6 +206,12 @@ nav input {
   width: 19%;
 }
 
+.product-quantity button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
 .product-quantity input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
