@@ -5,7 +5,8 @@ const reducer = (accumulator, currentValue) => accumulator + currentValue;
 let totalPriceIndicator = document.getElementById("total-price-indicator");
 let totalPrice = [];
 let loginAccount = document.getElementById("login-account");
-let productList = [];
+let buttonList = [];
+let botao;
 
 loginAccount.addEventListener("click", function () {
   enterLoginAccount();
@@ -51,7 +52,7 @@ function userCart() {
     if (userLogged[0] == users[i][2]) {
       for (j = 6; j < users[i].length; j++) {
         const product = `
-        <div class="product" id="${users[i][j].id}">
+        <div class="product">
         <div class="product-image-container">
         <div class="product-image">
         <img src="${users[i][j].img}" alt="">
@@ -65,8 +66,8 @@ function userCart() {
         <p id="size-cart">${users[i][j].size}</p>
         </div>
         <div class="product-quantity">
-        <button onclick="addQuantity()"><i id="plus-quantity" class="fas fa-chevron-up"></i></button>
-        <input type="number" name="quantityCart" id="quantity-cart" value="${users[i][j].quantity}"
+        <button onclick="buttonClicked()"><i id="plus-quantity" class="fas fa-chevron-up"></i></button>
+        <input type="number" id="${users[i][j].id}" value="${users[i][j].quantity}"
         min="1" max="10" readonly>
         <button><i id="minus-quantity" class="fas fa-chevron-down"></i></button>
         </div>
@@ -77,14 +78,13 @@ function userCart() {
         </div>
         `;
         productContainer.innerHTML += product;
+        botao = document.getElementById(`${users[i][j].id}`).id
+        buttonList.push({
+          button: botao
+        })
       }
+      console.log(buttonList);
       totalPriceCalculator();
     }
-  }
-}
-
-for(i = 0; i < users.length; i++){
-  for(j = 6; j < users[i].length; j++){
-    console.log(users[i][j].id);
   }
 }
