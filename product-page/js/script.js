@@ -73,11 +73,11 @@ function addCart() {
   userLogged = JSON.parse(localStorage.getItem("userLogged"));
   if (sizeProduct == null) {
     Swal.fire({
-      icon: 'warning',
-      title: 'Selecione um tamanho',
-      text: 'Selecione o tamanho do produto para continuar comprando',
-      confirmButtonText: 'Ok'
-    })
+      icon: "warning",
+      title: "Selecione um tamanho",
+      text: "Selecione o tamanho do produto para continuar comprando",
+      confirmButtonText: "Ok",
+    });
     return false;
   }
   for (i = 0; i < users.length; i++) {
@@ -98,7 +98,7 @@ function addCart() {
           confirmButtonText: "Continuar comprando",
           showDenyButton: "true",
           denyButtonText: "Acessar carrinho",
-          denyButtonColor: '#b1b1b1'
+          denyButtonColor: "#b1b1b1",
         }).then((result) => {
           if (result.isConfirmed) {
             window.location.href = "index.html";

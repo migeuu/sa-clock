@@ -6,27 +6,52 @@ let editIcon;
 let infoInput = [];
 
 function logout() {
-  localStorage.removeItem("userLogged");
-  window.location.href = "login.html";
+  Swal.fire({
+    title: "Deseja sair de sua conta?",
+    confirmButtonText: "Sim",
+    confirmButtonColor: "green",
+    showCancelButton: "true",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("userLogged");
+      window.location.href = "login.html";
+    }
+  });
 }
 
 function deleteUser() {
-  for (i = 0; i < users.length; i++) {
-    if (userLogged[0] == users[i][2]) {
-      positionDelete = i;
-      if (users.length > 1) {
-        users.splice(positionDelete, 1);
-        localStorage.removeItem("userLogged");
-        localStorage.setItem("users", JSON.stringify(users));
-        window.location.href = "login.html";
-      } else {
-        users.splice(positionDelete, 1);
-        localStorage.removeItem("userLogged");
-        localStorage.removeItem("users");
-        window.location.href = "login.html";
+  Swal.fire({
+    icon: "warning",
+    title: "Excluir conta",
+    text: "Você tem certeza que deseja excluir seu usuário?",
+    confirmButtonText: "Sim tenho certeza",
+    confirmButtonColor: "green",
+    showDenyButton: "true",
+    denyButtonText: "Não tenho certeza",
+    showCloseButton: "true",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      for (i = 0; i < users.length; i++) {
+        if (userLogged[0] == users[i][2]) {
+          positionDelete = i;
+          if (users.length > 1) {
+            users.splice(positionDelete, 1);
+            localStorage.removeItem("userLogged");
+            localStorage.setItem("users", JSON.stringify(users));
+            window.location.href = "login.html";
+          } else {
+            users.splice(positionDelete, 1);
+            localStorage.removeItem("userLogged");
+            localStorage.removeItem("users");
+            window.location.href = "login.html";
+          }
+        }
       }
+    } else if (result.isDenied) {
+      window.location.href = "accountpage.html";
     }
-  }
+  });
 }
 
 function accountUser() {
@@ -83,23 +108,58 @@ function accountUser() {
 }
 
 function editAccount() {
-  for (i = 0; i < infoInput.length; i++) {
-    infoInput[i].removeAttribute("readonly");
-    infoInput[i].style.borderBottom = "1px solid green";
-  }
-  editBtn.setAttribute("onClick", "changeUserData();");
-  editIcon.className = "far fa-check-circle";
+  Swal.fire({
+    title: "Editar",
+    text: "Deseja editar as informações do seu usuário?",
+    showCancelButton: "true",
+    confirmButtonText: "Sim",
+    confirmButtonColor: "green",
+    cancelButtonText: "Cancelar",
+    showCloseButton: "true",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      for (i = 0; i < infoInput.length; i++) {
+        infoInput[i].removeAttribute("readonly");
+        infoInput[i].style.borderBottom = "1px solid green";
+      }
+      editBtn.setAttribute("onClick", "changeUserData();");
+      editIcon.className = "far fa-check-circle";
+    }
+  });
 }
 
 function changeUserData() {
-  for(i = 0; i < users.length; i++){
-    if(userLogged[0] == users[i][2]){
-      for(j = 0; j < infoInput.length; j++){
-        users[i][j] = infoInput[j].value
-      }
-      localStorage.setItem("users", JSON.stringify(users))
-      alert("Dados atualizados")
-      window.location.href = "accountpage.html"
+  for (i = 0; i < users.length; i++) {
+    if (userLogged[0] == users[i][2]) {
+      Swal.fire({
+        title: "Salvar mudanças?",
+        confirmButtonText: "Salvar",
+        confirmButtonColor: "green",
+        showCancelButton: "true",
+        cancelButtonText: "Cancelar",
+        showDenyButton: "true",
+        denyButtonText: "Não",
+        showCloseButton: "true",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          for (i = 0; users.length; i++) {
+            if (userLogged[0] == users[i][2]) {
+              for (j = 0; j < infoInput.length; j++) {
+                users[i][j] = infoInput[j].value;
+              }
+              localStorage.setItem("users", JSON.stringify(users));
+              localStorage.removeItem("userLogged");
+              Swal.fire({
+                icon: "success",
+                title: "Dados atualizado",
+                text: "Faça login novamente para confirmar seus dados",
+                confirmButtonText:
+                  '<a style="text-decoration: none; color: white;" href="login.html">Confirmar</a>',
+              });
+            }
+          }
+        }
+      });
     }
   }
 }

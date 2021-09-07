@@ -1,100 +1,100 @@
 const slides = document.querySelector(".slider").children;
-const prev = document.querySelector(".prev")
-const next = document.querySelector(".next")
-const indicator = document.querySelector(".indicator")
-const loginAccount = document.getElementById("login-account")
-let users = JSON.parse(localStorage.getItem("users"))
-let userLogged = JSON.parse(localStorage.getItem("userLogged"))
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const indicator = document.querySelector(".indicator");
+const loginAccount = document.getElementById("login-account");
+let users = JSON.parse(localStorage.getItem("users"));
+let userLogged = JSON.parse(localStorage.getItem("userLogged"));
 
 let index = 0;
 
 prev.addEventListener("click", function () {
-    prevSlide();
-    updateCircleIndicator();
-    resetTimer();
-})
+  prevSlide();
+  updateCircleIndicator();
+  resetTimer();
+});
 
 next.addEventListener("click", function () {
-    nextSlide();
-    updateCircleIndicator();
-    resetTimer();
-})
+  nextSlide();
+  updateCircleIndicator();
+  resetTimer();
+});
 
-loginAccount.addEventListener("click", function(){
-    enterLoginAccount();
-})
+loginAccount.addEventListener("click", function () {
+  enterLoginAccount();
+});
 
 function enterLoginAccount() {
-    userLogged = JSON.parse(localStorage.getItem("userLogged"))
-    if(userLogged != null){
-        loginAccount.href = "accountpage.html"
-    } else {
-        loginAccount.href = "login.html"
-    }
+  userLogged = JSON.parse(localStorage.getItem("userLogged"));
+  if (userLogged != null) {
+    loginAccount.href = "accountpage.html";
+  } else {
+    loginAccount.href = "login.html";
+  }
 }
 
 function circleIndicator() {
-    for (let i = 0; i < slides.length; i++) {
-        const div = document.createElement("div");
-        div.innerHTML = i + 1
-        div.setAttribute("onclick", "indicateSlide(this)")
-        div.id = i
-        if (i == 0) {
-            div.className = "active"
-        }
-        indicator.appendChild(div)
+  for (let i = 0; i < slides.length; i++) {
+    const div = document.createElement("div");
+    div.innerHTML = i + 1;
+    div.setAttribute("onclick", "indicateSlide(this)");
+    div.id = i;
+    if (i == 0) {
+      div.className = "active";
     }
+    indicator.appendChild(div);
+  }
 }
-circleIndicator()
+circleIndicator();
 
 function indicateSlide(element) {
-    index = element.id;
-    changeSlide();
-    updateCircleIndicator();
-    resetTimer();
+  index = element.id;
+  changeSlide();
+  updateCircleIndicator();
+  resetTimer();
 }
 
 function updateCircleIndicator() {
-    for (let i = 0; i < indicator.children.length; i++) {
-        indicator.children[i].classList.remove("active")
-    }
-    indicator.children[index].classList.add("active")
+  for (let i = 0; i < indicator.children.length; i++) {
+    indicator.children[i].classList.remove("active");
+  }
+  indicator.children[index].classList.add("active");
 }
 
 function prevSlide() {
-    if (index == 0) {
-        index = slides.length - 1;
-    } else {
-        index--
-    }
-    changeSlide()
+  if (index == 0) {
+    index = slides.length - 1;
+  } else {
+    index--;
+  }
+  changeSlide();
 }
 
 function nextSlide() {
-    if (index == slides.length - 1) {
-        index = 0;
-    } else {
-        index++
-    }
+  if (index == slides.length - 1) {
+    index = 0;
+  } else {
+    index++;
+  }
 
-    changeSlide();
+  changeSlide();
 }
 
 function changeSlide() {
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active")
-    }
-    slides[index].classList.add("active")
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active");
+  }
+  slides[index].classList.add("active");
 }
 
 function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(autoPlay, 4000)
+  clearInterval(timer);
+  timer = setInterval(autoPlay, 4000);
 }
 
 function autoPlay() {
-    nextSlide();
-    updateCircleIndicator();
+  nextSlide();
+  updateCircleIndicator();
 }
 
-let timer = setInterval(autoPlay, 4000)
+let timer = setInterval(autoPlay, 4000);

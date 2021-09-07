@@ -326,7 +326,6 @@ nav input {
 }
 
 .footer-email-form h2 {
-  margin-top: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -472,11 +471,6 @@ nav input {
     display: flex;
     flex-direction: column;
     justify-content: left;
-  }
-
-  .footer-heading h2 {
-    margin-top: 16px;
-    margin-bottom: 8px;
   }
 
   .footer-email-form h2 {

@@ -9,6 +9,7 @@ body {
   background-color: #222;
   font-family: Arial, Helvetica, sans-serif;
   z-index: 1;
+  overflow-x: hidden;
 }
 
 nav {
@@ -82,7 +83,7 @@ nav ul ul ul {
 }
 
 nav ul li:hover > ul {
-  top: 70px;
+  top: 67px;
   opacity: 1;
   visibility: visible;
 }
@@ -119,6 +120,34 @@ nav ul ul ul li {
 .icon,
 nav input {
   display: none;
+}
+
+.banner-container {
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c71e81;
+  color: white;
+  font-weight: 500;
+}
+
+.banner-slider{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-letter {
+  color: white;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.sign-letter:hover {
+  color: #d6d6d6;
 }
 
 .home-carousel {
@@ -627,6 +656,10 @@ nav input {
 }
 
 @media screen and (max-width: 656px) {
+  .banner-slider {
+    font-size: 10px;
+  }
+
   .categories {
     margin: 30px 0;
   }
@@ -708,6 +741,10 @@ nav input {
 }
 
 @media screen and (max-width: 400px) {
+  .banner-slider {
+    font-size: 8px;
+  }
+
   .categories-title-container {
     width: 80%;
   }
@@ -785,6 +822,7 @@ nav input {
 }
 
 @media screen and (max-width: 360) {
+
   .categories-title-container hr {
     margin: 8px;
     transform: scaleX(2.2);

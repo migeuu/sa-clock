@@ -44,26 +44,28 @@ function cleanCart() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
       Swal.fire({
-        icon: 'question',
-        title: 'Deseja limpar seu carrinho?',
-        confirmButtonText: 'Sim',
-        confirmButtonColor: 'green',
-        showCloseButton: 'true'
+        title: "Deseja limpar seu carrinho?",
+        confirmButtonText: "Sim",
+        confirmButtonColor: "green",
+        showCloseButton: "true",
+        showCancelButton: "true",
+        cancelButtonText: "Cancelar",
       }).then((result) => {
-        if(result.isConfirmed){
+        if (result.isConfirmed) {
           for (i = 0; i < users.length; i++) {
-            if (userLogged[0] == users[i][2]){
-              users[i].length = 6
+            if (userLogged[0] == users[i][2]) {
+              users[i].length = 6;
             }
           }
-          localStorage.setItem("users", JSON.stringify(users))
+          localStorage.setItem("users", JSON.stringify(users));
           Swal.fire({
-            icon: 'success',
-            title: 'Carrinho limpo',
-            confirmButtonText: '<a style="text-decoration: none; color: white;" href="index.html">Confirmar</a>'
-          })
+            icon: "success",
+            title: "Carrinho limpo",
+            confirmButtonText:
+              '<a style="text-decoration: none; color: white;" href="index.html">Confirmar</a>',
+          });
         }
-      })
+      });
     }
   }
 }

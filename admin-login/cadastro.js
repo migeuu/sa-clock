@@ -3,7 +3,7 @@ let dateRegister = document.getElementById("dateRegister");
 let userRegister = document.getElementById("user");
 let passwordRegister = document.getElementById("pass");
 let emailRegister = document.getElementById("email");
-let eye = document.getElementById("eye")
+let eye = document.getElementById("eye");
 
 let userLogin = document.getElementById("userLog");
 let passwordLogin = document.getElementById("passwordLog");
@@ -35,14 +35,14 @@ function register() {
       emailRegister.value,
       passwordRegister.value,
       {
-        balance:balance
-      }
+        balance: balance,
+      },
     ]);
 
     localStorage.setItem("users", JSON.stringify(users));
     alert("Usuário cadastrado com sucesso!");
     window.location.href = "login.html";
-    return false
+    return false;
   } else {
     for (i = 0; i < users.length; i++) {
       if (
@@ -59,8 +59,8 @@ function register() {
           emailRegister.value,
           passwordRegister.value,
           {
-            balance:balance
-          }
+            balance: balance,
+          },
         ]);
 
         localStorage.setItem("users", JSON.stringify(users));
@@ -85,10 +85,30 @@ function login() {
   }
 
   if (logged == 1) {
-    alert("Login efetuado!");
-    window.location.href = "index.html";
+    Swal.fire({
+      icon: "success",
+      title: "Acesso autorizado",
+      confirmButtonText: "Página Inicial",
+      confirmButtonColor: "green",
+      showDenyButton: "true",
+      denyButtonText: "Acessar conta",
+      denyButtonColor: "#b1b1b1",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "index.html";
+      } else if (result.isDenied) {
+        window.location.href = "accountpage.html";
+      }
+    });
   } else {
-    alert("Preencha os campos corretamente");
+    Swal.fire({
+      icon: "error",
+      title: "Acesso negado",
+      text: "Usuario ou senha inválidos!",
+      confirmButtonText: "Voltar",
+      confirmButtonColor: "#b1b1b1",
+      showCloseButton: "true",
+    });
   }
 }
 
@@ -188,21 +208,20 @@ function editUser() {
 
 function seePasswordRegister() {
   if (passwordRegister.type == "password") {
-    passwordRegister.type = "text"
-    eye.className = "far fa-eye"
+    passwordRegister.type = "text";
+    eye.className = "far fa-eye";
   } else {
-    passwordRegister.type = "password"
-    eye.className = "far fa-eye-slash"
+    passwordRegister.type = "password";
+    eye.className = "far fa-eye-slash";
   }
 }
 
 function seePasswordLogin() {
   if (passwordLogin.type == "password") {
-    passwordLogin.type = "text"
-    eye.className = "far fa-eye"
-
+    passwordLogin.type = "text";
+    eye.className = "far fa-eye";
   } else {
-    passwordLogin.type = "password"
-    eye.className = "far fa-eye-slash"
+    passwordLogin.type = "password";
+    eye.className = "far fa-eye-slash";
   }
 }
