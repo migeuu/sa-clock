@@ -7,6 +7,7 @@ let totalPrice = [];
 let loginAccount = document.getElementById("login-account");
 let buttonList = [];
 let botao;
+let mainContainer = document.getElementById("main-container");
 
 loginAccount.addEventListener("click", function () {
   enterLoginAccount();
@@ -14,7 +15,8 @@ loginAccount.addEventListener("click", function () {
 
 function addQuantity() {
   for (i = 0; i < users.length; i++) {
-    if (userLogged[0] == users[i][2]) {}
+    if (userLogged[0] == users[i][2]) {
+    }
   }
 }
 
@@ -41,8 +43,27 @@ function totalPriceCalculator() {
 function cleanCart() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
-      users[i].length = 6;
-      localStorage.setItem("users", JSON.stringify(users));
+      Swal.fire({
+        icon: 'question',
+        title: 'Deseja limpar seu carrinho?',
+        confirmButtonText: 'Sim',
+        confirmButtonColor: 'green',
+        showCloseButton: 'true'
+      }).then((result) => {
+        if(result.isConfirmed){
+          for (i = 0; i < users.length; i++) {
+            if (userLogged[0] == users[i][2]){
+              users[i].length = 6
+            }
+          }
+          localStorage.setItem("users", JSON.stringify(users))
+          Swal.fire({
+            icon: 'success',
+            title: 'Carrinho limpo',
+            confirmButtonText: '<a style="text-decoration: none; color: white;" href="index.html">Confirmar</a>'
+          })
+        }
+      })
     }
   }
 }
@@ -50,6 +71,19 @@ function cleanCart() {
 function userCart() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
+      if (users[i].length == 6) {
+        mainContainer.style.opacity = "0";
+        Swal.fire({
+          icon: "warning",
+          title: "Carrinho Vazio",
+          text: "Seu carrinho está vazio",
+          confirmButtonText: "Voltar",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            window.location.href = "index.html";
+          }
+        });
+      }
       for (j = 6; j < users[i].length; j++) {
         const product = `
         <div class="product">

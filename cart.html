@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body onload="userCart()">
@@ -88,10 +89,10 @@
         </ul>
     </nav>
 
-    <div class="main-container">
+    <div class="main-container" id="main-container">
         <div id="product-container" class="product-container"></div>
         <div class="payment-container">
-            <form class="form-payment" action="#">
+            <form class="form-payment">
                 <div class="subtotal-container">
                     <h1>Subtotal:</h1>
                     <p>R$<code id="total-price-indicator" style="margin-left: 4px;"></code>,00</p>
@@ -101,8 +102,8 @@
                     <p>R$<code style="color: green; margin-left: 4px;">GRÁTIS</code></p>
                 </div>
                 <div class="button-container">
-                    <button style="margin-bottom: 8px;">FINALIZAR COMPRA</button>
-                    <button onclick="cleanCart()">LIMPAR CARRINHO</button>
+                    <button type="submit" style="margin-bottom: 8px;">FINALIZAR COMPRA</button>
+                    <button type="reset" onclick="cleanCart()">LIMPAR CARRINHO</button>
                 </div>
             </form>
         </div>
@@ -148,6 +149,7 @@
         educacional e sem fins lucrativos.
     </div>
 
+    <script src="./sweetalert2/sweetalert2.js"></script>
     <script src="./cart/js/cart.js"></script>
 </body>
 
