@@ -37,8 +37,11 @@ function register() {
     ]);
 
     localStorage.setItem("users", JSON.stringify(users));
-    alert("Usuário cadastrado com sucesso!");
-    window.location.href = "login.html";
+    Swal.fire({
+      icon: 'success',
+      title: 'Cadastro concluído',
+      text: 'Ola,' + nameRegister.value + ', seu usuário foi cadastrado com sucesso'
+    })
     return false;
   } else {
     for (i = 0; i < users.length; i++) {
@@ -65,7 +68,7 @@ function register() {
         Swal.fire({
           icon: 'success',
           title: 'Cadastro concluído',
-          text: 'Usuário cadastrado com sucesso!',
+          text: 'Ola, ' + nameRegister.value + ', seu usuário foi cadastrado com sucesso',
           confirmButtonText: '<a style="color: white; text-decoration: none" href="index.html">Página Inicial</a>',
           confirmButtonColor: 'green'
         })
@@ -121,7 +124,7 @@ function list() {
 
   for (i = 0; i < users.length; i++) {
     lista =
-      lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br>";
+      lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br><br>";
   }
 
   divBaixo.innerHTML = `
@@ -139,10 +142,15 @@ function deleteUser() {
   for (i = 0; i < users.length; i++) {
     if (userDelete.value == users[i][2]) {
       positionDelete = i;
-
       users.splice(positionDelete, 1);
-
-      alert("Usuário excluído!");
+      Swal.fire({
+        icon: "success",
+        title: "Usuário excluído",
+        text: 'O usuário ' + userDelete.value + ' foi excluído com sucesso.',
+        confirmButtonText: "Confirmar",
+        confirmButtonColor: "#b1b1b1",
+        showCloseButton: "true",
+      });
       if (users.length == 0) {
         localStorage.removeItem("users");
       } else {
