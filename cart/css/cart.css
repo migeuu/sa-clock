@@ -122,6 +122,7 @@ nav input {
 }
 
 .main-container {
+  min-height: 60vh;
   display: flex;
   justify-content: space-around;
   align-items: start;
@@ -285,9 +286,6 @@ nav input {
 }
 
 .footer-container {
-  position: absolute;
-  width: 100%;
-  bottom: 10;
   background: white;
   padding-top: 2rem;
   padding-bottom: 4rem;
