@@ -15,6 +15,7 @@ function logout() {
   }).then((result) => {
     if (result.isConfirmed) {
       localStorage.removeItem("userLogged");
+      localStorage.removeItem("total-price");
       window.location.href = "login.html";
     }
   });

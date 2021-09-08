@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./index/imgs/COVID DEZEROSA.png">
     <title>Clock Inc. | Forma de Pagamento</title>
+    <link rel="stylesheet" href="./payment/css/payment.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="returnCartInfo()">
     <nav>
         <div class="logo">
             <a style="text-decoration: none; color: white;" href="index.html">Clock&copy; <code
@@ -82,6 +89,134 @@
         </ul>
     </nav>
 
+    <div class="title-container">
+        <h1>Pagamento</h1>
+    </div>
+
+    <form class="form-main-container">
+        <div class="payment-container">
+            <div class="ticket-container" id="bs-container">
+                <div class="fop-container">
+                    <h1>Boleto Bancário</h1>
+                </div>
+                <div class="payment-form">
+                    <div class="info-single">
+                        <label class="inp-label">Nome Completo:</label>
+                        <input type="text" class="inp-form" id="full-name-inp" placeholder="ex... João da Silva" required>
+                    </div>
+                    <div class="info-double">
+                        <div class="input-cpf">
+                            <label class="inp-label">CPF:</label>
+                            <input type="text" class="inp-form" id="cpf-inp" placeholder="000.000.000-00" required>
+                        </div>
+                        <div class="input-date">
+                            <label class="inp-label">Data de Nascimento:</label>
+                            <input type="date" class="inp-form" id="date-inp"  required>
+                        </div>
+                    </div>
+                    <div class="info-single">
+                        <label class="inp-label">E-mail:</label>
+                        <input type="text" class="inp-form" id="email-inp" required>
+                    </div>
+                    <div class="info-double">
+                        <div class="input-city">
+                            <label class="inp-label">Cidade:</label>
+                            <input type="text" class="inp-form" id="city-inp" required>
+                        </div>
+                        <div class="input-district">
+                            <label class="inp-label">Bairro:</label>
+                            <input type="text" class="inp-form" id="district-inp" required>
+                        </div>
+                    </div>
+                    <div class="info-double">
+                        <div class="input-address">
+                            <label class="inp-label">Endereço:</label>
+                            <input type="text" class="inp-form" id="address-inp" required>
+                        </div>
+                        <div class="input-date">
+                            <label class="inp-label">Complemento:</label>
+                            <input type="text" class="inp-form" id="complement-inp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="credit-card-container" id="cc-container">
+                <div class="fop-container">
+                    <h1>Cartão de Crédito</h1>
+                </div>
+                <div class="payment-form">
+                    <div class="info-single">
+                        <label class="inp-label">Nome do titular:</label>
+                        <input type="text" class="inp-form" id="name-inp" placeholder="ex... João da Silva" required>
+                    </div>
+                    <div class="info-double">
+                        <div class="input-cpf">
+                            <label class="inp-label">CPF do Titular:</label>
+                            <input type="text" class="inp-form" id="cpf-inp" placeholder="000.000.000-00" required>
+                        </div>
+                        <div class="input-date">
+                            <label class="inp-label">Data de Nascimento:</label>
+                            <input type="date" class="inp-form" id="date-inp" required>
+                        </div>
+                    </div>
+                    <div class="info-single">
+                        <label class="inp-label">Núm. do Cartão:</label>
+                        <input type="text" class="inp-form" id="card-num-inp" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+                    </div>
+                    <div class="info-double">
+                        <div class="input-validity">
+                            <label class="inp-label">Validade:</label>
+                            <input type="text" class="inp-form" id="validity-inp" placeholder="MM/AA" required>
+                        </div>
+                        <div class="input-code">
+                            <label class="inp-label">Cód. de Segurança:</label>
+                            <input type="text" class="inp-form" id="code-inp" placeholder="CVV" required>
+                        </div>
+                    </div>
+                    <div class="info-double">
+                        <div class="input-cc-address" style="width: 100%;">
+                            <label class="inp-label">Endereço:</label>
+                            <input type="text" class="inp-form" id="address-inp" placeholder="ex... Servidão dos Lírios, 53, Ap 01." required>
+                        </div>
+                        <div class="input-state">
+                            <label class="inp-label">Estado:</label>
+                            <input type="text" class="inp-form" id="state-inp" placeholder="SC" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="payment-info-container">
+            <div class="payment-info">
+                <div class="fop-container">
+                    <h1>Resumo do Pedido</h1>
+                </div>
+                <div class="payment-info-content">
+                    <div class="product-info">
+                        <label style="padding: 0;" class="inp-label">Produtos do pedido:</label>
+                        <div class="product-cart" id="product-cart"></div>
+                    </div>
+                    <div class="price-container">
+                        <label style="padding: 0;" class="inp-label">Preço a pagar:</label>
+                        <p>R$<code id="price-to-pay"></code></p>
+                    </div>
+                    <div class="method-container">
+                        <label style="padding: 0;" class="inp-label">Método de pagamento:</label>
+                        <select id="payment-method" class="method" onchange="changePayMethod()">
+                            <option value="Selecione o método de pagamento" disabled selected hidden>Selecione o método</option>
+                            <option value="bank-slip">Boleto Bancário</option>
+                            <option value="credit-card">Cartão de Crédito</option>
+                        </select>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit">CONFIRMAR COMPRA</button>
+                        <button type="button">VOLTAR AO CARRINHO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
     <div class="footer-container">
         <div class="footer">
             <div class="footer-heading footer-1">
@@ -123,7 +258,7 @@
     </div>
 
     <script src="./sweetalert2/sweetalert2.js"></script>
-    <script src="./product-page/js/script.js"></script>
+    <script src="./payment/js/script.js"></script>
 </body>
 
 </html>

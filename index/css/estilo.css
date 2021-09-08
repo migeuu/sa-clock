@@ -133,7 +133,7 @@ nav input {
   font-weight: 500;
 }
 
-.banner-slider{
+.banner-slider {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -641,6 +641,10 @@ nav input {
 }
 
 @media screen and (max-width: 768px) {
+  .banner-slider {
+    font-size: 14px;
+  }
+
   .controls {
     display: none;
   }
@@ -822,7 +826,6 @@ nav input {
 }
 
 @media screen and (max-width: 360) {
-
   .categories-title-container hr {
     margin: 8px;
     transform: scaleX(2.2);
