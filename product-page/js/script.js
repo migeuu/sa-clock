@@ -114,7 +114,7 @@ function buyNow() {
             denyButtonColor: "#b1b1b1",
           }).then((result) => {
             if (result.isConfirmed) {
-              window.location.href = "cart.html";
+              window.location.href = "index.html";
             } else if (result.isDenied) {
               window.location.href = "payment.html";
             }

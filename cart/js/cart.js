@@ -15,12 +15,13 @@ loginAccount.addEventListener("click", function () {
 
 function addQuantity() {
   for (i = 0; i < users.length; i++) {
-    if (userLogged[0] == users[i][2]) {}
+    if (userLogged[0] == users[i][2]) {
+    }
   }
 }
 
 function payment() {
-  window.location.href = "payment.html"
+  window.location.href = "payment.html";
 }
 
 function enterLoginAccount() {
@@ -70,7 +71,8 @@ function cleanCart() {
             allowOutsideClick: false,
             icon: "success",
             title: "Carrinho limpo",
-            confirmButtonText: '<a style="text-decoration: none; color: white;" href="index.html">Confirmar</a>'
+            confirmButtonText:
+              '<a style="text-decoration: none; color: white;" href="index.html">Confirmar</a>',
           });
         }
       });
@@ -86,6 +88,7 @@ function userCart() {
           if (users[i].length == 5) {
             mainContainer.style.opacity = "0";
             Swal.fire({
+              allowOutsideClick: false,
               icon: "warning",
               title: "Carrinho Vazio",
               text: "Seu carrinho está vazio",
@@ -131,28 +134,34 @@ function userCart() {
       } else {
         mainContainer.style.opacity = "0";
         Swal.fire({
+          allowOutsideClick: false,
           icon: "error",
           title: "Erro",
           text: "Nenhum usuário identificado, por favor faça login",
-          confirmButtonText: '<a style="text-decoration: none; color: white;" href="login.html">Login</a>',
+          confirmButtonText:
+            '<a style="text-decoration: none; color: white;" href="login.html">Login</a>',
           confirmButtonColor: "green",
           showCancelButton: "true",
           cancelButtonColor: "#b1b1b1",
-          cancelButtonText: '<a style="text-decoration: none; color: white;" href="index.html">Voltar</a>',
+          cancelButtonText:
+            '<a style="text-decoration: none; color: white;" href="index.html">Voltar</a>',
         });
       }
     }
   } else {
     mainContainer.style.opacity = "0";
     Swal.fire({
+      allowOutsideClick: false,
       icon: "error",
       title: "Erro",
       text: "Nenhum usuário identificado, por favor faça login",
-      confirmButtonText: '<a style="text-decoration: none; color: white;" href="login.html">Login</a>',
+      confirmButtonText:
+        '<a style="text-decoration: none; color: white;" href="login.html">Login</a>',
       confirmButtonColor: "green",
       showCancelButton: "true",
       cancelButtonColor: "#b1b1b1",
-      cancelButtonText: '<a style="text-decoration: none; color: white;" href="index.html">Voltar</a>',
+      cancelButtonText:
+        '<a style="text-decoration: none; color: white;" href="index.html">Voltar</a>',
     });
   }
 }

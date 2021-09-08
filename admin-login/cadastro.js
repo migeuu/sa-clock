@@ -175,10 +175,16 @@ function deleteUser() {
 
   for (i = 0; i < users.length; i++) {
     lista =
-      lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br>";
+      lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br><br>";
   }
 
-  document.getElementById("baixo").innerHTML = lista;
+  divBaixo.innerHTML = `
+  <div class="title-container" style="color: #222; padding: 0;">
+  <h1>Usuários cadastrados</h1>
+  </div>
+  ` + lista;
+  divBaixo.style.display = "flex"
+  divBaixo.style.flexDirection = "column"
 }
 
 function search() {
