@@ -5,13 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./index/imgs/COVID DEZEROSA.png">
     <title>Principal</title>
+    <link rel="stylesheet" href="./admin-login/css/principal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/639a640fc0.js" crossorigin="anonymous"></script>
 </head>
 
-<body bgcolor="#7952B3" text="#FFFFFF">
+<body>
     <nav>
         <div class="logo">
-            <a style="text-decoration: none; color: white;" href="index.html">Clock&copy; <code style="color: #c71e81;">Inc.</code></a>
+            <a style="text-decoration: none; color: white;" href="index.html">Clock&copy; <code
+                    style="color: #c71e81;">Inc.</code></a>
         </div>
         <label for="btn" class="icon">
             <span class="fa fa-bars"></span>
@@ -68,46 +76,47 @@
             </li>
             <li><a href="allproducts.html">TODOS</a></li>
             <li><a href="support.html">SUPORTE</a></li>
-            <li>
-                <a style="letter-spacing: normal;" id="login-account" href="login.html">
-                    <i style="letter-spacing: normal;" class="fas fa-user-circle"></i>
-                </a>
-            </li>
-            <li>
-                <a href="cart.html">
-                    <i style="letter-spacing: normal;" class="fas fa-shopping-cart"></i>
-                </a>
-            </li>
         </ul>
     </nav>
 
-    <form action="#">
-    </form>
-    <div id="topo">
-
-        <button onclick="list()">Listar</button><br>
-        <label>Digite abaixo o nome de usuário a ser excluído.</label><br>
-        <input type="text" id="userDelete"><button onclick="deleteUser()">Excluir</button><br><br>
-
+    <div class="title-container">
+        <h1>Administração</h1>
     </div>
-    <div id="meio">
 
-        <label>Digite abaixo o nome de usuário a pesquisado.</label><br>
-        <label>Usuário</label>
-        <input type="text" id="userSearch"><br>
-        <label>Email</label>
-        <input type="text" id="emailSearch"><br>
-        <label>Senha</label>
-        <input type="text" id="passwordSearch"><br>
-        <br>
-        <button onclick="search()">Pesquisar</button>
-        <button onclick="selectUser()">Selecionar</button>
-        <button onclick="editUser()">Atualizar</button><br><br>
-
+    <div class="main-container">
+        <div id="topo">
+            <button class="button-function" onclick="list()">LISTAR</button><br>
+            <label class="inp-label">Digite abaixo o nome de usuário a ser excluído:</label>
+            <div class="inp-container">
+                <input type="text" id="userDelete">
+                <button class="button-function" onclick="deleteUser()">EXCLUIR</button>
+            </div>
+        </div>
+        <div id="meio">
+            <div class="title-container" style="color: #222; padding: 0;">
+                <h1>Pesquisar</h1>
+            </div>
+            <div class="inp-container">
+                <label class="inp-label">Usuário:</label>
+                <input type="text" id="userSearch"><br>
+            </div>
+            <div class="inp-container">
+                <label class="inp-label">Email:</label>
+                <input type="text" id="emailSearch">
+            </div>
+            <div class="inp-container">
+                <label class="inp-label">Senha:</label>
+                <input type="text" id="passwordSearch">
+            </div>
+            <div class="button-container">
+                <button class="button-function" onclick="search()">PESQUISAR</button>
+                <button class="button-function" onclick="selectUser()">SELECIONAR</button>
+                <button class="button-function" onclick="editUser()">ATUALIZAR</button>
+            </div>
+        </div>
+        <div style="display: none;" id="baixo"></div>
     </div>
-    <div id="baixo">
 
-    </div>
 
     <div class="footer-container">
         <div class="footer">
@@ -144,6 +153,11 @@
         </div>
     </div>
 
+    <div class="footer-bottom">
+        &copy; Clock Inc. | Designed by Clock Meddia | Todas as imagens são de uso educacional e sem fins lucrativos.
+    </div>
+
+    <script src="./sweetalert2/sweetalert2.js"></script>
     <script src="./admin-login/cadastro.js"></script>
 </body>
 

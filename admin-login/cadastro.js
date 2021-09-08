@@ -14,6 +14,7 @@ let passwordSearch = document.getElementById("passwordSearch");
 let passwordSearchTemp;
 let emailSearch = document.getElementById("emailSearch");
 let emailSearchTemp;
+let divBaixo = document.getElementById("baixo")
 
 let userDelete = document.getElementById("userDelete");
 
@@ -21,7 +22,6 @@ let positionSearch;
 
 let users = [];
 let userLogged = [];
-let balance = 0;
 
 function register() {
   users = JSON.parse(localStorage.getItem("users"));
@@ -124,7 +124,13 @@ function list() {
       lista + users[i][2] + " - " + users[i][3] + " - " + users[i][4] + "<br>";
   }
 
-  document.getElementById("baixo").innerHTML = lista;
+  divBaixo.innerHTML = `
+  <div class="title-container" style="color: #222; padding: 0;">
+  <h1>Usuários cadastrados</h1>
+  </div>
+  ` + lista;
+  divBaixo.style.display = "flex"
+  divBaixo.style.flexDirection = "column"
 }
 
 function deleteUser() {
@@ -204,9 +210,13 @@ function editUser() {
     emailSearchTemp == null;
     passwordSearchTemp == null;
   }
-
   localStorage.setItem("users", JSON.stringify(users));
-  alert("Dados atualizados!");
+  list();
+  Swal.fire({
+    icon: 'success',
+    title: 'Dados atualizados',
+    text: 'Dados do usuário atualizados.'
+  })
 }
 
 function seePasswordRegister() {

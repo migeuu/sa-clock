@@ -168,6 +168,7 @@ nav input {
   padding: 0 1rem;
   animation: slide 2s ease;
 }
+
 .home-carousel .slide.active {
   display: flex;
 }
