@@ -36,7 +36,7 @@ function enterLoginAccount() {
 function totalPriceCalculator() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
-      for (j = 6; j < users[i].length; j++) {
+      for (j = 5; j < users[i].length; j++) {
         totalPrice.push(users[i][j].quantity * users[i][j].price);
         totalPriceIndicator.innerHTML = totalPrice.reduce(reducer);
       }
@@ -62,7 +62,7 @@ function cleanCart() {
         if (result.isConfirmed) {
           for (i = 0; i < users.length; i++) {
             if (userLogged[0] == users[i][2]) {
-              users[i].length = 6;
+              users[i].length = 5;
             }
           }
           localStorage.setItem("users", JSON.stringify(users));
@@ -83,7 +83,7 @@ function userCart() {
   for (i = 0; i < users.length; i++) {
     if (userLogged != null) {
       if (userLogged[0] == users[i][2]) {
-        if (users[i].length == 6) {
+        if (users[i].length == 5) {
           mainContainer.style.opacity = "0";
           Swal.fire({
             icon: "warning",
@@ -97,7 +97,7 @@ function userCart() {
           });
           return false;
         }
-        for (j = 6; j < users[i].length; j++) {
+        for (j = 5; j < users[i].length; j++) {
           const product = `
           <div class="product">
           <div class="product-image-container">
