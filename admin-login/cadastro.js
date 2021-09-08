@@ -40,7 +40,8 @@ function register() {
     Swal.fire({
       icon: 'success',
       title: 'Cadastro concluído',
-      text: 'Ola,' + nameRegister.value + ', seu usuário foi cadastrado com sucesso'
+      text: 'Ola, ' + nameRegister.value + ', seu usuário foi cadastrado com sucesso',
+      confirmButtonText: '<a style="color: white; text-decoration: none" href="login.html">Login</a>',
     })
     return false;
   } else {
