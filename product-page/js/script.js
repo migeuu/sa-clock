@@ -21,6 +21,7 @@ let priceProduct = document.getElementById("price-product").innerHTML;
 let sizeProduct;
 let quantityProduct = document.getElementById("quantity");
 let loginAccount = document.getElementById("login-account");
+let totalPrice = [];
 
 container[0].addEventListener("click", function () {
   mainImage.src = img[0].src;
@@ -40,6 +41,17 @@ container[2].addEventListener("click", function () {
 loginAccount.addEventListener("click", function () {
   enterLoginAccount();
 });
+
+function totalPriceStorage() {
+  for (i = 0; i < users.length; i++) {
+    if (userLogged[0] == users[i][2]) {
+      for (j = 5; j < users[i].length; j++) {
+        totalPrice.push(users[i][j].quantity * users[i][j].price);
+      }
+      localStorage.setItem("total-price", JSON.stringify(totalPrice))
+    }
+  }
+}
 
 function enterLoginAccount() {
   userLogged = JSON.parse(localStorage.getItem("userLogged"));
@@ -71,117 +83,153 @@ function getSelectValue() {
 function buyNow() {
   users = JSON.parse(localStorage.getItem("users"));
   userLogged = JSON.parse(localStorage.getItem("userLogged"));
-  if (sizeProduct == null) {
-    Swal.fire({
-      icon: "warning",
-      title: "Selecione um tamanho",
-      text: "Selecione o tamanho do produto para continuar comprando",
-      confirmButtonText: "Ok",
-    });
-    return false;
-  }
-  for (i = 0; i < users.length; i++) {
-    if (userLogged != null) {
-      if (userLogged[0] == users[i][2]) {
-        cart = {
-          id: idProduct,
-          img: imgProduct,
-          name: titleProduct,
-          price: priceProduct,
-          size: sizeProduct,
-          quantity: quantityProduct.value,
-        };
-        users[i].push(cart);
+  if (users != null) {
+    if (sizeProduct == null) {
+      Swal.fire({
+        icon: "warning",
+        title: "Selecione um tamanho",
+        text: "Selecione o tamanho do produto para continuar comprando",
+        confirmButtonText: "Ok",
+      });
+      return false;
+    }
+    for (i = 0; i < users.length; i++) {
+      if (userLogged != null) {
+        if (userLogged[0] == users[i][2]) {
+          cart = {
+            id: idProduct,
+            img: imgProduct,
+            name: titleProduct,
+            price: priceProduct,
+            size: sizeProduct,
+            quantity: quantityProduct.value,
+          };
+          users[i].push(cart);
+          Swal.fire({
+            icon: "success",
+            title: "Produto adicionado ao carrinho",
+            confirmButtonText: "Continuar comprando",
+            showDenyButton: "true",
+            denyButtonText: "Finalizar Compra",
+            denyButtonColor: "#b1b1b1",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "cart.html";
+            } else if (result.isDenied) {
+              window.location.href = "payment.html";
+            }
+          });
+        }
+      } else {
         Swal.fire({
-          icon: "success",
-          title: "Produto adicionado ao carrinho",
-          confirmButtonText: "Continuar comprando",
+          icon: "error",
+          title: "Usuário não encontrado",
+          text: "Não foi possível encontrar um usuário com o login efetuado, por favor efetue login para continuar comprando",
+          confirmButtonText: "Login",
+          confirmButtonColor: "green",
           showDenyButton: "true",
-          denyButtonText: "Acessar carrinho",
+          denyButtonText: "Voltar",
           denyButtonColor: "#b1b1b1",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = "index.html";
-          } else if (result.isDenied) {
-            window.location.href = "cart.html";
+            window.location.href = "login.html";
           }
         });
       }
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Usuário não encontrado",
-        text: "Não foi possível encontrar um usuário com o login efetuado, por favor efetue login para continuar comprando",
-        confirmButtonText: "Login",
-        confirmButtonColor: "#c71e81",
-        showDenyButton: "true",
-        denyButtonText: "Voltar",
-        denyButtonColor: "#b1b1b1",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "login.html";
-        }
-      });
     }
+    localStorage.setItem("users", JSON.stringify(users));
+    totalPriceStorage();
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Usuário não encontrado",
+      text: "Não foi possível encontrar um usuário com o login efetuado, por favor efetue login para continuar comprando",
+      confirmButtonText: "Login",
+      confirmButtonColor: "green",
+      showDenyButton: "true",
+      denyButtonText: "Voltar",
+      denyButtonColor: "#b1b1b1",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "login.html";
+      }
+    });
   }
-  localStorage.setItem("users", JSON.stringify(users));
 }
 
 function addCart() {
   users = JSON.parse(localStorage.getItem("users"));
   userLogged = JSON.parse(localStorage.getItem("userLogged"));
-  if (sizeProduct == null) {
-    Swal.fire({
-      icon: "warning",
-      title: "Selecione um tamanho",
-      text: "Selecione o tamanho do produto para continuar comprando",
-      confirmButtonText: "Ok",
-    });
-    return false;
-  }
-  for (i = 0; i < users.length; i++) {
-    if (userLogged != null) {
-      if (userLogged[0] == users[i][2]) {
-        cart = {
-          id: idProduct,
-          img: imgProduct,
-          name: titleProduct,
-          price: priceProduct,
-          size: sizeProduct,
-          quantity: quantityProduct.value,
-        };
-        users[i].push(cart);
+  if (users != null) {
+    if (sizeProduct == null) {
+      Swal.fire({
+        icon: "warning",
+        title: "Selecione um tamanho",
+        text: "Selecione o tamanho do produto para continuar comprando",
+        confirmButtonText: "Ok",
+      });
+      return false;
+    }
+    for (i = 0; i < users.length; i++) {
+      if (userLogged != null) {
+        if (userLogged[0] == users[i][2]) {
+          cart = {
+            id: idProduct,
+            img: imgProduct,
+            name: titleProduct,
+            price: priceProduct,
+            size: sizeProduct,
+            quantity: quantityProduct.value,
+          };
+          users[i].push(cart);
+          Swal.fire({
+            icon: "success",
+            title: "Produto adicionado ao carrinho",
+            confirmButtonText: "Continuar comprando",
+            showDenyButton: "true",
+            denyButtonText: "Acessar carrinho",
+            denyButtonColor: "#b1b1b1",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              window.location.href = "index.html";
+            } else if (result.isDenied) {
+              window.location.href = "cart.html";
+            }
+          });
+        }
+      } else {
         Swal.fire({
-          icon: "success",
-          title: "Produto adicionado ao carrinho",
-          confirmButtonText: "Continuar comprando",
+          icon: "error",
+          title: "Usuário não encontrado",
+          text: "Não foi possível encontrar um usuário com o login efetuado, por favor efetue login para continuar comprando",
+          confirmButtonText: "Login",
+          confirmButtonColor: "green",
           showDenyButton: "true",
-          denyButtonText: "Acessar carrinho",
+          denyButtonText: "Voltar",
           denyButtonColor: "#b1b1b1",
         }).then((result) => {
           if (result.isConfirmed) {
-            window.location.href = "index.html";
-          } else if (result.isDenied) {
-            window.location.href = "cart.html";
+            window.location.href = "login.html";
           }
         });
       }
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Usuário não encontrado",
-        text: "Não foi possível encontrar um usuário com o login efetuado, por favor efetue login para continuar comprando",
-        confirmButtonText: "Login",
-        confirmButtonColor: "#c71e81",
-        showDenyButton: "true",
-        denyButtonText: "Voltar",
-        denyButtonColor: "#b1b1b1",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          window.location.href = "login.html";
-        }
-      });
     }
+    localStorage.setItem("users", JSON.stringify(users));
+    totalPriceStorage();
+  } else {
+    Swal.fire({
+      icon: "error",
+      title: "Usuário não encontrado",
+      text: "Não foi possível encontrar um usuário com o login efetuado, por favor efetue login para continuar comprando",
+      confirmButtonText: "Login",
+      confirmButtonColor: "green",
+      showDenyButton: "true",
+      denyButtonText: "Voltar",
+      denyButtonColor: "#b1b1b1",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "login.html";
+      }
+    });
   }
-  localStorage.setItem("users", JSON.stringify(users));
 }

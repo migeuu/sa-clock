@@ -79,33 +79,43 @@ function register() {
 }
 
 function login() {
-  let logged = 0;
   users = JSON.parse(localStorage.getItem("users"));
-  for (i = 0; i < users.length; i++) {
-    if (userLogin.value == users[i][2] && passwordLogin.value == users[i][4]) {
-      logged = 1;
-      userLogged = [];
-      userLogged.push(users[i][2]);
-      localStorage.setItem("userLogged", JSON.stringify(userLogged));
-    }
-  }
-
-  if (logged == 1) {
-    Swal.fire({
-      icon: "success",
-      title: "Acesso autorizado",
-      confirmButtonText: "Página Inicial",
-      confirmButtonColor: "green",
-      showDenyButton: "true",
-      denyButtonText: "Acessar conta",
-      denyButtonColor: "#b1b1b1",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "index.html";
-      } else if (result.isDenied) {
-        window.location.href = "accountpage.html";
+  if (users != null) {
+    let logged = 0;
+    for (i = 0; i < users.length; i++) {
+      if (userLogin.value == users[i][2] && passwordLogin.value == users[i][4]) {
+        logged = 1;
+        userLogged = [];
+        userLogged.push(users[i][2]);
+        localStorage.setItem("userLogged", JSON.stringify(userLogged));
       }
-    });
+    }
+    if (logged == 1) {
+      Swal.fire({
+        icon: "success",
+        title: "Acesso autorizado",
+        confirmButtonText: "Página Inicial",
+        confirmButtonColor: "green",
+        showDenyButton: "true",
+        denyButtonText: "Acessar conta",
+        denyButtonColor: "#b1b1b1",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "index.html";
+        } else if (result.isDenied) {
+          window.location.href = "accountpage.html";
+        }
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Acesso negado",
+        text: "Usuario ou senha inválidos!",
+        confirmButtonText: "Voltar",
+        confirmButtonColor: "#b1b1b1",
+        showCloseButton: "true",
+      });
+    }
   } else {
     Swal.fire({
       icon: "error",

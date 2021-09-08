@@ -42,8 +42,8 @@ function confirmPayment() {
   localStorage.removeItem("total-price");
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]){
-      for (j = 6; j < users[i].length; j++){
-        users[i].length = 6
+      for (j = 5; j < users[i].length; j++){
+        users[i].length = 5
       }
     }
   }
@@ -62,7 +62,7 @@ function confirmPayment() {
 function returnCartInfo() {
   for (i = 0; i < users.length; i++) {
     if (userLogged[0] == users[i][2]) {
-      for (j = 6; j < users[i].length; j++) {
+      for (j = 5; j < users[i].length; j++) {
         const product = `
           <p>${users[i][j].name} - R$${users[i][j].price}</p>
           `;
