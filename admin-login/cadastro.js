@@ -191,7 +191,13 @@ function search() {
     document.getElementById("emailSearch").value = users[positionSearch][3];
     document.getElementById("passwordSearch").value = users[positionSearch][4];
   } else {
-    alert("Usuário não encontrado!");
+    Swal.fire({
+      icon: "error",
+      title: "Dados incorretos",
+      text: "Usuario não encontrado",
+      confirmButtonColor: "#b1b1b1",
+      showCloseButton: "true",
+    });
     document.getElementById("userSearch").value = "";
   }
 }
