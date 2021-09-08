@@ -93,7 +93,7 @@
         <h1>Pagamento</h1>
     </div>
 
-    <form class="form-main-container">
+    <form class="form-main-container" action="javascript: confirmPayment()">
         <div class="payment-container">
             <div class="ticket-container" id="bs-container">
                 <div class="fop-container">
@@ -109,33 +109,33 @@
                             <label class="inp-label">CPF:</label>
                             <input type="text" class="inp-form" id="cpf-inp" placeholder="000.000.000-00" required>
                         </div>
-                        <div class="input-date">
+                        <div style="width: 60%;" class="input-bs-date">
                             <label class="inp-label">Data de Nascimento:</label>
                             <input type="date" class="inp-form" id="date-inp"  required>
                         </div>
                     </div>
                     <div class="info-single">
                         <label class="inp-label">E-mail:</label>
-                        <input type="text" class="inp-form" id="email-inp" required>
+                        <input type="text" class="inp-form" id="email-inp" placeholder="exemplo@outlook.com" required>
                     </div>
                     <div class="info-double">
                         <div class="input-city">
                             <label class="inp-label">Cidade:</label>
-                            <input type="text" class="inp-form" id="city-inp" required>
+                            <input type="text" class="inp-form" id="city-inp" placeholder="ex... Florianópolis" required>
                         </div>
                         <div class="input-district">
                             <label class="inp-label">Bairro:</label>
-                            <input type="text" class="inp-form" id="district-inp" required>
+                            <input type="text" class="inp-form" id="district-inp" placeholder="ex... Ingleses do Rio Vermelho" required>
                         </div>
                     </div>
                     <div class="info-double">
                         <div class="input-address">
                             <label class="inp-label">Endereço:</label>
-                            <input type="text" class="inp-form" id="address-inp" required>
+                            <input type="text" class="inp-form" id="address-inp" placeholder="ex... Servidão da Rosa, 53" required>
                         </div>
                         <div class="input-date">
                             <label class="inp-label">Complemento:</label>
-                            <input type="text" class="inp-form" id="complement-inp">
+                            <input type="text" class="inp-form" placeholder="ex... Ap 01" id="complement-inp">
                         </div>
                     </div>
                 </div>
@@ -147,40 +147,40 @@
                 <div class="payment-form">
                     <div class="info-single">
                         <label class="inp-label">Nome do titular:</label>
-                        <input type="text" class="inp-form" id="name-inp" placeholder="ex... João da Silva" required>
+                        <input type="text" class="inp-form" id="name-inp" placeholder="ex... João da Silva">
                     </div>
                     <div class="info-double">
                         <div class="input-cpf">
                             <label class="inp-label">CPF do Titular:</label>
-                            <input type="text" class="inp-form" id="cpf-inp" placeholder="000.000.000-00" required>
+                            <input type="text" class="inp-form" id="cpf-inp" placeholder="000.000.000-00">
                         </div>
                         <div class="input-date">
                             <label class="inp-label">Data de Nascimento:</label>
-                            <input type="date" class="inp-form" id="date-inp" required>
+                            <input type="date" class="inp-form" id="date-inp">
                         </div>
                     </div>
                     <div class="info-single">
                         <label class="inp-label">Núm. do Cartão:</label>
-                        <input type="text" class="inp-form" id="card-num-inp" placeholder="XXXX-XXXX-XXXX-XXXX" required>
+                        <input type="text" class="inp-form" id="card-num-inp" placeholder="XXXX-XXXX-XXXX-XXXX">
                     </div>
                     <div class="info-double">
                         <div class="input-validity">
                             <label class="inp-label">Validade:</label>
-                            <input type="text" class="inp-form" id="validity-inp" placeholder="MM/AA" required>
+                            <input type="text" class="inp-form" id="validity-inp" placeholder="MM/AA">
                         </div>
                         <div class="input-code">
                             <label class="inp-label">Cód. de Segurança:</label>
-                            <input type="text" class="inp-form" id="code-inp" placeholder="CVV" required>
+                            <input type="text" class="inp-form" id="code-inp" placeholder="CVV">
                         </div>
                     </div>
                     <div class="info-double">
                         <div class="input-cc-address" style="width: 100%;">
                             <label class="inp-label">Endereço:</label>
-                            <input type="text" class="inp-form" id="address-inp" placeholder="ex... Servidão dos Lírios, 53, Ap 01." required>
+                            <input type="text" class="inp-form" id="address-inp" placeholder="ex... Servidão dos Lírios, 53, Ap 01.">
                         </div>
                         <div class="input-state">
                             <label class="inp-label">Estado:</label>
-                            <input type="text" class="inp-form" id="state-inp" placeholder="SC" required>
+                            <input type="text" class="inp-form" id="state-inp" placeholder="SC">
                         </div>
                     </div>
                 </div>
@@ -210,7 +210,7 @@
                     </div>
                     <div class="button-container">
                         <button type="submit">CONFIRMAR COMPRA</button>
-                        <button type="button">VOLTAR AO CARRINHO</button>
+                        <button type="button" onclick="backCart()">VOLTAR AO CARRINHO</button>
                     </div>
                 </div>
             </div>

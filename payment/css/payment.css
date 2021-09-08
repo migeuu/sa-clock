@@ -202,7 +202,11 @@ nav input {
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  width: 46%;
+  width: 48%;
+}
+
+.info-bs-date {
+  width: 60%;
 }
 
 .inp-label {
@@ -476,6 +480,14 @@ nav input {
     display: block;
   }
 
+  .payment-container {
+    width: 55%;
+  }
+
+  .payment-info-container {
+    width: 43%;
+  }
+
   .footer {
     height: 100%;
     display: flex;
@@ -501,5 +513,28 @@ nav input {
     display: flex;
     align-items: center;
     height: 10vh;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .form-main-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-main-container > * {
+    width: 100%;
+    height: 70vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .inp-label {
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 24px;
   }
 }

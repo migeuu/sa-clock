@@ -33,10 +33,7 @@ function register() {
       dateRegister.value,
       userRegister.value,
       emailRegister.value,
-      passwordRegister.value,
-      {
-        balance: balance,
-      },
+      passwordRegister.value
     ]);
 
     localStorage.setItem("users", JSON.stringify(users));
@@ -49,7 +46,11 @@ function register() {
         userRegister.value == users[i][2] ||
         emailRegister.value == users[i][3]
       ) {
-        alert("Usuário já existente!");
+        Swal.fire({
+          icon: 'error',
+          title: 'Cadastro Negado',
+          text: 'Usuário já existente',
+        })
         return false;
       } else {
         users.push([
@@ -57,15 +58,17 @@ function register() {
           dateRegister.value,
           userRegister.value,
           emailRegister.value,
-          passwordRegister.value,
-          {
-            balance: balance,
-          },
+          passwordRegister.value
         ]);
 
         localStorage.setItem("users", JSON.stringify(users));
-        alert("Usuário cadastrado com sucesso!");
-        window.location.href = "login.html";
+        Swal.fire({
+          icon: 'success',
+          title: 'Cadastro concluído',
+          text: 'Usuário cadastrado com sucesso!',
+          confirmButtonText: '<a style="color: white; text-decoration: none" href="index.html">Página Inicial</a>',
+          confirmButtonColor: 'green'
+        })
         return false;
       }
     }
