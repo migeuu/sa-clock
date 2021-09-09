@@ -220,7 +220,7 @@ function addCart() {
     Swal.fire({
       icon: "error",
       title: "Usuário não encontrado",
-      text: "Não foi possível encontrar um usuário com o login efetuado, por favor efetue login para continuar comprando",
+      text: "Por favor efetue login para continuar comprando",
       confirmButtonText: "Login",
       confirmButtonColor: "green",
       showDenyButton: "true",
